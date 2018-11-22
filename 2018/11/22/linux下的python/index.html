@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Rafael,博客">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Rafael" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="在Linux中安装Python的操作步骤1.安装Python前的环境准备，非常非常重要！！！！1yum install gcc patch libffi-devel python-devel  zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux下的python">
+<meta property="og:url" content="http://fireworksrain.com/2018/11/22/linux下的python/index.html">
+<meta property="og:site_name" content="Rafael">
+<meta property="og:description" content="在Linux中安装Python的操作步骤1.安装Python前的环境准备，非常非常重要！！！！1yum install gcc patch libffi-devel python-devel  zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-22T00:55:39.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux下的python">
+<meta name="twitter:description" content="在Linux中安装Python的操作步骤1.安装Python前的环境准备，非常非常重要！！！！1yum install gcc patch libffi-devel python-devel  zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://fireworksrain.com/2018/11/22/linux下的python/">
+
+
+
+
+
+  <title>linux下的python | Rafael</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+	<a href="https://github.com/YrLuckly" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rafael</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">All the glory of life, to the end of the lonely repayment.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fireworksrain.com/2018/11/22/linux下的python/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr Zuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rafael">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">linux下的python</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-22T01:51:33+08:00">
+                2018-11-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="在Linux中安装Python的操作步骤"><a href="#在Linux中安装Python的操作步骤" class="headerlink" title="在Linux中安装Python的操作步骤"></a>在Linux中安装Python的操作步骤</h1><h3 id="1-安装Python前的环境准备，非常非常重要！！！！"><a href="#1-安装Python前的环境准备，非常非常重要！！！！" class="headerlink" title="1.安装Python前的环境准备，非常非常重要！！！！"></a>1.安装Python前的环境准备，非常非常重要！！！！</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install </span>gcc patch libffi-devel python-devel  zlib-devel <span class="keyword">bzip2-devel </span>openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel -y</span><br></pre></td></tr></table></figure>
+<h3 id="2-下载安装源码包"><a href="#2-下载安装源码包" class="headerlink" title="2.下载安装源码包"></a>2.下载安装源码包</h3><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/<span class="number">3.4</span><span class="meta">.7</span>/Python-<span class="number">3.4</span><span class="meta">.7</span>.tar.xzxz -d Python-<span class="number">3.4</span><span class="meta">.7</span>.tar.xztar -xf Python-<span class="number">3.4</span><span class="meta">.7</span>.tar</span><br></pre></td></tr></table></figure>
+<p>在opt的文件夹下执行此代码<br><code>[root@localhost opt]# wget https://www.python.org/ftp/python/3.4.7/Python-3.4.7.tar.xzxz -d Python-3.4.7.tar.xztar -xf Python-3.4.7.tar</code></p>
+<h3 id="3解压python源代码"><a href="#3解压python源代码" class="headerlink" title="3解压python源代码"></a>3解压python源代码</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">xz</span> <span class="selector-tag">-d</span> <span class="selector-tag">Python-3</span><span class="selector-class">.4</span><span class="selector-class">.7</span><span class="selector-class">.tar</span><span class="selector-class">.xz</span></span><br><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xf</span> <span class="selector-tag">Python-3</span><span class="selector-class">.4</span><span class="selector-class">.7</span><span class="selector-class">.tar</span></span><br></pre></td></tr></table></figure>
+<p>在opt的文件夹中操作<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[root@localhost opt]</span># <span class="selector-tag">xz</span> <span class="selector-tag">-d</span> <span class="selector-tag">Python-3</span><span class="selector-class">.4</span><span class="selector-class">.7</span><span class="selector-class">.tar</span><span class="selector-class">.xz</span></span><br><span class="line"><span class="selector-attr">[root@localhost opt]</span># <span class="selector-tag">tar</span> <span class="selector-tag">-xf</span> <span class="selector-tag">Python-3</span><span class="selector-class">.4</span><span class="selector-class">.7</span><span class="selector-class">.tar</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-切换进入python源码目录"><a href="#4-切换进入python源码目录" class="headerlink" title="4.切换进入python源码目录"></a>4.切换进入python源码目录</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/opt/Python-3.4.7</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-开始编译安装，释放编译文件"><a href="#5-开始编译安装，释放编译文件" class="headerlink" title="5.开始编译安装，释放编译文件"></a>5.开始编译安装，释放编译文件</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/configure --prefix=/</span>opt<span class="regexp">/python347/</span>    <span class="comment">#此时还不会生成这个文件夹！</span></span><br></pre></td></tr></table></figure>
+<p>在opt文件夹下的Python-3.4.7运行<br><code>[root@localhost Python-3.4.7]# ./configure --prefix=/opt/python347/</code></p>
+<h3 id="6-开始编译，编译安装-两种"><a href="#6-开始编译，编译安装-两种" class="headerlink" title="6.开始编译，编译安装(两种)"></a>6.开始编译，编译安装(两种)</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span></span><br><span class="line"> <span class="built_in">make</span> </span><br><span class="line"><span class="built_in">make</span> install     <span class="meta">#直到这两步走完，才会生成。创建 /opt/python347/</span></span><br><span class="line"><span class="number">2.</span></span><br><span class="line"><span class="built_in">make</span> &amp;&amp; <span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
+<p>继续在opt文件夹下的Python-3.4.7运行<br><code>[root@localhost Python-3.4.7]# make &amp;&amp; make install</code></p>
+<blockquote>
+<p>到这就可以运行python了<br>到opt文件夹下的python347文件夹下的bin目录中输入./python3<br>这是就会出现非常熟悉有感觉的界面<br>接下来就为了创建快捷方式</p>
+</blockquote>
+<h3 id="8-配置软连接，快捷启动python3和pip3"><a href="#8-配置软连接，快捷启动python3和pip3" class="headerlink" title="8.配置软连接，快捷启动python3和pip3"></a>8.配置软连接，快捷启动python3和pip3</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s <span class="meta-keyword">/opt/</span>python347<span class="meta-keyword">/bin/</span>python3    <span class="meta-keyword">/usr/</span>bin/python3</span><br><span class="line">ln -s <span class="meta-keyword">/opt/</span>python347<span class="meta-keyword">/bin/</span>pip3  <span class="meta-keyword">/usr/</span>bin/pip3</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在根目录下执行软连接：ln -s /opt/python347/bin/python3    /usr/bin/python3<br>在根目录继续创建软链接：ln -s /opt/python347/bin/pip3  /usr/bin/pip3</p>
+</blockquote>
+<h3 id="9-配置系统环境变量，配置PATH，加入python3的目录-目的跟上一步相同-配置环境变量须谨慎"><a href="#9-配置系统环境变量，配置PATH，加入python3的目录-目的跟上一步相同-配置环境变量须谨慎" class="headerlink" title="9. 配置系统环境变量，配置PATH，加入python3的目录(目的跟上一步相同)配置环境变量须谨慎"></a>9. 配置系统环境变量，配置PATH，加入python3的目录(目的跟上一步相同)配置环境变量须谨慎</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.最好用这一步</span><br><span class="line">PATH=<span class="regexp">/opt/python</span>347/bin/<span class="symbol">:/usr/local/sbin</span><span class="symbol">:/usr/local/bin</span><span class="symbol">:/usr/sbin</span><span class="symbol">:/usr/bin</span><span class="symbol">:/root/bin</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>.尽量不用</span><br><span class="line">PATH=<span class="variable">$PATH</span><span class="symbol">:/opt/python347/bin/</span></span><br><span class="line">将上面的写入到个人配置文件中，永久生效</span><br><span class="line">vim /etc/profile  <span class="comment">#编辑个人配置文件，写入PATH</span></span><br><span class="line">PATH=<span class="variable">$PATH</span><span class="symbol">:/opt/python347/bin/</span></span><br><span class="line">source /etc/profile  <span class="comment">#读取一下配置文件，生效配置</span></span><br></pre></td></tr></table></figure>
+<h3 id="运行时遇到问题"><a href="#运行时遇到问题" class="headerlink" title="运行时遇到问题"></a>运行时遇到问题</h3><blockquote>
+<p>网页访问不到 ：ptables -F  </p>
+<ul>
+<li>setenforce 0</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/11/22/linux下的python/">linux下的python</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Mr Zuo 的个人博客">Mr Zuo</a></p>
+  <p><span>发布时间:</span>2018年11月22日 - 01:11</p>
+  <p><span>最后更新:</span>2018年11月22日 - 08:11</p>
+  <p><span>原始链接:</span><a href="/2018/11/22/linux下的python/" title="linux下的python">http://fireworksrain.com/2018/11/22/linux下的python/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/2018/11/22/linux下的python/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
+      
+	</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/21/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Mr Zuo</p>
+              <p class="site-description motion-element" itemprop="description">Figure is true, people are false.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在Linux中安装Python的操作步骤"><span class="nav-number">1.</span> <span class="nav-text">在Linux中安装Python的操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装Python前的环境准备，非常非常重要！！！！"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.安装Python前的环境准备，非常非常重要！！！！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-下载安装源码包"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.下载安装源码包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3解压python源代码"><span class="nav-number">1.0.3.</span> <span class="nav-text">3解压python源代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-切换进入python源码目录"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.切换进入python源码目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-开始编译安装，释放编译文件"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.开始编译安装，释放编译文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-开始编译，编译安装-两种"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.开始编译，编译安装(两种)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-配置软连接，快捷启动python3和pip3"><span class="nav-number">1.0.7.</span> <span class="nav-text">8.配置软连接，快捷启动python3和pip3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-配置系统环境变量，配置PATH，加入python3的目录-目的跟上一步相同-配置环境变量须谨慎"><span class="nav-number">1.0.8.</span> <span class="nav-text">9. 配置系统环境变量，配置PATH，加入python3的目录(目的跟上一步相同)配置环境变量须谨慎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行时遇到问题"><span class="nav-number">1.0.9.</span> <span class="nav-text">运行时遇到问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr Zuo</span>
+
+  
+</div>
+
+<!-- 
+
+
+
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+</body>
+</html>
