@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="MySQL,Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Rafael" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="观沧海两汉：曹操 东临碣石，以观沧海。水何澹澹，山岛竦峙。树木丛生，百草丰茂。秋风萧瑟，洪波涌起。日月之行，若出其中；星汉灿烂，若出其里。幸甚至哉，歌以咏志。 mariadb的安装与其他设置1.添加MariaDb yum 仓库1231、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB.repo 文件。#编辑创建mariadb.r">
+<meta name="keywords" content="MySQL,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用部署之MySQL(mariadb)">
+<meta property="og:url" content="http://fireworksrain.com/2018/11/23/Linux常用部署之MySQL-mariadb/index.html">
+<meta property="og:site_name" content="Rafael">
+<meta property="og:description" content="观沧海两汉：曹操 东临碣石，以观沧海。水何澹澹，山岛竦峙。树木丛生，百草丰茂。秋风萧瑟，洪波涌起。日月之行，若出其中；星汉灿烂，若出其里。幸甚至哉，歌以咏志。 mariadb的安装与其他设置1.添加MariaDb yum 仓库1231、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB.repo 文件。#编辑创建mariadb.r">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="en-resource://database/928:1">
+<meta property="og:updated_time" content="2018-11-23T00:45:38.401Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux常用部署之MySQL(mariadb)">
+<meta name="twitter:description" content="观沧海两汉：曹操 东临碣石，以观沧海。水何澹澹，山岛竦峙。树木丛生，百草丰茂。秋风萧瑟，洪波涌起。日月之行，若出其中；星汉灿烂，若出其里。幸甚至哉，歌以咏志。 mariadb的安装与其他设置1.添加MariaDb yum 仓库1231、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB.repo 文件。#编辑创建mariadb.r">
+<meta name="twitter:image" content="en-resource://database/928:1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://fireworksrain.com/2018/11/23/Linux常用部署之MySQL-mariadb/">
+
+
+
+
+
+  <title>Linux常用部署之MySQL(mariadb) | Rafael</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+	<a href="https://github.com/YrLuckly" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rafael</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">All the glory of life, to the end of the lonely repayment.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fireworksrain.com/2018/11/23/Linux常用部署之MySQL-mariadb/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr Zuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542887581902&di=bc493d37a9dabe5da4bec6d33a74f2e8&imgtype=0&src=http%3A%2F%2Fimg.9553.com%2Fuploadfile%2F2017%2F0419%2F20170419112253185.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rafael">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux常用部署之MySQL(mariadb)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-23T08:42:12+08:00">
+                2018-11-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>观沧海<br>两汉：曹操</p>
+<p>东临碣石，以观沧海。<br>水何澹澹，山岛竦峙。<br>树木丛生，百草丰茂。<br>秋风萧瑟，洪波涌起。<br>日月之行，若出其中；<br>星汉灿烂，若出其里。<br>幸甚至哉，歌以咏志。</p>
+<h2 id="mariadb的安装与其他设置"><a href="#mariadb的安装与其他设置" class="headerlink" title="mariadb的安装与其他设置"></a>mariadb的安装与其他设置</h2><h4 id="1-添加MariaDb-yum-仓库"><a href="#1-添加MariaDb-yum-仓库" class="headerlink" title="1.添加MariaDb yum 仓库"></a>1.添加MariaDb yum 仓库</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB<span class="selector-class">.repo</span> 文件。</span><br><span class="line">#编辑创建mariadb.repo仓库文件</span><br><span class="line">vi /etc/yum<span class="selector-class">.repos</span><span class="selector-class">.d</span>/MariaDB.repo</span><br></pre></td></tr></table></figure>
+<h4 id="1-1-添加repo仓库配置"><a href="#1-1-添加repo仓库配置" class="headerlink" title="1.1 添加repo仓库配置"></a>1.1 添加repo仓库配置</h4><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mariadb]</span></span><br><span class="line"><span class="attr">name</span> = MariaDB</span><br><span class="line"><span class="attr">baseurl</span> = http://yum.mariadb.org/<span class="number">10.1</span>/centos7-amd64</span><br><span class="line"><span class="attr">gpgkey</span>=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB</span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-在CentOS7中安装MariaDB"><a href="#2-在CentOS7中安装MariaDB" class="headerlink" title="2 在CentOS7中安装MariaDB"></a>2 在CentOS7中安装MariaDB</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>、当 <span class="keyword">MariaDB </span>仓库地址添加好后，你可以通过下面的一行命令轻松安装 <span class="keyword">MariaDB。</span></span><br><span class="line"><span class="keyword">yum </span>install <span class="keyword">MariaDB-server </span><span class="keyword">MariaDB-client </span>-y</span><br></pre></td></tr></table></figure>
+<h4 id="3-启动mariadb相关命令"><a href="#3-启动mariadb相关命令" class="headerlink" title="3.启动mariadb相关命令"></a>3.启动mariadb相关命令</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">mariadb数据库的相关命令是：</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>start <span class="keyword">mariadb </span> #启动<span class="keyword">MariaDB</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>stop <span class="keyword">mariadb </span> #停止<span class="keyword">MariaDB</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>restart <span class="keyword">mariadb </span> #重启<span class="keyword">MariaDB</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>enable <span class="keyword">mariadb </span> #设置开机启动</span><br></pre></td></tr></table></figure>
+<p>启动后正常使用mysql<br><code>systemctl start mariadb</code></p>
+<h3 id="初始化mysql-必要操作！！"><a href="#初始化mysql-必要操作！！" class="headerlink" title="初始化mysql(必要操作！！)"></a>初始化mysql(必要操作！！)</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在确认 <span class="keyword">MariaDB </span>数据库软件程序安装完毕并成功启动后请不要立即使用。为了确保数据 库的安全性和正常运转，需要先对数据库程序进行初始化操作。这个初始化操作涉及下面 <span class="number">5</span> 个 步骤。</span><br><span class="line">➢ 设置 root 管理员在数据库中的密码值(注意，该密码并非 root 管理员在系统中的密 码，这里的密码值默认应该为空，可直接按回车键)。</span><br><span class="line">➢ 设置 root 管理员在数据库中的专有密码。</span><br><span class="line">➢ 随后删除匿名账户，并使用 root 管理员从远程登录数据库，以确保数据库上运行的业</span><br><span class="line">务的安全性。</span><br><span class="line">➢ 删除默认的测试数据库，取消测试数据库的一系列访问权限。</span><br><span class="line">➢ 刷新授权列表，让初始化的设定立即生效。</span><br></pre></td></tr></table></figure>
+<p><strong>必须在确保mariadb服务器启动后，执行初始化命令</strong><br><code>mysql_secure_installation</code><br>操作如下图：<br><img src="en-resource://database/928:1" alt="d93ba463132a07b9f7fefd6df7a8fb4e.png"></p>
+<h3 id="mysql基础命令"><a href="#mysql基础命令" class="headerlink" title="mysql基础命令"></a>mysql基础命令</h3><p>mysql创建普通用户：</p>
+<pre><code>#修改mysql密码
+MariaDB [(none)]&gt; set password = PASSWORD(&apos;redhat123&apos;);
+生产环境里不会死磕root用户，为了数据库的安全以及和其他用户协同管理数据库，就需要创建其他数据库账户，然后分配权限，满足工作需求。
+</code></pre><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [(none)]&gt; <span class="keyword">create</span> <span class="keyword">user</span> yuchao@<span class="string">'127.0.0.1'</span> identified <span class="keyword">by</span> <span class="string">'redhat123'</span>;</span><br><span class="line"></span><br><span class="line">MariaDB [(none)]&gt; use mysql;</span><br><span class="line"></span><br><span class="line">MariaDB [mysql]&gt; <span class="keyword">select</span> host,<span class="keyword">user</span>,<span class="keyword">password</span> <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'yuchao'</span>;</span><br><span class="line">切换普通用户yuchao，查看数据库信息，发现无法看到完整的数据库列表</span><br><span class="line"></span><br><span class="line">[root@master ~]# mysql -uyuchao -p -h 127.0.0.1</span><br><span class="line"></span><br><span class="line">MariaDB [(none)]&gt; show databases;</span><br></pre></td></tr></table></figure>
+<h3 id="数据库权限设置"><a href="#数据库权限设置" class="headerlink" title="数据库权限设置"></a>数据库权限设置</h3><p><code>mysql使用grant命令对账户进行授权，grant命令常见格式如下</code><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> 权限 <span class="keyword">on</span> 数据库.表名 <span class="keyword">to</span> 账户@主机名            对特定数据库中的特定表授权</span><br><span class="line"><span class="keyword">grant</span> 权限 <span class="keyword">on</span> 数据库.* <span class="keyword">to</span> 账户@主机名            　　对特定数据库中的所有表给与授权</span><br><span class="line"><span class="keyword">grant</span> 权限<span class="number">1</span>,权限<span class="number">2</span>,权限<span class="number">3</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> 账户@主机名   　　 对所有库中的所有表给与多个授权</span><br><span class="line"><span class="keyword">grant</span> all <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> 账户@主机名   　　 对所有库和所有表授权所有权限</span><br></pre></td></tr></table></figure></p>
+<p>退出数据库，使用root登录，开始权限设置<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[root@master ~]</span># <span class="selector-tag">mysql</span> <span class="selector-tag">-uroot</span> <span class="selector-tag">-p</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">MariaDB</span> <span class="selector-attr">[(none)]</span>&gt; <span class="selector-tag">use</span> <span class="selector-tag">mysql</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">MariaDB</span> <span class="selector-attr">[(none)]</span>&gt; <span class="selector-tag">grant</span> <span class="selector-tag">all</span> <span class="selector-tag">privileges</span> <span class="selector-tag">on</span> *.* <span class="selector-tag">to</span> <span class="selector-tag">yuchao</span>@<span class="keyword">127</span>.<span class="keyword">0</span>.<span class="keyword">0</span>.<span class="keyword">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">MariaDB</span> <span class="selector-attr">[mysql]</span>&gt; <span class="selector-tag">show</span> <span class="selector-tag">grants</span> <span class="selector-tag">for</span> <span class="selector-tag">yuchao</span>@<span class="keyword">127</span>.<span class="keyword">0</span>.<span class="keyword">0</span>.<span class="keyword">1</span>;</span><br></pre></td></tr></table></figure></p>
+<p>移除权限<br><code>MariaDB [(none)]&gt; revoke all privileges on *.* from yuchao@127.0.0.1;</code></p>
+<h3 id="配置mysql"><a href="#配置mysql" class="headerlink" title="配置mysql"></a>配置mysql</h3><h4 id="1-中文编码设置，编辑mysql配置文件-etc-my-cnf-填写一下内容"><a href="#1-中文编码设置，编辑mysql配置文件-etc-my-cnf-填写一下内容" class="headerlink" title="1.中文编码设置，编辑mysql配置文件/etc/my.cnf,填写一下内容"></a>1.中文编码设置，编辑mysql配置文件/etc/my.cnf,填写一下内容</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character-<span class="keyword">set</span>-<span class="keyword">server</span>=utf8</span><br><span class="line"><span class="keyword">collation</span>-<span class="keyword">server</span>=utf8_general_ci</span><br><span class="line"><span class="keyword">log</span>-<span class="keyword">error</span>=/<span class="keyword">var</span>/<span class="keyword">log</span>/mysqld.log</span><br><span class="line">[<span class="keyword">client</span>]</span><br><span class="line"><span class="keyword">default</span>-<span class="built_in">character</span>-<span class="keyword">set</span>=utf8</span><br><span class="line">[mysql]</span><br><span class="line"><span class="keyword">default</span>-<span class="built_in">character</span>-<span class="keyword">set</span>=utf8</span><br></pre></td></tr></table></figure>
+<h4 id="2-授权设置"><a href="#2-授权设置" class="headerlink" title="2.授权设置"></a>2.授权设置</h4><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">远程连接设置哦设置所有库，所有表的所有权限，赋值权限给所有ip地址的root用户mysql &gt; grant all privileges <span class="keyword">on</span> *.* <span class="keyword">to</span> root@<span class="string">'%'</span> identified <span class="keyword">by</span> <span class="string">'password'</span>;#创建用户mysql &gt; <span class="keyword">create</span> user <span class="string">'username'</span>@<span class="string">'%'</span> identified <span class="keyword">by</span> <span class="string">'password'</span>;#刷新权限flush privileges;</span><br></pre></td></tr></table></figure>
+<h3 id="数据库备份与恢复"><a href="#数据库备份与恢复" class="headerlink" title="数据库备份与恢复"></a>数据库备份与恢复</h3><ul>
+<li>mysqldump命令用于备份数据库数据<br><code>[root@master ~]# mysqldump -u root -p --all-databases &gt; /tmp/db.dump</code></li>
+<li><p>进入mariadb数据库，删除一个db</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@<span class="keyword">master</span> <span class="title">~]# mysql</span> -uroot -p</span><br><span class="line"></span><br><span class="line">MariaDB [(none)]&gt; drop database s11;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进行数据恢复，把刚才重定向备份的数据库文件导入到mysql中<br><code>[root@master ~]# mysql -uroot -p &lt; /tmp/db.dump</code></p>
+<h3 id="mysql远程登陆授权配置"><a href="#mysql远程登陆授权配置" class="headerlink" title="mysql远程登陆授权配置"></a>mysql远程登陆授权配置</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">注意！关闭防火墙。、。。。。这样就不会再出莫名其妙的bug了。。。</span><br><span class="line">	iptables -F  <span class="comment">#清空防火墙规则</span></span><br><span class="line">	<span class="comment">#关闭防火墙 </span></span><br><span class="line">	systemctl <span class="keyword">stop</span> firewalld</span><br><span class="line">	<span class="comment">#永久关闭防火墙开机自启</span></span><br><span class="line">	systemctl <span class="keyword">disable</span> firewalld</span><br><span class="line"></span><br><span class="line">	<span class="number">1.</span>新建一个用于远程登录的账户</span><br><span class="line">	<span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'username'</span>@<span class="string">'%'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'password'</span>;</span><br><span class="line">	2.给与账户远程登录的权限，授权</span><br><span class="line">	<span class="keyword">grant</span> all <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">'username'</span>@<span class="string">'%'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'password'</span>;</span><br><span class="line">	3.刷新权限表，防止不生效</span><br><span class="line">	<span class="keyword">flush</span> <span class="keyword">privileges</span>;</span><br><span class="line">	4.此时可以在windows登录你的linux数据库拉！！！！</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="mysql主从同步配置（重点）"><a href="#mysql主从同步配置（重点）" class="headerlink" title="mysql主从同步配置（重点）"></a>mysql主从同步配置（重点）</h3><h4 id="1-主库设置配置："><a href="#1-主库设置配置：" class="headerlink" title="1.主库设置配置："></a>1.主库设置配置：</h4><ol>
+<li><p>修改配置文件，开启主从同步的功能<br> 1.修改配置文件</p>
+<pre><code>`vim /etc/my.cnf`
+</code></pre><p> 2.修改内容</p>
+ <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="attr">server-id</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">log-bin</span>=mysql-bin</span><br></pre></td></tr></table></figure>
+<p> 3.重启mariadb<br> <code>systemctl start mariadb</code><br> 4.重启后，mysql主库已经开启同步功能，创建了mysql-bin日志文件</p>
+</li>
+<li><p>创建用于主从同步的账号<br><code>create user &#39;username&#39;@&#39;%&#39; identified by &#39;password&#39;;</code></p>
+</li>
+<li>给与账号slave的权限<br>grant replication slave on <em>.</em> to ‘username‘@’%’;</li>
+<li>检查一下主库创建的账号信息<br>select user,host from mysql.user;</li>
+<li>检查授权账号的权限信息<br>show grants for username@’%’;</li>
+<li>实现主库的锁表，防止数据写入<br>flush table with read lock;</li>
+<li>此时可以检查主库的日志状态，已经锁表了，防止日志位置发生变化<br>show master status;</li>
+<li>开始数据备份，导出主库的已经存在的数据，然后用于从库写入<br>mysqldump -uroot -p  –all-databases &gt; /data/my_all.dump</li>
+<li>将主库的数据备份文件，scp到从库机器上，然后从库mysql导入数据<br>scp /tmp/all.dump <a href="mailto:root@10.0.0.11" target="_blank" rel="noopener">root@10.0.0.11</a>:/opt/</li>
+</ol>
+<h4 id="2-从库的设置："><a href="#2-从库的设置：" class="headerlink" title="2.从库的设置："></a>2.从库的设置：</h4><pre><code>1. 在从库中导入主库的最新数据，以便于素具一致性
+        1.登录slave数据库
+        2.删除slave当前机器所有的database，清空database数据，为了保证从库干净
+        3.登录数据库，导入数据
+            `source /opt/all.dump`
+2. 修改配置文件，添加用于同步的配置，
+</code></pre><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/<span class="keyword">my</span>.cnf   写入配置</span><br><span class="line">server-<span class="built_in">id</span>=<span class="number">5</span></span><br></pre></td></tr></table></figure>
+<pre><code>3. 重启mariadb 从库
+</code></pre><p><code>systemctl restart mariadb</code></p>
+<pre><code>4. 检查从库的各项参数
+</code></pre><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'log_bin'</span>;</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'server_id'</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>5.通过此命令，将slave库同于master库</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">change master <span class="keyword">to</span> <span class="attribute">master_host</span>=<span class="string">'10.0.0.10'</span>,</span><br><span class="line"><span class="attribute">master_user</span>=<span class="string">'bhf'</span>,</span><br><span class="line"><span class="attribute">master_password</span>=<span class="string">'bhfdsb'</span>,</span><br><span class="line"><span class="attribute">master_log_file</span>=<span class="string">'mysql-bin.000001'</span>,</span><br><span class="line"><span class="attribute">master_log_pos</span>=1485;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>6.开启主从同步的开关<br>    <code>start slave;</code></p>
+</blockquote>
+<blockquote>
+<p>7.检查复制的状态<br>        <code>show slave status\G</code></p>
+</blockquote>
+<blockquote>
+<p>8.检查从库通过不得两条参数，均为yes确认同步成功</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Slave_IO_Running:</span> <span class="literal">Yes</span></span><br><span class="line"><span class="attr">Slave_SQL_Running:</span> <span class="literal">Yes</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>9.此时已经确认主从同步配置ok，前往主库解锁数据库，然后数据写入查看结果</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">master上：</span><br><span class="line">			<span class="keyword">unlock</span> <span class="keyword">tables</span>;  解锁数据库</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/11/23/Linux常用部署之MySQL-mariadb/">Linux常用部署之MySQL(mariadb)</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Mr Zuo 的个人博客">Mr Zuo</a></p>
+  <p><span>发布时间:</span>2018年11月23日 - 08:11</p>
+  <p><span>最后更新:</span>2018年11月23日 - 08:11</p>
+  <p><span>原始链接:</span><a href="/2018/11/23/Linux常用部署之MySQL-mariadb/" title="Linux常用部署之MySQL(mariadb)">http://fireworksrain.com/2018/11/23/Linux常用部署之MySQL-mariadb/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/2018/11/23/Linux常用部署之MySQL-mariadb/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
+      
+	</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/22/Nginx入门/" rel="next" title="Nginx入门">
+                <i class="fa fa-chevron-left"></i> Nginx入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542887581902&di=bc493d37a9dabe5da4bec6d33a74f2e8&imgtype=0&src=http%3A%2F%2Fimg.9553.com%2Fuploadfile%2F2017%2F0419%2F20170419112253185.jpg" alt="Mr Zuo">
+            
+              <p class="site-author-name" itemprop="name">Mr Zuo</p>
+              <p class="site-description motion-element" itemprop="description">Figure is true, people are false.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mariadb的安装与其他设置"><span class="nav-number">1.</span> <span class="nav-text">mariadb的安装与其他设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-添加MariaDb-yum-仓库"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.添加MariaDb yum 仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-添加repo仓库配置"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.1 添加repo仓库配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在CentOS7中安装MariaDB"><span class="nav-number">1.0.3.</span> <span class="nav-text">2 在CentOS7中安装MariaDB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-启动mariadb相关命令"><span class="nav-number">1.0.4.</span> <span class="nav-text">3.启动mariadb相关命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化mysql-必要操作！！"><span class="nav-number">1.1.</span> <span class="nav-text">初始化mysql(必要操作！！)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql基础命令"><span class="nav-number">1.2.</span> <span class="nav-text">mysql基础命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库权限设置"><span class="nav-number">1.3.</span> <span class="nav-text">数据库权限设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置mysql"><span class="nav-number">1.4.</span> <span class="nav-text">配置mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-中文编码设置，编辑mysql配置文件-etc-my-cnf-填写一下内容"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.中文编码设置，编辑mysql配置文件/etc/my.cnf,填写一下内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-授权设置"><span class="nav-number">1.4.2.</span> <span class="nav-text">2.授权设置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库备份与恢复"><span class="nav-number">1.5.</span> <span class="nav-text">数据库备份与恢复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql远程登陆授权配置"><span class="nav-number">1.6.</span> <span class="nav-text">mysql远程登陆授权配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql主从同步配置（重点）"><span class="nav-number">1.7.</span> <span class="nav-text">mysql主从同步配置（重点）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-主库设置配置："><span class="nav-number">1.7.1.</span> <span class="nav-text">1.主库设置配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-从库的设置："><span class="nav-number">1.7.2.</span> <span class="nav-text">2.从库的设置：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr Zuo</span>
+
+  
+</div>
+
+<!-- 
+
+
+
+
+-->
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+
+</body>
+</html>
