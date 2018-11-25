@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fireworksrain.com/"/>
-  <updated>2018-11-23T00:55:08.629Z</updated>
+  <updated>2018-11-25T09:08:59.029Z</updated>
   <id>http://fireworksrain.com/</id>
   
   <author>
@@ -17,9 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>linux下安装Django</title>
+    <link href="http://fireworksrain.com/linux%E4%B8%8B%E5%AE%89%E8%A3%85Django/"/>
+    <id>http://fireworksrain.com/linux下安装Django/</id>
+    <published>2018-11-25T09:05:19.000Z</published>
+    <updated>2018-11-25T09:08:59.029Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="基于安装python安装django"><a href="#基于安装python安装django" class="headerlink" title="基于安装python安装django"></a>基于安装python安装django</h1><h3 id="非常简答"><a href="#非常简答" class="headerlink" title="非常简答"></a>非常简答</h3><h3 id="前提是安装好Python"><a href="#前提是安装好Python" class="headerlink" title="前提是安装好Python"></a>前提是安装好Python</h3><p><code>pip3 install django==1.11.14</code></p><blockquote><p>接下来就是最基本的django的创建和运行<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">创建django项目</span><br><span class="line">django-admin startproject mysite</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">修改django settings.<span class="keyword">py</span>配置文件，不知道可以用<span class="keyword">find</span>查找</span><br><span class="line">ALLOWED_HOSTS = [<span class="string">'*'</span>]</span><br><span class="line">启动django</span><br><span class="line"></span><br><span class="line"><span class="keyword">python3</span> manage.<span class="keyword">py</span> runserver <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">9000</span></span><br></pre></td></tr></table></figure></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;基于安装python安装django&quot;&gt;&lt;a href=&quot;#基于安装python安装django&quot; class=&quot;headerlink&quot; title=&quot;基于安装python安装django&quot;&gt;&lt;/a&gt;基于安装python安装django&lt;/h1&gt;&lt;h3 id=&quot;非
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://fireworksrain.com/categories/Linux/"/>
+    
+    
+      <category term="Django" scheme="http://fireworksrain.com/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux常用部署之MySQL(mariadb)</title>
-    <link href="http://fireworksrain.com/2018/11/23/Linux%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2%E4%B9%8BMySQL-mariadb/"/>
-    <id>http://fireworksrain.com/2018/11/23/Linux常用部署之MySQL-mariadb/</id>
+    <link href="http://fireworksrain.com/Linux%E5%B8%B8%E7%94%A8%E9%83%A8%E7%BD%B2%E4%B9%8BMySQL-mariadb/"/>
+    <id>http://fireworksrain.com/Linux常用部署之MySQL-mariadb/</id>
     <published>2018-11-23T00:42:12.000Z</published>
     <updated>2018-11-23T00:55:08.629Z</updated>
     
@@ -45,8 +70,8 @@
   
   <entry>
     <title>Nginx入门</title>
-    <link href="http://fireworksrain.com/2018/11/22/Nginx%E5%85%A5%E9%97%A8/"/>
-    <id>http://fireworksrain.com/2018/11/22/Nginx入门/</id>
+    <link href="http://fireworksrain.com/Nginx%E5%85%A5%E9%97%A8/"/>
+    <id>http://fireworksrain.com/Nginx入门/</id>
     <published>2018-11-22T09:31:32.000Z</published>
     <updated>2018-11-23T00:55:12.867Z</updated>
     
@@ -73,8 +98,8 @@
   
   <entry>
     <title>linux下的python</title>
-    <link href="http://fireworksrain.com/2018/11/22/linux%E4%B8%8B%E7%9A%84python/"/>
-    <id>http://fireworksrain.com/2018/11/22/linux下的python/</id>
+    <link href="http://fireworksrain.com/linux%E4%B8%8B%E7%9A%84python/"/>
+    <id>http://fireworksrain.com/linux下的python/</id>
     <published>2018-11-21T17:51:33.000Z</published>
     <updated>2018-11-23T00:55:10.321Z</updated>
     
@@ -100,8 +125,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://fireworksrain.com/2018/11/21/hello-world/"/>
-    <id>http://fireworksrain.com/2018/11/21/hello-world/</id>
+    <link href="http://fireworksrain.com/hello-world/"/>
+    <id>http://fireworksrain.com/hello-world/</id>
     <published>2018-11-21T14:34:14.754Z</published>
     <updated>2018-11-21T14:34:14.754Z</updated>
     
