@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="Rafael">
 <meta property="og:description" content="requests模块重点梳理1.robots协议Robots协议(也称为爬虫协议、爬虫规则、机器人协议等)也就是robots.txt，网站通过robots协议告诉搜索引擎哪些页面可以抓取，哪些页面不能抓取。Robots协议是网站国际互联网界通信的道德规范，其目的是保护网站数据和敏感信息，确保用户个人信息和个人隐私不被侵犯。因其不是命令，故需要搜索引擎自觉遵守。 2.python网络爬虫所用到的网络">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-26T13:58:24.882Z">
+<meta property="og:updated_time" content="2018-11-26T14:11:24.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫重点知识梳理">
 <meta name="twitter:description" content="requests模块重点梳理1.robots协议Robots协议(也称为爬虫协议、爬虫规则、机器人协议等)也就是robots.txt，网站通过robots协议告诉搜索引擎哪些页面可以抓取，哪些页面不能抓取。Robots协议是网站国际互联网界通信的道德规范，其目的是保护网站数据和敏感信息，确保用户个人信息和个人隐私不被侵犯。因其不是命令，故需要搜索引擎自觉遵守。 2.python网络爬虫所用到的网络">
@@ -475,10 +475,7 @@
 <li><p>5.对项目中settings进行配置：</p>
 <ul>
 <li><p>a)配置redis服务器的ip和端口号：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- b)配置使用scrapy-redis组件中的调度器</span><br><span class="line"></span><br><span class="line">	```# 使用scrapy-redis组件的去重队列  DUPEFILTER_CLASS=&quot;scrapy_redis.dupefilter.RFPDupeFilter&quot;                                             # 使用scrapy-redis组件自己的调度器                                     SCHEDULER = &quot;scrapy_redis.scheduler.Scheduler&quot;                           # 是否允许暂停                                                    SCHEDULER_PERSIST = True</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>c)配置使用scrapy-redis组件中的管道</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    &apos;scrapy_redis.pipelines.RedisPipeline&apos;: 400,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	- b)配置使用scrapy-redis组件中的调度器</span><br><span class="line">	</span><br><span class="line">	    	使用scrapy-redis组件的去重队列</span><br><span class="line">			DUPEFILTER_CLASS = &quot;scrapy_redis.dupefilter.RFPDupeFilter&quot;</span><br><span class="line">			# 使用scrapy-redis组件自己的调度器</span><br><span class="line">			SCHEDULER = &quot;scrapy_redis.scheduler.Scheduler&quot;</span><br><span class="line">			# 是否允许暂停</span><br><span class="line">			SCHEDULER_PERSIST = True</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	- c)配置使用scrapy-redis组件中的管道</span><br><span class="line"></span><br><span class="line">	```ITEM_PIPELINES = &#123;#&apos;wangyiPro.pipelines.WangyiproPipeline&apos;: 300,</span><br><span class="line">    &apos;scrapy_redis.pipelines.RedisPipeline&apos;: 400,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>d)开启redis数据库的服务：redis-server 配置文件</p>
 </li>
@@ -495,7 +492,32 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ii.使用光纤网络</span><br><span class="line">iii.多进程</span><br><span class="line">iv.多线程</span><br><span class="line">v.分布式</span><br></pre></td></tr></table></figure>
 <h4 id="2-基于requests模块的多线程爬取建议大家使用："><a href="#2-基于requests模块的多线程爬取建议大家使用：" class="headerlink" title="2.基于requests模块的多线程爬取建议大家使用："></a>2.基于requests模块的多线程爬取建议大家使用：</h4><pre><code>multiprocessing.dummy.pool线程池，爬取效率会显著提升。
 </code></pre><p>简单代码示例：</p>
-<pre><code><figure class="highlight plain"><figcaption><span>requests	from bs4 import Beautiful	#导入线程池	from multiprocessing.dummy import Poolpool </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pass</span><br></pre></td></tr></table></figure>
+<pre><code>import requests
+from bs4 import Beautiful
+#导入线程池
+from multiprocessing.dummy import Pool
+
+pool = Pool()#实例化线程池对象
+#发起首页请求
+page_text = requests.get(url=&apos;xxx&apos;)
+#使用bs4解析首页中所有的a标签
+soup = Beautiful(page_text)
+a_list = soup.select(&apos;a&apos;)
+#将a标签的href属性值和域名拼接，形成完整的url
+url_list = [&apos;www.xxx.com/&apos;+url[&apos;href&apos;] for url in a_list]
+#封装请求函数，该函数可以获取请求对应的页面数据
+request_page_text = lambda link:requests.get(link).text
+
+#使用线程池的map方法异步进行请求发送，切获取响应回来的页面数据
+page_text_list = pool.map(request_page_text, url_list)
+
+#使用线程池异步进行解析操作
+get_data = lambda data:parse(data)
+pool.map(get_data, page_text_list)
+
+#数据解析方法
+def parse(data):
+    pass
 </code></pre><h4 id="3-如何提升scrapy的爬取效率"><a href="#3-如何提升scrapy的爬取效率" class="headerlink" title="3.如何提升scrapy的爬取效率"></a>3.如何提升scrapy的爬取效率</h4><p>1.增加并发：</p>
 <ul>
 <li>1.默认scrapy开启的并发线程为32个，可以适当进行增加。在settings配置文件中修改CONCURRENT_REQUESTS = 100值为100,并发设置成了为100。</li>
@@ -608,7 +630,7 @@
   <p><span>本文标题:</span><a href="/爬虫重点知识梳理/">爬虫重点知识梳理</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mr Zuo 的个人博客">Mr Zuo</a></p>
   <p><span>发布时间:</span>2017年11月26日 - 11:11</p>
-  <p><span>最后更新:</span>2018年11月26日 - 21:11</p>
+  <p><span>最后更新:</span>2018年11月26日 - 22:11</p>
   <p><span>原始链接:</span><a href="/爬虫重点知识梳理/" title="爬虫重点知识梳理">http://fireworksrain.com/爬虫重点知识梳理/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/爬虫重点知识梳理/" aria-label="复制成功！"></i></span>
   </p>
