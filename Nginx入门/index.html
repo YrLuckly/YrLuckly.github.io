@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="三五七言 / 秋风词 唐代：李白 秋风清，秋月明，落叶聚还散，寒鸦栖复惊。相思相见知何日？此时此夜难为情！入我相思门，知我相思苦，长相思兮长相忆，短相思兮无穷极，早知如此绊人心，何如当初莫相识。  Web服务访问流程： dns解析流程：1.你要输入域名  pythonav.cn    2.你的机器首先在/etc/hosts文件中查找解析记录    3.会去本地dns缓存中查找记录，LDNS">
+<meta name="description" content="Web服务访问流程： dns解析流程：1.你要输入域名  pythonav.cn    2.你的机器首先在/etc/hosts文件中查找解析记录    3.会去本地dns缓存中查找记录，LDNS    4.就去/etc/resolv.conf去找到指定的公网dns服务器    5.假设你dns服务器是119.29.29.29        通过119.29.29.29找到对应的记录">
 <meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx入门">
 <meta property="og:url" content="http://fireworksrain.com/Nginx入门/index.html">
 <meta property="og:site_name" content="Rafael">
-<meta property="og:description" content="三五七言 / 秋风词 唐代：李白 秋风清，秋月明，落叶聚还散，寒鸦栖复惊。相思相见知何日？此时此夜难为情！入我相思门，知我相思苦，长相思兮长相忆，短相思兮无穷极，早知如此绊人心，何如当初莫相识。  Web服务访问流程： dns解析流程：1.你要输入域名  pythonav.cn    2.你的机器首先在/etc/hosts文件中查找解析记录    3.会去本地dns缓存中查找记录，LDNS">
+<meta property="og:description" content="Web服务访问流程： dns解析流程：1.你要输入域名  pythonav.cn    2.你的机器首先在/etc/hosts文件中查找解析记录    3.会去本地dns缓存中查找记录，LDNS    4.就去/etc/resolv.conf去找到指定的公网dns服务器    5.假设你dns服务器是119.29.29.29        通过119.29.29.29找到对应的记录">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-23T00:55:12.867Z">
+<meta property="og:updated_time" content="2018-11-26T12:54:57.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx入门">
-<meta name="twitter:description" content="三五七言 / 秋风词 唐代：李白 秋风清，秋月明，落叶聚还散，寒鸦栖复惊。相思相见知何日？此时此夜难为情！入我相思门，知我相思苦，长相思兮长相忆，短相思兮无穷极，早知如此绊人心，何如当初莫相识。  Web服务访问流程： dns解析流程：1.你要输入域名  pythonav.cn    2.你的机器首先在/etc/hosts文件中查找解析记录    3.会去本地dns缓存中查找记录，LDNS">
+<meta name="twitter:description" content="Web服务访问流程： dns解析流程：1.你要输入域名  pythonav.cn    2.你的机器首先在/etc/hosts文件中查找解析记录    3.会去本地dns缓存中查找记录，LDNS    4.就去/etc/resolv.conf去找到指定的公网dns服务器    5.假设你dns服务器是119.29.29.29        通过119.29.29.29找到对应的记录">
 
 
 
@@ -358,10 +358,7 @@
       
 
       
-        <p>三五七言 / 秋风词</p>
-<p>唐代：李白</p>
-<p>秋风清，秋月明，<br>落叶聚还散，寒鸦栖复惊。<br>相思相见知何日？此时此夜难为情！<br>入我相思门，知我相思苦，<br>长相思兮长相忆，短相思兮无穷极，<br>早知如此绊人心，何如当初莫相识。</p>
-<hr>
+        <hr>
 <h3 id="Web服务访问流程："><a href="#Web服务访问流程：" class="headerlink" title="Web服务访问流程："></a>Web服务访问流程：</h3><blockquote>
 <p>dns解析流程：<br>1.你要输入域名  pythonav.cn<br>    2.你的机器首先在/etc/hosts文件中查找解析记录<br>    3.会去本地dns缓存中查找记录，LDNS<br>    4.就去/etc/resolv.conf去找到指定的公网dns服务器<br>    5.假设你dns服务器是119.29.29.29<br>        通过119.29.29.29找到对应的记录<br>        pythonav.cn    123.206.16.61<br>    6.找到记录后，机器会将此记录，缓存到LDNS中，用于下次加速解析<br>    7.浏览器访问对应的ip ，123.206.16.61，发起http请求</p>
 </blockquote>
@@ -449,7 +446,7 @@
   <p><span>本文标题:</span><a href="/Nginx入门/">Nginx入门</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mr Zuo 的个人博客">Mr Zuo</a></p>
   <p><span>发布时间:</span>2018年11月22日 - 17:11</p>
-  <p><span>最后更新:</span>2018年11月23日 - 08:11</p>
+  <p><span>最后更新:</span>2018年11月26日 - 20:11</p>
   <p><span>原始链接:</span><a href="/Nginx入门/" title="Nginx入门">http://fireworksrain.com/Nginx入门/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/Nginx入门/" aria-label="复制成功！"></i></span>
   </p>
@@ -586,7 +583,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -597,7 +594,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -608,7 +605,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

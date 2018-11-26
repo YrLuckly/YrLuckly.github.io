@@ -83,20 +83,20 @@
 
 
 
-<meta name="description" content="观沧海两汉：曹操 东临碣石，以观沧海。水何澹澹，山岛竦峙。树木丛生，百草丰茂。秋风萧瑟，洪波涌起。日月之行，若出其中；星汉灿烂，若出其里。幸甚至哉，歌以咏志。 mariadb的安装与其他设置1.添加MariaDb yum 仓库1231、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB.repo 文件。#编辑创建mariadb.r">
+<meta name="description" content="mariadb的安装与其他设置@[toc] 1.添加MariaDb yum 仓库1231、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB.repo 文件。#编辑创建mariadb.repo仓库文件vi /etc/yum.repos.d/MariaDB.repo 1.1 添加repo仓库配置12345[mariadb]name">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux常用部署之MySQL(mariadb)">
 <meta property="og:url" content="http://fireworksrain.com/Linux常用部署之MySQL-mariadb/index.html">
 <meta property="og:site_name" content="Rafael">
-<meta property="og:description" content="观沧海两汉：曹操 东临碣石，以观沧海。水何澹澹，山岛竦峙。树木丛生，百草丰茂。秋风萧瑟，洪波涌起。日月之行，若出其中；星汉灿烂，若出其里。幸甚至哉，歌以咏志。 mariadb的安装与其他设置1.添加MariaDb yum 仓库1231、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB.repo 文件。#编辑创建mariadb.r">
+<meta property="og:description" content="mariadb的安装与其他设置@[toc] 1.添加MariaDb yum 仓库1231、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB.repo 文件。#编辑创建mariadb.repo仓库文件vi /etc/yum.repos.d/MariaDB.repo 1.1 添加repo仓库配置12345[mariadb]name">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="en-resource://database/928:1">
-<meta property="og:updated_time" content="2018-11-23T00:55:08.629Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181126152150897.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgwMjk4Mg==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2018-11-26T07:22:04.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用部署之MySQL(mariadb)">
-<meta name="twitter:description" content="观沧海两汉：曹操 东临碣石，以观沧海。水何澹澹，山岛竦峙。树木丛生，百草丰茂。秋风萧瑟，洪波涌起。日月之行，若出其中；星汉灿烂，若出其里。幸甚至哉，歌以咏志。 mariadb的安装与其他设置1.添加MariaDb yum 仓库1231、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB.repo 文件。#编辑创建mariadb.r">
-<meta name="twitter:image" content="en-resource://database/928:1">
+<meta name="twitter:description" content="mariadb的安装与其他设置@[toc] 1.添加MariaDb yum 仓库1231、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB.repo 文件。#编辑创建mariadb.repo仓库文件vi /etc/yum.repos.d/MariaDB.repo 1.1 添加repo仓库配置12345[mariadb]name">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20181126152150897.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgwMjk4Mg==,size_16,color_FFFFFF,t_70">
 
 
 
@@ -360,15 +360,14 @@
       
 
       
-        <p>观沧海<br>两汉：曹操</p>
-<p>东临碣石，以观沧海。<br>水何澹澹，山岛竦峙。<br>树木丛生，百草丰茂。<br>秋风萧瑟，洪波涌起。<br>日月之行，若出其中；<br>星汉灿烂，若出其里。<br>幸甚至哉，歌以咏志。</p>
-<h2 id="mariadb的安装与其他设置"><a href="#mariadb的安装与其他设置" class="headerlink" title="mariadb的安装与其他设置"></a>mariadb的安装与其他设置</h2><h4 id="1-添加MariaDb-yum-仓库"><a href="#1-添加MariaDb-yum-仓库" class="headerlink" title="1.添加MariaDb yum 仓库"></a>1.添加MariaDb yum 仓库</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB<span class="selector-class">.repo</span> 文件。</span><br><span class="line">#编辑创建mariadb.repo仓库文件</span><br><span class="line">vi /etc/yum<span class="selector-class">.repos</span><span class="selector-class">.d</span>/MariaDB.repo</span><br></pre></td></tr></table></figure>
+        <h2 id="mariadb的安装与其他设置"><a href="#mariadb的安装与其他设置" class="headerlink" title="mariadb的安装与其他设置"></a>mariadb的安装与其他设置</h2><p>@[toc]</p>
+<h4 id="1-添加MariaDb-yum-仓库"><a href="#1-添加MariaDb-yum-仓库" class="headerlink" title="1.添加MariaDb yum 仓库"></a>1.添加MariaDb yum 仓库</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、首先在 RHEL/CentOS 和 Fedora 操作系统中添加 MariaDB 的 YUM 配置文件 MariaDB<span class="selector-class">.repo</span> 文件。</span><br><span class="line">#编辑创建mariadb.repo仓库文件</span><br><span class="line">vi /etc/yum<span class="selector-class">.repos</span><span class="selector-class">.d</span>/MariaDB.repo</span><br></pre></td></tr></table></figure>
 <h4 id="1-1-添加repo仓库配置"><a href="#1-1-添加repo仓库配置" class="headerlink" title="1.1 添加repo仓库配置"></a>1.1 添加repo仓库配置</h4><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mariadb]</span></span><br><span class="line"><span class="attr">name</span> = MariaDB</span><br><span class="line"><span class="attr">baseurl</span> = http://yum.mariadb.org/<span class="number">10.1</span>/centos7-amd64</span><br><span class="line"><span class="attr">gpgkey</span>=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB</span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
 <h4 id="2-在CentOS7中安装MariaDB"><a href="#2-在CentOS7中安装MariaDB" class="headerlink" title="2 在CentOS7中安装MariaDB"></a>2 在CentOS7中安装MariaDB</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span>、当 <span class="keyword">MariaDB </span>仓库地址添加好后，你可以通过下面的一行命令轻松安装 <span class="keyword">MariaDB。</span></span><br><span class="line"><span class="keyword">yum </span>install <span class="keyword">MariaDB-server </span><span class="keyword">MariaDB-client </span>-y</span><br></pre></td></tr></table></figure>
 <h4 id="3-启动mariadb相关命令"><a href="#3-启动mariadb相关命令" class="headerlink" title="3.启动mariadb相关命令"></a>3.启动mariadb相关命令</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">mariadb数据库的相关命令是：</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>start <span class="keyword">mariadb </span> #启动<span class="keyword">MariaDB</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>stop <span class="keyword">mariadb </span> #停止<span class="keyword">MariaDB</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>restart <span class="keyword">mariadb </span> #重启<span class="keyword">MariaDB</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>enable <span class="keyword">mariadb </span> #设置开机启动</span><br></pre></td></tr></table></figure>
 <p>启动后正常使用mysql<br><code>systemctl start mariadb</code></p>
 <h3 id="初始化mysql-必要操作！！"><a href="#初始化mysql-必要操作！！" class="headerlink" title="初始化mysql(必要操作！！)"></a>初始化mysql(必要操作！！)</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在确认 <span class="keyword">MariaDB </span>数据库软件程序安装完毕并成功启动后请不要立即使用。为了确保数据 库的安全性和正常运转，需要先对数据库程序进行初始化操作。这个初始化操作涉及下面 <span class="number">5</span> 个 步骤。</span><br><span class="line">➢ 设置 root 管理员在数据库中的密码值(注意，该密码并非 root 管理员在系统中的密 码，这里的密码值默认应该为空，可直接按回车键)。</span><br><span class="line">➢ 设置 root 管理员在数据库中的专有密码。</span><br><span class="line">➢ 随后删除匿名账户，并使用 root 管理员从远程登录数据库，以确保数据库上运行的业</span><br><span class="line">务的安全性。</span><br><span class="line">➢ 删除默认的测试数据库，取消测试数据库的一系列访问权限。</span><br><span class="line">➢ 刷新授权列表，让初始化的设定立即生效。</span><br></pre></td></tr></table></figure>
-<p><strong>必须在确保mariadb服务器启动后，执行初始化命令</strong><br><code>mysql_secure_installation</code><br>操作如下图：<br><img src="en-resource://database/928:1" alt="d93ba463132a07b9f7fefd6df7a8fb4e.png"></p>
+<p><strong>必须在确保mariadb服务器启动后，执行初始化命令</strong><br><code>mysql_secure_installation</code><br>操作如下图：<br><img src="https://img-blog.csdnimg.cn/20181126152150897.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzgwMjk4Mg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="mysql基础命令"><a href="#mysql基础命令" class="headerlink" title="mysql基础命令"></a>mysql基础命令</h3><p>mysql创建普通用户：</p>
 <pre><code>#修改mysql密码
 MariaDB [(none)]&gt; set password = PASSWORD(&apos;redhat123&apos;);
@@ -453,7 +452,7 @@ MariaDB [(none)]&gt; set password = PASSWORD(&apos;redhat123&apos;);
   <p><span>本文标题:</span><a href="/Linux常用部署之MySQL-mariadb/">Linux常用部署之MySQL(mariadb)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mr Zuo 的个人博客">Mr Zuo</a></p>
   <p><span>发布时间:</span>2018年11月23日 - 08:11</p>
-  <p><span>最后更新:</span>2018年11月23日 - 08:11</p>
+  <p><span>最后更新:</span>2018年11月26日 - 15:11</p>
   <p><span>原始链接:</span><a href="/Linux常用部署之MySQL-mariadb/" title="Linux常用部署之MySQL(mariadb)">http://fireworksrain.com/Linux常用部署之MySQL-mariadb/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/Linux常用部署之MySQL-mariadb/" aria-label="复制成功！"></i></span>
   </p>
@@ -590,7 +589,7 @@ MariaDB [(none)]&gt; set password = PASSWORD(&apos;redhat123&apos;);
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -601,7 +600,7 @@ MariaDB [(none)]&gt; set password = PASSWORD(&apos;redhat123&apos;);
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -612,7 +611,7 @@ MariaDB [(none)]&gt; set password = PASSWORD(&apos;redhat123&apos;);
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
