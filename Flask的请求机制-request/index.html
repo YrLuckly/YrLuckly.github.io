@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="linux,">
+  <meta name="keywords" content="Flask框架,">
 
 
 
@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="将进酒 唐代：李白 君不见，黄河之水天上来，奔流到海不复回。君不见，高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。钟鼓馔玉不足贵，但愿长醉不复醒。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马，千金裘，">
-<meta name="keywords" content="linux">
+<meta name="description" content="每个框架斗鱼处理请求的机制(request)，但每个框架的处理方式和机制是不同的 认识request包含的内容基于HTML + Flask写一段前后端交互标准的form表单，点击登录就可以提交一个POST请求过去 &amp;lt;body&amp;gt; &amp;lt;form action=&amp;quot;/login&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;     &amp;lt;p&amp;gt;用户名：">
+<meta name="keywords" content="Flask框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux下的python">
-<meta property="og:url" content="http://fireworksrain.com/linux下的python/index.html">
+<meta property="og:title" content="Flask的请求机制(request)">
+<meta property="og:url" content="http://fireworksrain.com/Flask的请求机制-request/index.html">
 <meta property="og:site_name" content="Rafael">
-<meta property="og:description" content="将进酒 唐代：李白 君不见，黄河之水天上来，奔流到海不复回。君不见，高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。钟鼓馔玉不足贵，但愿长醉不复醒。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马，千金裘，">
+<meta property="og:description" content="每个框架斗鱼处理请求的机制(request)，但每个框架的处理方式和机制是不同的 认识request包含的内容基于HTML + Flask写一段前后端交互标准的form表单，点击登录就可以提交一个POST请求过去 &amp;lt;body&amp;gt; &amp;lt;form action=&amp;quot;/login&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;     &amp;lt;p&amp;gt;用户名：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-23T00:55:10.321Z">
+<meta property="og:updated_time" content="2018-11-27T09:46:26.915Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux下的python">
-<meta name="twitter:description" content="将进酒 唐代：李白 君不见，黄河之水天上来，奔流到海不复回。君不见，高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。钟鼓馔玉不足贵，但愿长醉不复醒。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马，千金裘，">
+<meta name="twitter:title" content="Flask的请求机制(request)">
+<meta name="twitter:description" content="每个框架斗鱼处理请求的机制(request)，但每个框架的处理方式和机制是不同的 认识request包含的内容基于HTML + Flask写一段前后端交互标准的form表单，点击登录就可以提交一个POST请求过去 &amp;lt;body&amp;gt; &amp;lt;form action=&amp;quot;/login&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;     &amp;lt;p&amp;gt;用户名：">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://fireworksrain.com/linux下的python/">
+  <link rel="canonical" href="http://fireworksrain.com/Flask的请求机制-request/">
 
 
 
 
 
-  <title>linux下的python | Rafael</title>
+  <title>Flask的请求机制(request) | Rafael</title>
   
 
 
@@ -269,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fireworksrain.com/linux下的python/">
+    <link itemprop="mainEntityOfPage" href="http://fireworksrain.com/Flask的请求机制-request/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr Zuo">
@@ -286,7 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux下的python</h1>
+          <h1 class="post-title" itemprop="name headline">Flask的请求机制(request)</h1>
         
 
         <div class="post-meta">
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-22T01:51:33+08:00">
-                2018-11-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T16:38:04+08:00">
+                2017-11-27
               </time>
             
 
@@ -321,8 +321,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -358,33 +358,128 @@
       
 
       
-        <p>将进酒</p>
-<p>唐代：李白</p>
-<p>君不见，黄河之水天上来，奔流到海不复回。<br>君不见，高堂明镜悲白发，朝如青丝暮成雪。<br>人生得意须尽欢，莫使金樽空对月。<br>天生我材必有用，千金散尽还复来。<br>烹羊宰牛且为乐，会须一饮三百杯。<br>岑夫子，丹丘生，将进酒，杯莫停。<br>与君歌一曲，请君为我倾耳听。<br>钟鼓馔玉不足贵，但愿长醉不复醒。<br>古来圣贤皆寂寞，惟有饮者留其名。<br>陈王昔时宴平乐，斗酒十千恣欢谑。<br>主人何为言少钱，径须沽取对君酌。<br>五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。</p>
-<h1 id="在Linux中安装Python的操作步骤"><a href="#在Linux中安装Python的操作步骤" class="headerlink" title="在Linux中安装Python的操作步骤"></a>在Linux中安装Python的操作步骤</h1><h3 id="1-安装Python前的环境准备，非常非常重要！！！！"><a href="#1-安装Python前的环境准备，非常非常重要！！！！" class="headerlink" title="1.安装Python前的环境准备，非常非常重要！！！！"></a>1.安装Python前的环境准备，非常非常重要！！！！</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install </span>gcc patch libffi-devel python-devel  zlib-devel <span class="keyword">bzip2-devel </span>openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel -y</span><br></pre></td></tr></table></figure>
-<h3 id="2-下载安装源码包"><a href="#2-下载安装源码包" class="headerlink" title="2.下载安装源码包"></a>2.下载安装源码包</h3><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/<span class="number">3.4</span><span class="meta">.7</span>/Python-<span class="number">3.4</span><span class="meta">.7</span>.tar.xzxz -d Python-<span class="number">3.4</span><span class="meta">.7</span>.tar.xztar -xf Python-<span class="number">3.4</span><span class="meta">.7</span>.tar</span><br></pre></td></tr></table></figure>
-<p>在opt的文件夹下执行此代码<br><code>[root@localhost opt]# wget https://www.python.org/ftp/python/3.4.7/Python-3.4.7.tar.xzxz -d Python-3.4.7.tar.xztar -xf Python-3.4.7.tar</code></p>
-<h3 id="3解压python源代码"><a href="#3解压python源代码" class="headerlink" title="3解压python源代码"></a>3解压python源代码</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">xz</span> <span class="selector-tag">-d</span> <span class="selector-tag">Python-3</span><span class="selector-class">.4</span><span class="selector-class">.7</span><span class="selector-class">.tar</span><span class="selector-class">.xz</span></span><br><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xf</span> <span class="selector-tag">Python-3</span><span class="selector-class">.4</span><span class="selector-class">.7</span><span class="selector-class">.tar</span></span><br></pre></td></tr></table></figure>
-<p>在opt的文件夹中操作<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[root@localhost opt]</span># <span class="selector-tag">xz</span> <span class="selector-tag">-d</span> <span class="selector-tag">Python-3</span><span class="selector-class">.4</span><span class="selector-class">.7</span><span class="selector-class">.tar</span><span class="selector-class">.xz</span></span><br><span class="line"><span class="selector-attr">[root@localhost opt]</span># <span class="selector-tag">tar</span> <span class="selector-tag">-xf</span> <span class="selector-tag">Python-3</span><span class="selector-class">.4</span><span class="selector-class">.7</span><span class="selector-class">.tar</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="4-切换进入python源码目录"><a href="#4-切换进入python源码目录" class="headerlink" title="4.切换进入python源码目录"></a>4.切换进入python源码目录</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/opt/Python-3.4.7</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-开始编译安装，释放编译文件"><a href="#5-开始编译安装，释放编译文件" class="headerlink" title="5.开始编译安装，释放编译文件"></a>5.开始编译安装，释放编译文件</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/configure --prefix=/</span>opt<span class="regexp">/python347/</span>    <span class="comment">#此时还不会生成这个文件夹！</span></span><br></pre></td></tr></table></figure>
-<p>在opt文件夹下的Python-3.4.7运行<br><code>[root@localhost Python-3.4.7]# ./configure --prefix=/opt/python347/</code></p>
-<h3 id="6-开始编译，编译安装-两种"><a href="#6-开始编译，编译安装-两种" class="headerlink" title="6.开始编译，编译安装(两种)"></a>6.开始编译，编译安装(两种)</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span></span><br><span class="line"> <span class="built_in">make</span> </span><br><span class="line"><span class="built_in">make</span> install     <span class="meta">#直到这两步走完，才会生成。创建 /opt/python347/</span></span><br><span class="line"><span class="number">2.</span></span><br><span class="line"><span class="built_in">make</span> &amp;&amp; <span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
-<p>继续在opt文件夹下的Python-3.4.7运行<br><code>[root@localhost Python-3.4.7]# make &amp;&amp; make install</code></p>
+        <p>每个框架斗鱼处理请求的机制(request)，但每个框架的处理方式和机制是不同的</p>
+<h3 id="认识request包含的内容"><a href="#认识request包含的内容" class="headerlink" title="认识request包含的内容"></a>认识request包含的内容</h3><h4 id="基于HTML-Flask写一段前后端交互"><a href="#基于HTML-Flask写一段前后端交互" class="headerlink" title="基于HTML + Flask写一段前后端交互"></a>基于HTML + Flask写一段前后端交互</h4><p>标准的form表单，点击登录就可以提交一个POST请求过去</p>
+<pre><code>&lt;body&gt;
+&lt;form action=&quot;/login&quot; method=&quot;post&quot;&gt;
+    &lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;密码：&lt;input type=&quot;text&quot; name=&quot;password&quot;&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;&lt;/p&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;
+</code></pre><h4 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h4><p>首先要从flask包中导入request模块</p>
+<pre><code>from flask import request
+
+@app.route(&quot;/login&quot;, methods=[&quot;POST&quot;])
+def req():
+
+    print(request.method) # POST看来可以使用这种方式来验证请求方式了
+
+    print(request.form) # ImmutableMultiDict([(&apos;user&apos;, &apos;Oldboy&apos;), (&apos;pwd, &apos;DragonFire&apos;)])# ImmutableMultiDict它看起来像是的Dict就用Dict的方法取值试一下吧print(request.form[&quot;user&quot;]) # Oldboy
+
+    print(request.form.get(&quot;pwd&quot;)) # DragonFire
+
+    #看来全部才对了, ImmutableMultiDict似乎就是个字典，再来玩一 玩它print(list(request.form.keys()) # [&apos;user&apos;, &apos;pwd&apos;] 看来是又才对了
+
+    return &quot;OK Hello World&quot;
+</code></pre><h3 id="request-method"><a href="#request-method" class="headerlink" title="request.method"></a>request.method</h3><p>request.method 知道前端用什么方式提交的<br>Flask的request中给我们提供了一个method属性里面包含了前端请求的方式<br><code>print(request.method)  # post</code></p>
+<h3 id="request-form"><a href="#request-form" class="headerlink" title="request.form"></a>request.form</h3><pre><code>Form表单中传递过来的值使用request.form拿到
+
+print(request.form)  # ImmutableMultiDict([(&apos;user&apos;, &apos;Oldboy&apos;), (&apos;pwd&apos;, &apos;DragonFire&apos;)])
+# ImmutableMultiDict 它看起来像是的Dict 就用Dict的方法取值试一下吧
+print(request.form[&quot;user&quot;])  # Oldboy
+print(request.form.get(&quot;pwd&quot;))  # DragonFire
+# 看来全部才对了, ImmutableMultiDict 似乎就是个字典,再来玩一玩它
+print(list(request.form.keys()))  # [&apos;user&apos;, &apos;pwd&apos;] 看来是又才对了
+#如果以上所有的方法你都觉得用的不爽的话
+req_dict = dict(request.form)
+print(req_dict)  # 如果你觉得用字典更爽的话,也可以转成字典操作(这里有坑)
+</code></pre><h3 id="request-args"><a href="#request-args" class="headerlink" title="request.args"></a>request.args</h3><p>request.args中保存的是url中传递的参数</p>
+<pre><code>print(request.args)  # ImmutableMultiDict([(&apos;id&apos;, &apos;1&apos;), (&apos;age&apos;, &apos;20&apos;)])
+print(request.args[&quot;id&quot;])  # 1
+print(request.args.get(&quot;age&quot;))  # 20
+print(list(request.args.keys()))  # [&apos;id&apos;, &apos;age&apos;]
+print(list(request.args.values()))  # [&apos;1&apos;, &apos;20&apos;]
+req_dict = dict(request.args)  # {&apos;id&apos;: [&apos;1&apos;], &apos;age&apos;: [&apos;20&apos;]}
+print(req_dict)
+</code></pre><blockquote>
+<p>request.args 与 request.form 的区别就是:</p>
+</blockquote>
 <blockquote>
-<p>到这就可以运行python了<br>到opt文件夹下的python347文件夹下的bin目录中输入./python3<br>这是就会出现非常熟悉有感觉的界面<br>接下来就为了创建快捷方式</p>
-</blockquote>
-<h3 id="8-配置软连接，快捷启动python3和pip3"><a href="#8-配置软连接，快捷启动python3和pip3" class="headerlink" title="8.配置软连接，快捷启动python3和pip3"></a>8.配置软连接，快捷启动python3和pip3</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s <span class="meta-keyword">/opt/</span>python347<span class="meta-keyword">/bin/</span>python3    <span class="meta-keyword">/usr/</span>bin/python3</span><br><span class="line">ln -s <span class="meta-keyword">/opt/</span>python347<span class="meta-keyword">/bin/</span>pip3  <span class="meta-keyword">/usr/</span>bin/pip3</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>在根目录下执行软连接：ln -s /opt/python347/bin/python3    /usr/bin/python3<br>在根目录继续创建软链接：ln -s /opt/python347/bin/pip3  /usr/bin/pip3</p>
+<p>request.args 是获取url中的参数</p>
 </blockquote>
-<h3 id="9-配置系统环境变量，配置PATH，加入python3的目录-目的跟上一步相同-配置环境变量须谨慎"><a href="#9-配置系统环境变量，配置PATH，加入python3的目录-目的跟上一步相同-配置环境变量须谨慎" class="headerlink" title="9. 配置系统环境变量，配置PATH，加入python3的目录(目的跟上一步相同)配置环境变量须谨慎"></a>9. 配置系统环境变量，配置PATH，加入python3的目录(目的跟上一步相同)配置环境变量须谨慎</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.最好用这一步</span><br><span class="line">PATH=<span class="regexp">/opt/python</span>347/bin/<span class="symbol">:/usr/local/sbin</span><span class="symbol">:/usr/local/bin</span><span class="symbol">:/usr/sbin</span><span class="symbol">:/usr/bin</span><span class="symbol">:/root/bin</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>.尽量不用</span><br><span class="line">PATH=<span class="variable">$PATH</span><span class="symbol">:/opt/python347/bin/</span></span><br><span class="line">将上面的写入到个人配置文件中，永久生效</span><br><span class="line">vim /etc/profile  <span class="comment">#编辑个人配置文件，写入PATH</span></span><br><span class="line">PATH=<span class="variable">$PATH</span><span class="symbol">:/opt/python347/bin/</span></span><br><span class="line">source /etc/profile  <span class="comment">#读取一下配置文件，生效配置</span></span><br></pre></td></tr></table></figure>
-<h3 id="运行时遇到问题"><a href="#运行时遇到问题" class="headerlink" title="运行时遇到问题"></a>运行时遇到问题</h3><blockquote>
-<p>网页访问不到 ：ptables -F  </p>
-<ul>
-<li>setenforce 0</li>
-</ul>
 </blockquote>
+<blockquote>
+<blockquote>
+<p>request.form 是获取form表单中的参数</p>
+</blockquote>
+</blockquote>
+<h3 id="request-values"><a href="#request-values" class="headerlink" title="request.values"></a>request.values</h3><p>request.values 只要是参数都需要</p>
+<p>修改下前端代码</p>
+<pre><code>&lt;body&gt;
+&lt;form action=&quot;/login?id=1&amp;age=20&quot; method=&quot;post&quot;&gt;
+    &lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;密码：&lt;input type=&quot;text&quot; name=&quot;password&quot;&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;&lt;/p&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;
+</code></pre><p>使用form表单提交的同时使用url参数提交</p>
+<pre><code>print(request.values)  # CombinedMultiDict([ImmutableMultiDict([(&apos;id&apos;, &apos;1&apos;), (&apos;age&apos;, &apos;20&apos;)]), ImmutableMultiDict([(&apos;user&apos;, &apos;Oldboy&apos;), (&apos;pwd&apos;, &apos;DragonFire&apos;)])])
+print(request.values.get(&quot;id&quot;))  # 1
+print(request.values[&quot;user&quot;])  # Oldboy
+# 这回喜欢直接操作字典的小伙伴们有惊喜了! to_dict() 方法可以直接将我们的参数全部转为字典形式
+print(request.values.to_dict()) # {&apos;user&apos;: &apos;Oldboy&apos;, &apos;pwd&apos;: &apos;DragonFire&apos;, &apos;id&apos;: &apos;1&apos;, &apos;age&apos;: &apos;20&apos;}
+</code></pre><h3 id="request-headers"><a href="#request-headers" class="headerlink" title="request.headers"></a>request.headers</h3><p>request.headers  获取请求头</p>
+<pre><code>print(type(request.headers))
+    &quot;&quot;&quot;
+    Host: 127.0.0.1:5000
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+    Accept-Encoding: gzip, deflate
+    Referer: http://127.0.0.1:5000/home
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 26
+    Cookie: csrftoken=vDIozqveCEfArdYXlM6goHVlSQEn7h4bDygNphL2Feas60DiM2di0jlqKfxo7xhA
+    Connection: keep-alive
+    Upgrade-Insecure-Requests: 1
+    Cache-Control: max-age=0
+    &quot;&quot;&quot;
+</code></pre><h3 id="request-files"><a href="#request-files" class="headerlink" title="request.files"></a>request.files</h3><p>request.files 可上传文件</p>
+<p>前端代码：</p>
+<pre><code>&lt;body&gt;
+&lt;form action=&quot;/login&quot; method=&quot;post&quot; enctype=&apos;multipart/form-data&apos;&gt;
+    &lt;input type=&quot;file&quot; name=&quot;file&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;
+</code></pre><p>后端代码：</p>
+<pre><code>print(request.files)  # ImmutableMultiDict([(&apos;file&apos;, &lt;FileStorage: &apos;DragonFire.txt&apos; (&apos;text/plain&apos;)&gt;)])
+print(request.files[&quot;file&quot;])  # &lt;FileStorage: &apos;DragonFire.txt&apos; (&apos;text/plain&apos;)&gt;
+my_file = request.files[&quot;file&quot;]
+my_file.save(&quot;zuobangzheng.txt&quot;)  # 保存文件,里面可以写完整路径+文件名
+
+print(request.values)  # CombinedMultiDict([ImmutableMultiDict([(&apos;id&apos;, &apos;1&apos;), (&apos;age&apos;, &apos;20&apos;)]), ImmutableMultiDict([(&apos;user&apos;, &apos;zuo&apos;), (&apos;pwd&apos;, &apos;123&apos;)])])
+print(request.values.get(&quot;id&quot;))  # 1
+print(request.values[&quot;user&quot;])  # zuo
+# 这回喜欢直接操作字典的小伙伴们有惊喜了! to_dict() 方法可以直接将我们的参数全部转为字典形式
+print(request.values.to_dict()) # {&apos;user&apos;: &apos;zuo&apos;, &apos;pwd&apos;: &apos;123&apos;, &apos;id&apos;: &apos;1&apos;, &apos;age&apos;: &apos;20&apos;}
+</code></pre><p>最后这样就可以保存文件了</p>
+<h3 id="request-获取各种路径"><a href="#request-获取各种路径" class="headerlink" title="request.获取各种路径"></a>request.获取各种路径</h3><pre><code># 获取当前的url路径
+print(request.path)  # /req
+# 当前url路径的上一级路径
+print(request.script_root)  #
+# 当前url的全部路径
+print(request.url)  # http://127.0.0.1:5000/req
+# 当前url的路径的上一级全部路径
+print(request.url_root)  # http://127.0.0.1:5000/
+</code></pre><h3 id="request-json"><a href="#request-json" class="headerlink" title="request.json"></a>request.json</h3><p>如果在请求中写入了 “application/json” 使用 request.json 则返回json解析数据, 否则返回 None</p>
 
       
     </div>
@@ -401,12 +496,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/linux下的python/">linux下的python</a></p>
+  <p><span>本文标题:</span><a href="/Flask的请求机制-request/">Flask的请求机制(request)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mr Zuo 的个人博客">Mr Zuo</a></p>
-  <p><span>发布时间:</span>2018年11月22日 - 01:11</p>
-  <p><span>最后更新:</span>2018年11月23日 - 08:11</p>
-  <p><span>原始链接:</span><a href="/linux下的python/" title="linux下的python">http://fireworksrain.com/linux下的python/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/linux下的python/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2017年11月27日 - 16:11</p>
+  <p><span>最后更新:</span>2018年11月27日 - 17:11</p>
+  <p><span>原始链接:</span><a href="/Flask的请求机制-request/" title="Flask的请求机制(request)">http://fireworksrain.com/Flask的请求机制-request/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/Flask的请求机制-request/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -437,7 +532,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+            <a href="/tags/Flask框架/" rel="tag"><i class="fa fa-tag"></i> Flask框架</a>
           
         </div>
       
@@ -450,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/Flask初识/" rel="next" title="Flask初识">
+                <i class="fa fa-chevron-left"></i> Flask初识
               </a>
             
           </div>
@@ -460,8 +555,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Nginx入门/" rel="prev" title="Nginx入门">
-                Nginx入门 <i class="fa fa-chevron-right"></i>
+              <a href="/Flask的三剑客/" rel="prev" title="Flask的三剑客">
+                Flask的三剑客 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -603,7 +698,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在Linux中安装Python的操作步骤"><span class="nav-number">1.</span> <span class="nav-text">在Linux中安装Python的操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装Python前的环境准备，非常非常重要！！！！"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.安装Python前的环境准备，非常非常重要！！！！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-下载安装源码包"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.下载安装源码包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3解压python源代码"><span class="nav-number">1.0.3.</span> <span class="nav-text">3解压python源代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-切换进入python源码目录"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.切换进入python源码目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-开始编译安装，释放编译文件"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.开始编译安装，释放编译文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-开始编译，编译安装-两种"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.开始编译，编译安装(两种)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-配置软连接，快捷启动python3和pip3"><span class="nav-number">1.0.7.</span> <span class="nav-text">8.配置软连接，快捷启动python3和pip3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-配置系统环境变量，配置PATH，加入python3的目录-目的跟上一步相同-配置环境变量须谨慎"><span class="nav-number">1.0.8.</span> <span class="nav-text">9. 配置系统环境变量，配置PATH，加入python3的目录(目的跟上一步相同)配置环境变量须谨慎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行时遇到问题"><span class="nav-number">1.0.9.</span> <span class="nav-text">运行时遇到问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#认识request包含的内容"><span class="nav-number">1.</span> <span class="nav-text">认识request包含的内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基于HTML-Flask写一段前后端交互"><span class="nav-number">1.1.</span> <span class="nav-text">基于HTML + Flask写一段前后端交互</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后端"><span class="nav-number">1.2.</span> <span class="nav-text">后端</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request-method"><span class="nav-number">2.</span> <span class="nav-text">request.method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request-form"><span class="nav-number">3.</span> <span class="nav-text">request.form</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request-args"><span class="nav-number">4.</span> <span class="nav-text">request.args</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request-values"><span class="nav-number">5.</span> <span class="nav-text">request.values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request-headers"><span class="nav-number">6.</span> <span class="nav-text">request.headers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request-files"><span class="nav-number">7.</span> <span class="nav-text">request.files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request-获取各种路径"><span class="nav-number">8.</span> <span class="nav-text">request.获取各种路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#request-json"><span class="nav-number">9.</span> <span class="nav-text">request.json</span></a></li></ol></div>
             
 
           </div>

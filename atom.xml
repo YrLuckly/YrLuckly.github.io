@@ -143,6 +143,84 @@
   </entry>
   
   <entry>
+    <title>Flask的三剑客</title>
+    <link href="http://fireworksrain.com/Flask%E7%9A%84%E4%B8%89%E5%89%91%E5%AE%A2/"/>
+    <id>http://fireworksrain.com/Flask的三剑客/</id>
+    <published>2017-11-27T09:49:04.000Z</published>
+    <updated>2018-11-27T10:01:21.186Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="三剑客"><a href="#三剑客" class="headerlink" title="三剑客"></a>三剑客</h3><p>Flask框架的三剑客跟Django的是有点区别的：</p><blockquote><p>HTTPResponse<br>Redirect<br>render_template</p></blockquote><h4 id="1-HTTPResponse"><a href="#1-HTTPResponse" class="headerlink" title="1.HTTPResponse"></a>1.HTTPResponse</h4><p>在Flask 中的HttpResponse 在我们看来其实就是直接返回字符串</p><pre><code>from flask import Flaskapp = Flask(__name__)@app.route(&quot;/&quot;)def index():  # 视图函数    return &quot;Hello World&quot;   #返回一个字符串，类似于HttpResponseapp.run()</code></pre><h4 id="2-Redirect"><a href="#2-Redirect" class="headerlink" title="2.Redirect"></a>2.Redirect</h4><p>每当访问”/login”这个地址的时候,视图函数redi会触发redirect(“/“) 跳转到url地址:  “/“ 并会触发”/“对应的视图函数index()</p><pre><code>from flask import Flask,redirect  # 导入模块app = Flask(__name__)@app.route(&quot;/login&quot;)def redi():    return redirect(&quot;/&quot;) #redirect跳转至&apos;/&apos;app.run()</code></pre><h4 id="3-render-template"><a href="#3-render-template" class="headerlink" title="3.render_template"></a>3.render_template</h4><p>HTML模板渲染是每个Web框架中都必须有的,至于render_template的具体用法,</p><p>注意: 如果要使用 render_template 返回渲染的模板,请在项目的主目录中加入一个目录 templates,否则可能会有一个Jinja2的异常哦</p><pre><code>from flask import Flask,render_templateapp = Flask(__name__)@app.route(&quot;/login&quot;)def login():    return render_template(&quot;login.html&quot;)app.run()</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;三剑客&quot;&gt;&lt;a href=&quot;#三剑客&quot; class=&quot;headerlink&quot; title=&quot;三剑客&quot;&gt;&lt;/a&gt;三剑客&lt;/h3&gt;&lt;p&gt;Flask框架的三剑客跟Django的是有点区别的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HTTPResponse&lt;br&gt;Red
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
+    
+    
+      <category term="Flask框架" scheme="http://fireworksrain.com/tags/Flask%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flask的请求机制(request)</title>
+    <link href="http://fireworksrain.com/Flask%E7%9A%84%E8%AF%B7%E6%B1%82%E6%9C%BA%E5%88%B6-request/"/>
+    <id>http://fireworksrain.com/Flask的请求机制-request/</id>
+    <published>2017-11-27T08:38:04.000Z</published>
+    <updated>2018-11-27T09:46:26.915Z</updated>
+    
+    <content type="html"><![CDATA[<p>每个框架斗鱼处理请求的机制(request)，但每个框架的处理方式和机制是不同的</p><h3 id="认识request包含的内容"><a href="#认识request包含的内容" class="headerlink" title="认识request包含的内容"></a>认识request包含的内容</h3><h4 id="基于HTML-Flask写一段前后端交互"><a href="#基于HTML-Flask写一段前后端交互" class="headerlink" title="基于HTML + Flask写一段前后端交互"></a>基于HTML + Flask写一段前后端交互</h4><p>标准的form表单，点击登录就可以提交一个POST请求过去</p><pre><code>&lt;body&gt;&lt;form action=&quot;/login&quot; method=&quot;post&quot;&gt;    &lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/p&gt;    &lt;p&gt;密码：&lt;input type=&quot;text&quot; name=&quot;password&quot;&gt;&lt;/p&gt;    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;&lt;/p&gt;&lt;/form&gt;&lt;/body&gt;</code></pre><h4 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h4><p>首先要从flask包中导入request模块</p><pre><code>from flask import request@app.route(&quot;/login&quot;, methods=[&quot;POST&quot;])def req():    print(request.method) # POST看来可以使用这种方式来验证请求方式了    print(request.form) # ImmutableMultiDict([(&apos;user&apos;, &apos;Oldboy&apos;), (&apos;pwd, &apos;DragonFire&apos;)])# ImmutableMultiDict它看起来像是的Dict就用Dict的方法取值试一下吧print(request.form[&quot;user&quot;]) # Oldboy    print(request.form.get(&quot;pwd&quot;)) # DragonFire    #看来全部才对了, ImmutableMultiDict似乎就是个字典，再来玩一 玩它print(list(request.form.keys()) # [&apos;user&apos;, &apos;pwd&apos;] 看来是又才对了    return &quot;OK Hello World&quot;</code></pre><h3 id="request-method"><a href="#request-method" class="headerlink" title="request.method"></a>request.method</h3><p>request.method 知道前端用什么方式提交的<br>Flask的request中给我们提供了一个method属性里面包含了前端请求的方式<br><code>print(request.method)  # post</code></p><h3 id="request-form"><a href="#request-form" class="headerlink" title="request.form"></a>request.form</h3><pre><code>Form表单中传递过来的值使用request.form拿到print(request.form)  # ImmutableMultiDict([(&apos;user&apos;, &apos;Oldboy&apos;), (&apos;pwd&apos;, &apos;DragonFire&apos;)])# ImmutableMultiDict 它看起来像是的Dict 就用Dict的方法取值试一下吧print(request.form[&quot;user&quot;])  # Oldboyprint(request.form.get(&quot;pwd&quot;))  # DragonFire# 看来全部才对了, ImmutableMultiDict 似乎就是个字典,再来玩一玩它print(list(request.form.keys()))  # [&apos;user&apos;, &apos;pwd&apos;] 看来是又才对了#如果以上所有的方法你都觉得用的不爽的话req_dict = dict(request.form)print(req_dict)  # 如果你觉得用字典更爽的话,也可以转成字典操作(这里有坑)</code></pre><h3 id="request-args"><a href="#request-args" class="headerlink" title="request.args"></a>request.args</h3><p>request.args中保存的是url中传递的参数</p><pre><code>print(request.args)  # ImmutableMultiDict([(&apos;id&apos;, &apos;1&apos;), (&apos;age&apos;, &apos;20&apos;)])print(request.args[&quot;id&quot;])  # 1print(request.args.get(&quot;age&quot;))  # 20print(list(request.args.keys()))  # [&apos;id&apos;, &apos;age&apos;]print(list(request.args.values()))  # [&apos;1&apos;, &apos;20&apos;]req_dict = dict(request.args)  # {&apos;id&apos;: [&apos;1&apos;], &apos;age&apos;: [&apos;20&apos;]}print(req_dict)</code></pre><blockquote><p>request.args 与 request.form 的区别就是:</p></blockquote><blockquote><blockquote><p>request.args 是获取url中的参数</p></blockquote></blockquote><blockquote><blockquote><p>request.form 是获取form表单中的参数</p></blockquote></blockquote><h3 id="request-values"><a href="#request-values" class="headerlink" title="request.values"></a>request.values</h3><p>request.values 只要是参数都需要</p><p>修改下前端代码</p><pre><code>&lt;body&gt;&lt;form action=&quot;/login?id=1&amp;age=20&quot; method=&quot;post&quot;&gt;    &lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/p&gt;    &lt;p&gt;密码：&lt;input type=&quot;text&quot; name=&quot;password&quot;&gt;&lt;/p&gt;    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;&lt;/p&gt;&lt;/form&gt;&lt;/body&gt;</code></pre><p>使用form表单提交的同时使用url参数提交</p><pre><code>print(request.values)  # CombinedMultiDict([ImmutableMultiDict([(&apos;id&apos;, &apos;1&apos;), (&apos;age&apos;, &apos;20&apos;)]), ImmutableMultiDict([(&apos;user&apos;, &apos;Oldboy&apos;), (&apos;pwd&apos;, &apos;DragonFire&apos;)])])print(request.values.get(&quot;id&quot;))  # 1print(request.values[&quot;user&quot;])  # Oldboy# 这回喜欢直接操作字典的小伙伴们有惊喜了! to_dict() 方法可以直接将我们的参数全部转为字典形式print(request.values.to_dict()) # {&apos;user&apos;: &apos;Oldboy&apos;, &apos;pwd&apos;: &apos;DragonFire&apos;, &apos;id&apos;: &apos;1&apos;, &apos;age&apos;: &apos;20&apos;}</code></pre><h3 id="request-headers"><a href="#request-headers" class="headerlink" title="request.headers"></a>request.headers</h3><p>request.headers  获取请求头</p><pre><code>print(type(request.headers))    &quot;&quot;&quot;    Host: 127.0.0.1:5000    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8    Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2    Accept-Encoding: gzip, deflate    Referer: http://127.0.0.1:5000/home    Content-Type: application/x-www-form-urlencoded    Content-Length: 26    Cookie: csrftoken=vDIozqveCEfArdYXlM6goHVlSQEn7h4bDygNphL2Feas60DiM2di0jlqKfxo7xhA    Connection: keep-alive    Upgrade-Insecure-Requests: 1    Cache-Control: max-age=0    &quot;&quot;&quot;</code></pre><h3 id="request-files"><a href="#request-files" class="headerlink" title="request.files"></a>request.files</h3><p>request.files 可上传文件</p><p>前端代码：</p><pre><code>&lt;body&gt;&lt;form action=&quot;/login&quot; method=&quot;post&quot; enctype=&apos;multipart/form-data&apos;&gt;    &lt;input type=&quot;file&quot; name=&quot;file&quot;&gt;    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;&lt;/form&gt;&lt;/body&gt;</code></pre><p>后端代码：</p><pre><code>print(request.files)  # ImmutableMultiDict([(&apos;file&apos;, &lt;FileStorage: &apos;DragonFire.txt&apos; (&apos;text/plain&apos;)&gt;)])print(request.files[&quot;file&quot;])  # &lt;FileStorage: &apos;DragonFire.txt&apos; (&apos;text/plain&apos;)&gt;my_file = request.files[&quot;file&quot;]my_file.save(&quot;zuobangzheng.txt&quot;)  # 保存文件,里面可以写完整路径+文件名print(request.values)  # CombinedMultiDict([ImmutableMultiDict([(&apos;id&apos;, &apos;1&apos;), (&apos;age&apos;, &apos;20&apos;)]), ImmutableMultiDict([(&apos;user&apos;, &apos;zuo&apos;), (&apos;pwd&apos;, &apos;123&apos;)])])print(request.values.get(&quot;id&quot;))  # 1print(request.values[&quot;user&quot;])  # zuo# 这回喜欢直接操作字典的小伙伴们有惊喜了! to_dict() 方法可以直接将我们的参数全部转为字典形式print(request.values.to_dict()) # {&apos;user&apos;: &apos;zuo&apos;, &apos;pwd&apos;: &apos;123&apos;, &apos;id&apos;: &apos;1&apos;, &apos;age&apos;: &apos;20&apos;}</code></pre><p>最后这样就可以保存文件了</p><h3 id="request-获取各种路径"><a href="#request-获取各种路径" class="headerlink" title="request.获取各种路径"></a>request.获取各种路径</h3><pre><code># 获取当前的url路径print(request.path)  # /req# 当前url路径的上一级路径print(request.script_root)  ## 当前url的全部路径print(request.url)  # http://127.0.0.1:5000/req# 当前url的路径的上一级全部路径print(request.url_root)  # http://127.0.0.1:5000/</code></pre><h3 id="request-json"><a href="#request-json" class="headerlink" title="request.json"></a>request.json</h3><p>如果在请求中写入了 “application/json” 使用 request.json 则返回json解析数据, 否则返回 None</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;每个框架斗鱼处理请求的机制(request)，但每个框架的处理方式和机制是不同的&lt;/p&gt;
+&lt;h3 id=&quot;认识request包含的内容&quot;&gt;&lt;a href=&quot;#认识request包含的内容&quot; class=&quot;headerlink&quot; title=&quot;认识request包含的内容&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
+    
+    
+      <category term="Flask框架" scheme="http://fireworksrain.com/tags/Flask%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flask初识</title>
+    <link href="http://fireworksrain.com/Flask%E5%88%9D%E8%AF%86/"/>
+    <id>http://fireworksrain.com/Flask初识/</id>
+    <published>2017-11-27T08:05:14.000Z</published>
+    <updated>2018-11-27T09:53:24.608Z</updated>
+    
+    <content type="html"><![CDATA[<p>整体Flask框架思维导图<br><a href="https://www.processon.com/mindmap/5bdade0de4b0e452133637d9" title="Flask框架思维导图" target="_blank" rel="noopener">https://www.processon.com/mindmap/5bdade0de4b0e452133637d9</a></p><h3 id="Python-现阶段三大主流Web框架及比较"><a href="#Python-现阶段三大主流Web框架及比较" class="headerlink" title="Python 现阶段三大主流Web框架及比较"></a>Python 现阶段三大主流Web框架及比较</h3><blockquote><p>Django主要特点是大而全，集成很多组件，属于全能型框架。用于大型Web应用，但是会造成一部分资源浪费<br>Tornado主要特点是原生异步非阻塞，在IO密集型应用和多任务处理上占据绝对性的优势，属于专注型框架。用于API后端应用，如游戏服务后台，但是太过干净没有session<br>Flask主要特点小而轻，原生组件几乎为零，三方库非常全面，属于短小精悍框架。</p></blockquote><h3 id="Flask的安装与简单测试"><a href="#Flask的安装与简单测试" class="headerlink" title="Flask的安装与简单测试"></a>Flask的安装与简单测试</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>一条命令就足以安装成功：<br><code>pip install Flask</code></p><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>1.最简单三行测试：</p><pre><code>from flask import Flask #导入flask模块app = Flask(__name__);app.run()</code></pre><p>2.六行代码实现flask的helloworld</p><ul><li><p>1.简单写法：</p><pre><code>from flask import Flaskapp = Flask(__name__)</code></pre></li></ul><pre><code>@app.route(&quot;/&quot;)  # app中的route装饰器def index():    return &quot;Hello World&quot;app.run()  # 启动Flask Web服务</code></pre><ul><li><p>2.按照源码书写：</p><pre><code>from flask import Flaskapp = Flask(__name__)</code></pre></li></ul><pre><code>@app.route(&quot;/&quot;)  # app中的route装饰器def index():    return &quot;Hello World&quot;app.run()  # 启动Flask Web服务</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;整体Flask框架思维导图&lt;br&gt;&lt;a href=&quot;https://www.processon.com/mindmap/5bdade0de4b0e452133637d9&quot; title=&quot;Flask框架思维导图&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
+    
+    
+      <category term="Flask框架" scheme="http://fireworksrain.com/tags/Flask%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>爬虫重点知识梳理</title>
     <link href="http://fireworksrain.com/%E7%88%AC%E8%99%AB%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/"/>
     <id>http://fireworksrain.com/爬虫重点知识梳理/</id>
