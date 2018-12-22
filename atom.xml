@@ -143,6 +143,24 @@
   </entry>
   
   <entry>
+    <title>Flask的模版语言Jinja2</title>
+    <link href="http://fireworksrain.com/Flask%E7%9A%84%E6%A8%A1%E7%89%88%E8%AF%AD%E8%A8%80Jinja2/"/>
+    <id>http://fireworksrain.com/Flask的模版语言Jinja2/</id>
+    <published>2017-11-28T08:30:03.000Z</published>
+    <updated>2018-11-27T10:49:37.005Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
+    
+    
+      <category term="Flask框架" scheme="http://fireworksrain.com/tags/Flask%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Flask的三剑客</title>
     <link href="http://fireworksrain.com/Flask%E7%9A%84%E4%B8%89%E5%89%91%E5%AE%A2/"/>
     <id>http://fireworksrain.com/Flask的三剑客/</id>
@@ -242,6 +260,31 @@
     
     
       <category term="爬虫" scheme="http://fireworksrain.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络变成与并发知识小结</title>
+    <link href="http://fireworksrain.com/%E7%BD%91%E7%BB%9C%E5%8F%98%E6%88%90%E4%B8%8E%E5%B9%B6%E5%8F%91%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/"/>
+    <id>http://fireworksrain.com/网络变成与并发知识小结/</id>
+    <published>2016-12-22T08:41:37.000Z</published>
+    <updated>2018-12-22T08:45:00.374Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-简述osi-7层模型"><a href="#1-简述osi-7层模型" class="headerlink" title="1.简述osi 7层模型"></a>1.简述osi 7层模型</h3><pre><code>应用层             py文件                 应用层 表示层 会话层传输层             udp、TCP协议       传输层网络层             IP协议                 网络层数据链路层        ARP协议              数据链路层物理层             网线等                 物理层</code></pre><h3 id="TCP三次握手和四次挥手"><a href="#TCP三次握手和四次挥手" class="headerlink" title="TCP三次握手和四次挥手"></a>TCP三次握手和四次挥手</h3><blockquote><ol><li>三次握手<br>客户端向服务器发送一个连接请求，服务端接收并同意连接并且在发送给客户端请求连接，客户端收到服务器发送的消息并同意<br>2.四次挥手<br>客户端向服务器主动发送断开请求，服务器接收并发送也要断开连接，服务器向客户端发送断开请求，客户端接收并同意断开</li></ol></blockquote><h3 id="TCP和UDP区别"><a href="#TCP和UDP区别" class="headerlink" title="TCP和UDP区别"></a>TCP和UDP区别</h3><p>TCP是可靠的、面向连接的协议、传输效率低、全双工通信、面向自己节流<br>UDP不可靠的、无连接的服务、传输效率高、一对一、一对多、多对多、多对一、面向报文、无拥塞控制。</p><h3 id="黏包显现"><a href="#黏包显现" class="headerlink" title="黏包显现"></a>黏包显现</h3><p>客户端向服务端发送数据会经过缓冲区，服务端接收但不能区分出数据。<br>可用struct模块实现对数据的封包</p><h3 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h3><p>HTTP协议叫做超文本传输协议，基于TCP协议实现的，一次请求一次响应然后断开链接</p><pre><code>格式    请求        请求头            user-agent    设备信息            accept          接收的格式数据            content-type  发送请求体的格式            cookies         浏览器端的cookie信息            connection     告诉服务器保持连接状态 值keep alive            referer 将浏览器上次访问的地址发给服务器            请求方式：GET/POST..        请求体     响应        响应头            location 让用户重定向到指定url            set-cookies 给用户浏览器设置cookie            状态码：                200                300                400                500         响应体                用户能看到的内容</code></pre><h3 id="7-websocket协议"><a href="#7-websocket协议" class="headerlink" title="7.websocket协议"></a>7.websocket协议</h3><p><strong>服务器向客户端主动推送消息</strong><br>它是基于TCP协议实现的新的协议，连接后需要进行握手，连接不断开</p><pre><code>简单过程连接后进行握手    获取客户端发送过来的随机字符串：在请求Sec-WebSocket-Key中获取  加密：     base64.b64encode(hashlib.sha1(mnwFxiOlctXFN/DeMt1Amg== + magic string))    返回给客户浏览器，在响应头中设置：Sec-WebSocket-Key：加密后的值握手成功后，进行收发数据（加密的）：            - 127: 2+8字节   MASK（4字节）+数据        - 126: 2+2字节   MASK（4字节）+数据        - 125: 2字节     MASK（4字节）+数据返回数据加密</code></pre><h3 id="8-https协议"><a href="#8-https协议" class="headerlink" title="8.https协议"></a>8.https协议</h3><p>HTTPS协议叫做超文本传输安全协议，是以安全为目的的HTTP通道。HTTP下加入SSL层。端口号：443</p><h3 id="9-进程、线程、协程的区别"><a href="#9-进程、线程、协程的区别" class="headerlink" title="9.进程、线程、协程的区别"></a>9.进程、线程、协程的区别</h3><p>进程：计算机中资源分配的最小单元<br>线程：计算机CPU调度的最小单元。一个进程中可以创建多个线程，进程用于维护一个空间，线程则在此空间内进行工作。<br>协程：计算机中并不存在，由开发人员认为创造的。也称为“微线程”</p><h3 id="10-GIL锁"><a href="#10-GIL锁" class="headerlink" title="10. GIL锁"></a>10. GIL锁</h3><p>GIL锁叫做全局解释器锁，它保证了一个进程中统一时刻只有一个线程可以被CPU调度，保证不了数据的安全，可以通过RLock，Lock，Condition,Event来实现数据的安全。<br>应用：爬虫，进程+协程</p><h3 id="11-IO多路复用"><a href="#11-IO多路复用" class="headerlink" title="11.IO多路复用"></a>11.IO多路复用</h3><p>帮助开发者监听多个socket是否发生变化</p><pre><code>实现IO多路复用：        win：            select        linux：            select，个数最多为1024个，轮询检测            poll，轮询检测(水平触发)            epoll，回调通知(边缘触发)应用场景：wsgiref，socketuwsgi，socket+IO多路复用nginx，IO多路复用</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-简述osi-7层模型&quot;&gt;&lt;a href=&quot;#1-简述osi-7层模型&quot; class=&quot;headerlink&quot; title=&quot;1.简述osi 7层模型&quot;&gt;&lt;/a&gt;1.简述osi 7层模型&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;应用层             py文件  
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
+    
+    
+      <category term="网络编程与并发" scheme="http://fireworksrain.com/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
