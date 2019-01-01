@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fireworksrain.com/网络变成与并发知识小结/">
+    <link itemprop="mainEntityOfPage" href="http://fireworksrain.com/Python之Web框架原理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr Zuo">
@@ -287,7 +287,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/网络变成与并发知识小结/" itemprop="url">网络变成与并发知识小结</a></h1>
+                <a class="post-title-link" href="/Python之Web框架原理/" itemprop="url">Python之Web框架原理</a></h1>
         
 
         <div class="post-meta">
@@ -361,14 +361,17 @@
       
         
           
-          1.简述osi 7层模型应用层             py文件                 应用层 表示层 会话层
-传输层             udp、TCP协议       传输层
-网络层             IP协议                 网络层
-数据链路层       
+          Web框架本质所有的Web本质上就是一个socket服务端，而用户的浏览器就是一个socket客户端，这样就可以实现Web框架
+socket服务端：
+
+import socket  
+
+sk = socket.socket()  
+sk.bind((&quot;127.0.0.1&quot;, 80
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/网络变成与并发知识小结/" rel="contents">
+            <a class="btn" href="/Python之Web框架原理/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -483,7 +486,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -527,7 +530,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="heart">
     <i class="fa fa-heart"></i>
   </span>
