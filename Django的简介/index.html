@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Flask框架,">
+  <meta name="keywords" content="Django,">
 
 
 
@@ -83,18 +83,21 @@
 
 
 
-<meta name="description" content="三剑客Flask框架的三剑客跟Django的是有点区别的：  HTTPResponseRedirectrender_template  1.HTTPResponse在Flask 中的HttpResponse 在我们看来其实就是直接返回字符串 from flask import Flask app = Flask(__name__) @app.route(&amp;quot;/&amp;quot;) def ind">
-<meta name="keywords" content="Flask框架">
+<meta name="description" content="MVC框架和MTV框架MVC：全名是Model View Controller，是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型(Model)、视图(View)和控制器(Controller)，具有耦合性低、重用性高、生命周期成本低等优点。大体上是这样的： Django框架的设计模式借鉴了MVC框架的思想，也分为三个部分，用来降低各个部分之间的耦合性。Django框架的不同之处在于">
+<meta name="keywords" content="Django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flask的三剑客">
-<meta property="og:url" content="http://fireworksrain.com/Flask的三剑客/index.html">
+<meta property="og:title" content="Django的简介">
+<meta property="og:url" content="http://fireworksrain.com/Django的简介/index.html">
 <meta property="og:site_name" content="Rafael">
-<meta property="og:description" content="三剑客Flask框架的三剑客跟Django的是有点区别的：  HTTPResponseRedirectrender_template  1.HTTPResponse在Flask 中的HttpResponse 在我们看来其实就是直接返回字符串 from flask import Flask app = Flask(__name__) @app.route(&amp;quot;/&amp;quot;) def ind">
+<meta property="og:description" content="MVC框架和MTV框架MVC：全名是Model View Controller，是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型(Model)、视图(View)和控制器(Controller)，具有耦合性低、重用性高、生命周期成本低等优点。大体上是这样的： Django框架的设计模式借鉴了MVC框架的思想，也分为三个部分，用来降低各个部分之间的耦合性。Django框架的不同之处在于">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-27T10:01:21.186Z">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/867021/201801/867021-20180116155130396-1611801504.png">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/867021/201801/867021-20180116155153334-721949851.png">
+<meta property="og:updated_time" content="2019-01-04T08:20:12.570Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flask的三剑客">
-<meta name="twitter:description" content="三剑客Flask框架的三剑客跟Django的是有点区别的：  HTTPResponseRedirectrender_template  1.HTTPResponse在Flask 中的HttpResponse 在我们看来其实就是直接返回字符串 from flask import Flask app = Flask(__name__) @app.route(&amp;quot;/&amp;quot;) def ind">
+<meta name="twitter:title" content="Django的简介">
+<meta name="twitter:description" content="MVC框架和MTV框架MVC：全名是Model View Controller，是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型(Model)、视图(View)和控制器(Controller)，具有耦合性低、重用性高、生命周期成本低等优点。大体上是这样的： Django框架的设计模式借鉴了MVC框架的思想，也分为三个部分，用来降低各个部分之间的耦合性。Django框架的不同之处在于">
+<meta name="twitter:image" content="https://images2017.cnblogs.com/blog/867021/201801/867021-20180116155130396-1611801504.png">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://fireworksrain.com/Flask的三剑客/">
+  <link rel="canonical" href="http://fireworksrain.com/Django的简介/">
 
 
 
 
 
-  <title>Flask的三剑客 | Rafael</title>
+  <title>Django的简介 | Rafael</title>
   
 
 
@@ -269,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fireworksrain.com/Flask的三剑客/">
+    <link itemprop="mainEntityOfPage" href="http://fireworksrain.com/Django的简介/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr Zuo">
@@ -286,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Flask的三剑客</h1>
+          <h1 class="post-title" itemprop="name headline">Django的简介</h1>
         
 
         <div class="post-meta">
@@ -298,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T17:49:04+08:00">
-                2017-11-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-02T16:24:58+08:00">
+                2017-01-02
               </time>
             
 
@@ -358,34 +361,51 @@
       
 
       
-        <h3 id="三剑客"><a href="#三剑客" class="headerlink" title="三剑客"></a>三剑客</h3><p>Flask框架的三剑客跟Django的是有点区别的：</p>
-<blockquote>
-<p>HTTPResponse<br>Redirect<br>render_template</p>
-</blockquote>
-<h4 id="1-HTTPResponse"><a href="#1-HTTPResponse" class="headerlink" title="1.HTTPResponse"></a>1.HTTPResponse</h4><p>在Flask 中的HttpResponse 在我们看来其实就是直接返回字符串</p>
-<pre><code>from flask import Flask
-app = Flask(__name__)
-@app.route(&quot;/&quot;)
-def index():  # 视图函数
-    return &quot;Hello World&quot;   #返回一个字符串，类似于HttpResponse
-app.run()
-</code></pre><h4 id="2-Redirect"><a href="#2-Redirect" class="headerlink" title="2.Redirect"></a>2.Redirect</h4><p>每当访问”/login”这个地址的时候,视图函数redi会触发redirect(“/“) 跳转到url地址:  “/“ 并会触发”/“对应的视图函数index()</p>
-<pre><code>from flask import Flask,redirect  # 导入模块
-app = Flask(__name__)
+        <h3 id="MVC框架和MTV框架"><a href="#MVC框架和MTV框架" class="headerlink" title="MVC框架和MTV框架"></a>MVC框架和MTV框架</h3><p>MVC：全名是Model View Controller，是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型(Model)、视图(View)和控制器(Controller)，具有耦合性低、重用性高、生命周期成本低等优点。<br>大体上是这样的：<br><img src="https://images2017.cnblogs.com/blog/867021/201801/867021-20180116155130396-1611801504.png" alt=""></p>
+<p>Django框架的设计模式借鉴了MVC框架的思想，也分为三个部分，用来降低各个部分之间的耦合性。<br>Django框架的不同之处在于它拆分的三个部分：Model（模型）、Template（模板）和View（视图），也就是MTV框架。</p>
+<h3 id="Django的MTV模式"><a href="#Django的MTV模式" class="headerlink" title="Django的MTV模式"></a>Django的MTV模式</h3><p> Model(模型)：负责业务对象与数据库的对象(ORM)</p>
+<p> Template(模版)：负责如何把页面展示给用户</p>
+<p> View(视图)：负责业务逻辑，并在适当的时候调用Model和Template</p>
+<p>此外，Django还有一个urls分发器，它的作用是将一个个URL的页面请求分发给不同的view处理，view再调用相应的Model和Template</p>
+<h3 id="Django框架图示"><a href="#Django框架图示" class="headerlink" title="Django框架图示"></a>Django框架图示</h3><p><img src="https://images2017.cnblogs.com/blog/867021/201801/867021-20180116155153334-721949851.png" alt=""></p>
+<h3 id="Django常见命令"><a href="#Django常见命令" class="headerlink" title="Django常见命令"></a>Django常见命令</h3><p>在Django的使用过程中需要使用命令让Django进行一些早做，比如创建Django项目、启动Django程序、创建新的APP等</p>
+<h4 id="1-创建Django项目"><a href="#1-创建Django项目" class="headerlink" title="1.创建Django项目"></a>1.创建Django项目</h4><p>一把我们都新建一个文件夹来存放项目文件，切换到这个目录下，启动命令行工具。创建一个名为xxx的Django项目：</p>
+<pre><code>django-admin startproject xxx
+</code></pre><p>创建好项目后，可以查看当前目录下多出一个名为xxx的文件，xxx的文件夹目录结构如下：</p>
+<pre><code>xxx/
+    manage.py
+    xxx/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+</code></pre><h4 id="2-启动Django项目"><a href="#2-启动Django项目" class="headerlink" title="2.启动Django项目"></a>2.启动Django项目</h4><p>启动项目的时候，需要切换到xxx目录下，执行命令如下：</p>
+<pre><code>python manage.py runserver　　#默认使用8000端口
+</code></pre><p>命令后面可以跟指定端口号:</p>
+<pre><code>python manage.py runserver 8888　　#默认使用8888
+</code></pre><p>或者IP：</p>
+<pre><code>python manage.py runserver 127.0.0.1:8000    #指定IP和端口，冒号分割
+</code></pre><h4 id="3-创建app"><a href="#3-创建app" class="headerlink" title="3.创建app"></a>3.创建app</h4><p>一个Django项目可以分为很多个app用来隔离不同功能模块的代码<br>命令行创建：</p>
+<pre><code>python manage.py startapp app01
+</code></pre><p>执行后，项目目录下多出一个app01的文件夹，结构如下：</p>
+<pre><code>app01/
+    migrations
+        __init__.py
+    __init__.py
+    admin.py
+    apps.py
+    models.py
+    tests.py
+    views.py
+</code></pre><h3 id="使用PyCharm创建"><a href="#使用PyCharm创建" class="headerlink" title="使用PyCharm创建"></a>使用PyCharm创建</h3><p>可以使用PyCharm的manage.py工具来执行命名。在主菜单栏中选择<strong>Tools</strong>，在下拉菜单中选择<strong>Run manage.py task</strong>，</p>
+<p>在弹出的命令窗口中直接输入下面的命令便可创建app：</p>
+<pre><code>startapp app01
+</code></pre><p>使用PyCharm的manage.py工具执行命令时，只用输入命令及参数即可，不再输入python manage.py了。</p>
+<h4 id="1-数据库迁移"><a href="#1-数据库迁移" class="headerlink" title="1.数据库迁移"></a>1.数据库迁移</h4><pre><code>python manage.py makemigrations
+python manage.py migrate
+</code></pre><h4 id="2-创建超级用户"><a href="#2-创建超级用户" class="headerlink" title="2.创建超级用户"></a>2.创建超级用户</h4><pre><code>python manage.py createsuperuser
+</code></pre><p>输入以上命令后，根据提示输入用户名、邮箱、密码、确认密码。密码的要求至少是不八位，不能和邮箱太接近，两次密码需要一致。</p>
 
-@app.route(&quot;/login&quot;)
-def redi():
-    return redirect(&quot;/&quot;) #redirect跳转至&apos;/&apos;
-app.run()
-</code></pre><h4 id="3-render-template"><a href="#3-render-template" class="headerlink" title="3.render_template"></a>3.render_template</h4><p>HTML模板渲染是每个Web框架中都必须有的,至于render_template的具体用法,</p>
-<p>注意: 如果要使用 render_template 返回渲染的模板,请在项目的主目录中加入一个目录 templates,否则可能会有一个Jinja2的异常哦</p>
-<pre><code>from flask import Flask,render_template
-app = Flask(__name__)
-@app.route(&quot;/login&quot;)
-def login():
-    return render_template(&quot;login.html&quot;)
-app.run()
-</code></pre>
       
     </div>
     
@@ -401,11 +421,11 @@ app.run()
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/Flask的三剑客/">Flask的三剑客</a></p>
+  <p><span>本文标题:</span><a href="/Django的简介/">Django的简介</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mr Zuo 的个人博客">Mr Zuo</a></p>
-  <p><span>发布时间:</span>2017年11月27日 - 17:11</p>
-  <p><span>原始链接:</span><a href="/Flask的三剑客/" title="Flask的三剑客">http://fireworksrain.com/Flask的三剑客/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/Flask的三剑客/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2017年01月02日 - 16:01</p>
+  <p><span>原始链接:</span><a href="/Django的简介/" title="Django的简介">http://fireworksrain.com/Django的简介/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/Django的简介/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -436,7 +456,7 @@ app.run()
       
         <div class="post-tags">
           
-            <a href="/tags/Flask框架/" rel="tag"><i class="fa fa-tag"></i> Flask框架</a>
+            <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i> Django</a>
           
         </div>
       
@@ -449,8 +469,8 @@ app.run()
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Flask的请求机制-request/" rel="next" title="Flask的请求机制(request)">
-                <i class="fa fa-chevron-left"></i> Flask的请求机制(request)
+              <a href="/网络变成与并发知识小结/" rel="next" title="网络变成与并发知识小结">
+                <i class="fa fa-chevron-left"></i> 网络变成与并发知识小结
               </a>
             
           </div>
@@ -459,8 +479,8 @@ app.run()
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Flask的模版语言Jinja2/" rel="prev" title="Flask的模版语言Jinja2">
-                Flask的模版语言Jinja2 <i class="fa fa-chevron-right"></i>
+              <a href="/爬虫重点知识梳理/" rel="prev" title="爬虫重点知识梳理">
+                爬虫重点知识梳理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -602,7 +622,7 @@ app.run()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三剑客"><span class="nav-number">1.</span> <span class="nav-text">三剑客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-HTTPResponse"><span class="nav-number">1.1.</span> <span class="nav-text">1.HTTPResponse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Redirect"><span class="nav-number">1.2.</span> <span class="nav-text">2.Redirect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-render-template"><span class="nav-number">1.3.</span> <span class="nav-text">3.render_template</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC框架和MTV框架"><span class="nav-number">1.</span> <span class="nav-text">MVC框架和MTV框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Django的MTV模式"><span class="nav-number">2.</span> <span class="nav-text">Django的MTV模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Django框架图示"><span class="nav-number">3.</span> <span class="nav-text">Django框架图示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Django常见命令"><span class="nav-number">4.</span> <span class="nav-text">Django常见命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建Django项目"><span class="nav-number">4.1.</span> <span class="nav-text">1.创建Django项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-启动Django项目"><span class="nav-number">4.2.</span> <span class="nav-text">2.启动Django项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-创建app"><span class="nav-number">4.3.</span> <span class="nav-text">3.创建app</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用PyCharm创建"><span class="nav-number">5.</span> <span class="nav-text">使用PyCharm创建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数据库迁移"><span class="nav-number">5.1.</span> <span class="nav-text">1.数据库迁移</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-创建超级用户"><span class="nav-number">5.2.</span> <span class="nav-text">2.创建超级用户</span></a></li></ol></li></ol></div>
             
 
           </div>
