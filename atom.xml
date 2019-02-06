@@ -243,11 +243,37 @@
   </entry>
   
   <entry>
+    <title>Django模版系统</title>
+    <link href="http://fireworksrain.com/Django%E6%A8%A1%E7%89%88%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://fireworksrain.com/Django模版系统/</id>
+    <published>2017-01-05T02:59:18.000Z</published>
+    <updated>2019-01-05T03:25:47.344Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://docs.djangoproject.com/en/1.11/ref/templates/language/" target="_blank" rel="noopener">官方文档</a></p><h3 id="常用语法"><a href="#常用语法" class="headerlink" title="常用语法"></a>常用语法</h3><p>Django模版中只需要记两种特殊符号：</p><pre><code>{{}} 和{% %}{{}} 表示变量，在模版渲染的时候替换成值{% %} 表示逻辑相关的操作</code></pre><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><pre><code>{{变量名}}</code></pre><p>变量名由字母数字和下划线组成<br>点(.)在模版语言中有特殊的含义，用来获取对象的相应属性值</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://docs.djangoproject.com/en/1.11/ref/templates/language/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;常用语法&quot;&gt;&lt;a hre
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
+    
+    
+      <category term="Django框架" scheme="http://fireworksrain.com/tags/Django%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Django的简介</title>
     <link href="http://fireworksrain.com/Django%E7%9A%84%E7%AE%80%E4%BB%8B/"/>
     <id>http://fireworksrain.com/Django的简介/</id>
     <published>2017-01-02T08:24:58.000Z</published>
-    <updated>2019-01-04T08:20:12.570Z</updated>
+    <updated>2019-01-04T08:26:33.113Z</updated>
     
     <content type="html"><![CDATA[<h3 id="MVC框架和MTV框架"><a href="#MVC框架和MTV框架" class="headerlink" title="MVC框架和MTV框架"></a>MVC框架和MTV框架</h3><p>MVC：全名是Model View Controller，是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型(Model)、视图(View)和控制器(Controller)，具有耦合性低、重用性高、生命周期成本低等优点。<br>大体上是这样的：<br><img src="https://images2017.cnblogs.com/blog/867021/201801/867021-20180116155130396-1611801504.png" alt=""></p><p>Django框架的设计模式借鉴了MVC框架的思想，也分为三个部分，用来降低各个部分之间的耦合性。<br>Django框架的不同之处在于它拆分的三个部分：Model（模型）、Template（模板）和View（视图），也就是MTV框架。</p><h3 id="Django的MTV模式"><a href="#Django的MTV模式" class="headerlink" title="Django的MTV模式"></a>Django的MTV模式</h3><p> Model(模型)：负责业务对象与数据库的对象(ORM)</p><p> Template(模版)：负责如何把页面展示给用户</p><p> View(视图)：负责业务逻辑，并在适当的时候调用Model和Template</p><p>此外，Django还有一个urls分发器，它的作用是将一个个URL的页面请求分发给不同的view处理，view再调用相应的Model和Template</p><h3 id="Django框架图示"><a href="#Django框架图示" class="headerlink" title="Django框架图示"></a>Django框架图示</h3><p><img src="https://images2017.cnblogs.com/blog/867021/201801/867021-20180116155153334-721949851.png" alt=""></p><h3 id="Django常见命令"><a href="#Django常见命令" class="headerlink" title="Django常见命令"></a>Django常见命令</h3><p>在Django的使用过程中需要使用命令让Django进行一些早做，比如创建Django项目、启动Django程序、创建新的APP等</p><h4 id="1-创建Django项目"><a href="#1-创建Django项目" class="headerlink" title="1.创建Django项目"></a>1.创建Django项目</h4><p>一把我们都新建一个文件夹来存放项目文件，切换到这个目录下，启动命令行工具。创建一个名为xxx的Django项目：</p><pre><code>django-admin startproject xxx</code></pre><p>创建好项目后，可以查看当前目录下多出一个名为xxx的文件，xxx的文件夹目录结构如下：</p><pre><code>xxx/    manage.py    xxx/        __init__.py        settings.py        urls.py        wsgi.py</code></pre><h4 id="2-启动Django项目"><a href="#2-启动Django项目" class="headerlink" title="2.启动Django项目"></a>2.启动Django项目</h4><p>启动项目的时候，需要切换到xxx目录下，执行命令如下：</p><pre><code>python manage.py runserver　　#默认使用8000端口</code></pre><p>命令后面可以跟指定端口号:</p><pre><code>python manage.py runserver 8888　　#默认使用8888</code></pre><p>或者IP：</p><pre><code>python manage.py runserver 127.0.0.1:8000    #指定IP和端口，冒号分割</code></pre><h4 id="3-创建app"><a href="#3-创建app" class="headerlink" title="3.创建app"></a>3.创建app</h4><p>一个Django项目可以分为很多个app用来隔离不同功能模块的代码<br>命令行创建：</p><pre><code>python manage.py startapp app01</code></pre><p>执行后，项目目录下多出一个app01的文件夹，结构如下：</p><pre><code>app01/    migrations        __init__.py    __init__.py    admin.py    apps.py    models.py    tests.py    views.py</code></pre><h3 id="使用PyCharm创建"><a href="#使用PyCharm创建" class="headerlink" title="使用PyCharm创建"></a>使用PyCharm创建</h3><p>可以使用PyCharm的manage.py工具来执行命名。在主菜单栏中选择<strong>Tools</strong>，在下拉菜单中选择<strong>Run manage.py task</strong>，</p><p>在弹出的命令窗口中直接输入下面的命令便可创建app：</p><pre><code>startapp app01</code></pre><p>使用PyCharm的manage.py工具执行命令时，只用输入命令及参数即可，不再输入python manage.py了。</p><h4 id="1-数据库迁移"><a href="#1-数据库迁移" class="headerlink" title="1.数据库迁移"></a>1.数据库迁移</h4><pre><code>python manage.py makemigrationspython manage.py migrate</code></pre><h4 id="2-创建超级用户"><a href="#2-创建超级用户" class="headerlink" title="2.创建超级用户"></a>2.创建超级用户</h4><pre><code>python manage.py createsuperuser</code></pre><p>输入以上命令后，根据提示输入用户名、邮箱、密码、确认密码。密码的要求至少是不八位，不能和邮箱太接近，两次密码需要一致。</p>]]></content>
     
@@ -263,7 +289,7 @@
       <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
     
     
-      <category term="Django" scheme="http://fireworksrain.com/tags/Django/"/>
+      <category term="Django框架" scheme="http://fireworksrain.com/tags/Django%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
