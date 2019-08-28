@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fireworksrain.com/"/>
-  <updated>2018-11-25T09:08:59.029Z</updated>
+  <updated>2019-08-28T10:26:54.188Z</updated>
   <id>http://fireworksrain.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python基础知识</title>
+    <link href="http://fireworksrain.com/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://fireworksrain.com/Python基础知识/</id>
+    <published>2019-08-28T10:26:54.000Z</published>
+    <updated>2019-08-28T10:26:54.188Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>linux下安装Django</title>
