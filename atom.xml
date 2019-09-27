@@ -140,9 +140,20 @@
     <link href="http://fireworksrain.com/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     <id>http://fireworksrain.com/Python基础知识/</id>
     <published>2018-08-28T10:26:54.000Z</published>
-    <updated>2019-09-01T09:11:04.922Z</updated>
+    <updated>2019-09-27T03:19:31.893Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>行宫唐代·元稹寥落古行宫，宫花寂寞红。白头宫女在，闲坐说玄宗。</code></pre><h4 id="1-运行Python代码"><a href="#1-运行Python代码" class="headerlink" title="1.运行Python代码"></a>1.运行Python代码</h4><p>1.在d盘下创建一个it.py文件，里面内容是：</p><pre><code>print(&apos;hello world&apos;)</code></pre><p>2.打开Windows命令行输入cmd，确认后写入代码：</p><pre><code>python d:it.py</code></pre><p>总结：创建一个后缀名.py的文件，写入内容，打开终端，输入cmd，最后 python 文件路径，回车。</p><h4 id="2-注释"><a href="#2-注释" class="headerlink" title="2.注释"></a>2.注释</h4><p>注释，是为了让每一个程序员都能看懂代码，了解其中的内容。作为一名程序员，我们应该“汝必注释”，，注释务必要有物，不能重复注释<br>常见的注释方法：</p><pre><code>当行注释：# 被注释内容多行注释：&apos;&apos;&apos;被注释内容&apos;&apos;&apos; 或者 &quot;&quot;&quot;被注释内容&quot;&quot;&quot;</code></pre>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code&gt;行宫
+唐代·元稹
+寥落古行宫，宫花寂寞红。
+白头宫女在，闲坐说玄宗。
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-运行Python代码&quot;&gt;&lt;a href=&quot;#1-运行Python代码&quot; class=&quot;headerlink&quot; title=&quot;1.运行Pytho
+      
     
     </summary>
     
