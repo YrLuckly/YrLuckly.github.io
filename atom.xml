@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fireworksrain.com/"/>
-  <updated>2019-08-28T10:26:54.188Z</updated>
+  <updated>2019-09-27T02:21:48.000Z</updated>
   <id>http://fireworksrain.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Python基础知识</title>
-    <link href="http://fireworksrain.com/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://fireworksrain.com/Python基础知识/</id>
-    <published>2019-08-28T10:26:54.000Z</published>
-    <updated>2019-08-28T10:26:54.188Z</updated>
+    <title>Python游戏的基础知识</title>
+    <link href="http://fireworksrain.com/Python%E6%B8%B8%E6%88%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://fireworksrain.com/Python游戏的基础知识/</id>
+    <published>2019-09-27T02:21:47.000Z</published>
+    <updated>2019-09-27T02:21:48.000Z</updated>
     
     <summary type="html">
     
@@ -136,13 +136,31 @@
   </entry>
   
   <entry>
+    <title>Python基础知识</title>
+    <link href="http://fireworksrain.com/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://fireworksrain.com/Python基础知识/</id>
+    <published>2018-08-28T10:26:54.000Z</published>
+    <updated>2019-09-01T09:11:04.922Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
+    
+    
+      <category term="基础知识" scheme="http://fireworksrain.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python语言的介绍</title>
     <link href="http://fireworksrain.com/Python%E8%AF%AD%E8%A8%80%E7%9A%84%E4%BB%8B%E7%BB%8D/"/>
     <id>http://fireworksrain.com/Python语言的介绍/</id>
     <published>2018-08-28T08:10:30.000Z</published>
-    <updated>2019-08-28T09:33:32.748Z</updated>
+    <updated>2019-08-28T10:29:16.057Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1-编程语言的分类"><a href="#1-编程语言的分类" class="headerlink" title="1.编程语言的分类"></a>1.编程语言的分类</h3><p>编程语言主要从以下几个角度进行分类，编译型和解释型、静态语言和动态语言、强类型定义语言和弱类型定义语言。</p><h4 id="1-1-编译型与解释型"><a href="#1-1-编译型与解释型" class="headerlink" title="1.1 编译型与解释型"></a>1.1 编译型与解释型</h4><p>编译器是把源程序的每一条语句都编译成机器语言,并保存成二进制文件,这样运行时计算机可以直接以机器语言来运行此程序,速度很快; </p><p>而解释器则是只在执行程序时,才一条一条的解释成机器语言给计算机来执行,所以运行速度是不如编译后的程序运行的快的. </p><p>这是因为计算机不能直接认识并执行我们写的语句,它只能认识机器语言(是二进制的形式)</p><p>编译型<br>优点：编译器一般会有预编译的过程对代码进行优化。因为编译只做一次，运行时不需要编译，所以编译型语言的程序执行效率高。可以脱离语言环境独立运行。<br>缺点：编译之后如果需要修改就需要整个模块重新编译。编译的时候根据对应的运行环境生成机器码，不同的操作系统之间移植就会有问题，需要根据运行的操作系统环境编译不同的可执行文件。</p><p>解释型<br>优点：有良好的平台兼容性，在任何环境中都可以运行，前提是安装了解释器（虚拟机）。灵活，修改代码的时候直接修改就可以，可以快速部署，不用停机维护。</p><p>缺点：每次运行的时候都要解释一遍，性能上不如编译型语言。</p><h3 id="1-2动态语言和静态语言"><a href="#1-2动态语言和静态语言" class="headerlink" title="1.2动态语言和静态语言"></a>1.2动态语言和静态语言</h3><p>通常我们所说的动态语言、静态语言是指动态类型语言和静态类型语言。</p><p>（1）动态类型语言：动态类型语言是指在运行期间才去做数据类型检查的语言，也就是说，在用动态类型的语言编程时，永远也不用给任何变量指定数据类型，该语言会在你第一次赋值给变量时，在内部将数据类型记录下来。Python和Ruby就是一种典型的动态类型语言，其他的各种脚本语言如VBScript也多少属于动态类型语言。</p><p>（2）静态类型语言：静态类型语言与动态类型语言刚好相反，它的数据类型是在编译其间检查的，也就是说在写程序时要声明所有变量的数据类型，C/C++是静态类型语言的典型代表，其他的静态类型语言还有C#、JAVA等。</p><h3 id="1-3强类型定义语言和弱类型定义语言"><a href="#1-3强类型定义语言和弱类型定义语言" class="headerlink" title="1.3强类型定义语言和弱类型定义语言"></a>1.3强类型定义语言和弱类型定义语言</h3><p>（1）强类型定义语言：强制数据类型定义的语言。也就是说，一旦一个变量被指定了某个数据类型，如果不经过强制转换，那么它就永远是这个数据类型了。举个例子：如果你定义了一个整型变量a,那么程序根本不可能将a当作字符串类型处理。强类型定义语言是类型安全的语言。</p><p>（2）弱类型定义语言：数据类型可以被忽略的语言。它与强类型定义语言相反, 一个变量可以赋不同数据类型的值。</p><p>强类型定义语言在速度上可能略逊色于弱类型定义语言，但是强类型定义语言带来的严谨性能够有效的避免许多错误。另外，“这门语言是不是动态语言”与“这门语言是否类型安全”之间是完全没有联系的！<br>例如：Python是动态语言，是强类型定义语言（类型安全的语言）; VBScript是动态语言，是弱类型定义语言（类型不安全的语言）; JAVA是静态语言，是强类型定义语言（类型安全的语言）。</p><p>通过上面这些介绍，我们可以得出，python是一门动态解释性的强类型定义语言。</p><h3 id="2-Python的种类"><a href="#2-Python的种类" class="headerlink" title="2.Python的种类"></a>2.Python的种类</h3><h4 id="CPython"><a href="#CPython" class="headerlink" title="CPython"></a>CPython</h4><p>当我们从Python官方网站下载并安装好Python 3.6后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。</p><p>CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。</p><h4 id="IPython"><a href="#IPython" class="headerlink" title="IPython"></a>IPython</h4><p>IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。</p><p>CPython用&gt;&gt;&gt;作为提示符，而IPython用In [序号]:作为提示符。</p><h4 id="PyPy"><a href="#PyPy" class="headerlink" title="PyPy"></a>PyPy</h4><p>PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。</p><p>绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。如果你的代码要放到PyPy下执行，就需要了解PyPy和CPython的不同点。</p><h4 id="Jython"><a href="#Jython" class="headerlink" title="Jython"></a>Jython</h4><p>Jython是运行在Java平台上的Python解释器，可以直接把Python代码编译成Java字节码执行。</p><h4 id="IronPython"><a href="#IronPython" class="headerlink" title="IronPython"></a>IronPython</h4><p>IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。</p><p>小结：</p><p>　　Python的解释器很多，但使用最广泛的还是CPython。如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，而是通过网络调用来交互，确保各程序之间的独立性。</p><h3 id="3-Python环境"><a href="#3-Python环境" class="headerlink" title="3.Python环境"></a>3.Python环境</h3><p>windows下安装：</p><pre><code>1. 下载安装包：  https://www.python.org/downloads/2. 安装：    默认安装路径：C:\python273. 配置环境变量：    【右键计算机】--》【属性】--》【高级系统设置】--》【高级】--》【环境变量】--》【在第二个内容框中找到 变量名为Path 的一行，双击】 --&gt; 【Python安装目录追加到变值值中，用 ； 分割】    如：原来的值;C:\python27，切记前面有分号4.注3.5版本可自动添加环境变量</code></pre><p>linux：</p><pre><code>无需安装，原装Python环境ps：如果自带2.6，请更新至2.7</code></pre><p><img src="https://i.imgur.com/JNifuzA.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="1-编程语言的分类"><a href="#1-编程语言的分类" class="headerlink" title="1.编程语言的分类"></a>1.编程语言的分类</h3><p>编程语言主要从以下几个角度进行分类，编译型和解释型、静态语言和动态语言、强类型定义语言和弱类型定义语言。</p><h4 id="1-1-编译型与解释型"><a href="#1-1-编译型与解释型" class="headerlink" title="1.1 编译型与解释型"></a>1.1 编译型与解释型</h4><p>编译器是把源程序的每一条语句都编译成机器语言,并保存成二进制文件,这样运行时计算机可以直接以机器语言来运行此程序,速度很快; </p><p>而解释器则是只在执行程序时,才一条一条的解释成机器语言给计算机来执行,所以运行速度是不如编译后的程序运行的快的. </p><p>这是因为计算机不能直接认识并执行我们写的语句,它只能认识机器语言(是二进制的形式)</p><p>编译型<br>优点：编译器一般会有预编译的过程对代码进行优化。因为编译只做一次，运行时不需要编译，所以编译型语言的程序执行效率高。可以脱离语言环境独立运行。<br>缺点：编译之后如果需要修改就需要整个模块重新编译。编译的时候根据对应的运行环境生成机器码，不同的操作系统之间移植就会有问题，需要根据运行的操作系统环境编译不同的可执行文件。</p><p>解释型<br>优点：有良好的平台兼容性，在任何环境中都可以运行，前提是安装了解释器（虚拟机）。灵活，修改代码的时候直接修改就可以，可以快速部署，不用停机维护。</p><p>缺点：每次运行的时候都要解释一遍，性能上不如编译型语言。</p><h3 id="1-2动态语言和静态语言"><a href="#1-2动态语言和静态语言" class="headerlink" title="1.2动态语言和静态语言"></a>1.2动态语言和静态语言</h3><p>通常我们所说的动态语言、静态语言是指动态类型语言和静态类型语言。</p><p>（1）动态类型语言：动态类型语言是指在运行期间才去做数据类型检查的语言，也就是说，在用动态类型的语言编程时，永远也不用给任何变量指定数据类型，该语言会在你第一次赋值给变量时，在内部将数据类型记录下来。Python和Ruby就是一种典型的动态类型语言，其他的各种脚本语言如VBScript也多少属于动态类型语言。</p><p>（2）静态类型语言：静态类型语言与动态类型语言刚好相反，它的数据类型是在编译其间检查的，也就是说在写程序时要声明所有变量的数据类型，C/C++是静态类型语言的典型代表，其他的静态类型语言还有C#、JAVA等。</p><h3 id="1-3强类型定义语言和弱类型定义语言"><a href="#1-3强类型定义语言和弱类型定义语言" class="headerlink" title="1.3强类型定义语言和弱类型定义语言"></a>1.3强类型定义语言和弱类型定义语言</h3><p>（1）强类型定义语言：强制数据类型定义的语言。也就是说，一旦一个变量被指定了某个数据类型，如果不经过强制转换，那么它就永远是这个数据类型了。举个例子：如果你定义了一个整型变量a,那么程序根本不可能将a当作字符串类型处理。强类型定义语言是类型安全的语言。</p><p>（2）弱类型定义语言：数据类型可以被忽略的语言。它与强类型定义语言相反, 一个变量可以赋不同数据类型的值。</p><p>强类型定义语言在速度上可能略逊色于弱类型定义语言，但是强类型定义语言带来的严谨性能够有效的避免许多错误。另外，“这门语言是不是动态语言”与“这门语言是否类型安全”之间是完全没有联系的！<br>例如：Python是动态语言，是强类型定义语言（类型安全的语言）; VBScript是动态语言，是弱类型定义语言（类型不安全的语言）; JAVA是静态语言，是强类型定义语言（类型安全的语言）。</p><p>通过上面这些介绍，我们可以得出，python是一门动态解释性的强类型定义语言。</p><h3 id="2-Python的种类"><a href="#2-Python的种类" class="headerlink" title="2.Python的种类"></a>2.Python的种类</h3><h4 id="CPython"><a href="#CPython" class="headerlink" title="CPython"></a>CPython</h4><p>当我们从Python官方网站下载并安装好Python 3.6后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。</p><p>CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。</p><h4 id="IPython"><a href="#IPython" class="headerlink" title="IPython"></a>IPython</h4><p>IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。</p><p>CPython用&gt;&gt;&gt;作为提示符，而IPython用In [序号]:作为提示符。</p><h4 id="PyPy"><a href="#PyPy" class="headerlink" title="PyPy"></a>PyPy</h4><p>PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。</p><p>绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。如果你的代码要放到PyPy下执行，就需要了解PyPy和CPython的不同点。</p><h4 id="Jython"><a href="#Jython" class="headerlink" title="Jython"></a>Jython</h4><p>Jython是运行在Java平台上的Python解释器，可以直接把Python代码编译成Java字节码执行。</p><h4 id="IronPython"><a href="#IronPython" class="headerlink" title="IronPython"></a>IronPython</h4><p>IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。</p><p>小结：</p><p>　　Python的解释器很多，但使用最广泛的还是CPython。如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，而是通过网络调用来交互，确保各程序之间的独立性。</p><h3 id="3-Python环境"><a href="#3-Python环境" class="headerlink" title="3.Python环境"></a>3.Python环境</h3><p>windows下安装：</p><pre><code>1. 下载安装包：  https://www.python.org/downloads/2. 安装：    默认安装路径：C:\python273. 配置环境变量：    【右键计算机】--》【属性】--》【高级系统设置】--》【高级】--》【环境变量】--》【在第二个内容框中找到 变量名为Path 的一行，双击】 --&gt; 【Python安装目录追加到变值值中，用 ； 分割】    如：原来的值;C:\python27，切记前面有分号4.注3.5版本可自动添加环境变量</code></pre><p>linux：</p><pre><code>无需安装，原装Python环境ps：如果自带2.6，请更新至2.7</code></pre>]]></content>
     
     <summary type="html">
     
