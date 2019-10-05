@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="Rafael">
 <meta property="og:description" content="行宫 唐代·元稹 寥落古行宫，宫花寂寞红。 白头宫女在，闲坐说玄宗。 1.运行Python代码1.在d盘下创建一个it.py文件，里面内容是： print(&amp;apos;hello world&amp;apos;) 2.打开Windows命令行输入cmd，确认后写入代码： python d:it.py 总结：创建一个后缀名.py的文件，写入内容，打开终端，输入cmd，最后 python 文件路径，回车。 2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-03T03:55:19.081Z">
+<meta property="og:updated_time" content="2019-10-05T04:41:47.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础知识">
 <meta name="twitter:description" content="行宫 唐代·元稹 寥落古行宫，宫花寂寞红。 白头宫女在，闲坐说玄宗。 1.运行Python代码1.在d盘下创建一个it.py文件，里面内容是： print(&amp;apos;hello world&amp;apos;) 2.打开Windows命令行输入cmd，确认后写入代码： python d:it.py 总结：创建一个后缀名.py的文件，写入内容，打开终端，输入cmd，最后 python 文件路径，回车。 2">
@@ -383,8 +383,230 @@
 </code></pre><h4 id="4-常量"><a href="#4-常量" class="headerlink" title="4.常量"></a>4.常量</h4><p>常量即指不变的量，如π= 3.141592653…, 或在程序运行过程中不会改变的量</p>
 <p>举例，假如有一个人的岁数会变，那这就是个变量，但在一些情况下，他的岁数不会变了，那就是常量。在Python中没有一个专门的语法代表常量，程序员约定俗成用变量名全部大写代表常量</p>
 <pre><code>AGE_OF_OLDBOY = 56
-</code></pre><h4 id="5-函数-初识"><a href="#5-函数-初识" class="headerlink" title="5.函数(初识)"></a>5.函数(初识)</h4><p>函数就像小型程序，可用来执行特定的操作。Python提供了很多的函数，用来进行很神奇的操作。</p>
-<h4 id="6-模块"><a href="#6-模块" class="headerlink" title="6.模块"></a>6.模块</h4><p>可将模块视为扩展。通常是将其导入可以扩展Python功能。要想导入模块，首先要使用特殊命令import，如导入math：</p>
+</code></pre><h4 id="5-获取用户输入-程序交互"><a href="#5-获取用户输入-程序交互" class="headerlink" title="5.获取用户输入(程序交互)"></a>5.获取用户输入(程序交互)</h4><pre><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# 将用户输入的内容赋值给 name 变量
+name = input(&quot;请输入用户名：&quot;)
+
+# 打印输入的内容
+print(name)
+</code></pre><p>执行脚本后发现，程序等待着输入你的名字，然后才能往下走。<br>也可以让用户输入多个信息，如年龄，家乡什么的</p>
+<pre><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+name = input(&quot;What is your name?&quot;)
+age = input(&quot;How old are you?&quot;)
+hometown = input(&quot;Where is your hometown?&quot;)
+
+print(&quot;Hello &quot;,name , &quot;your are &quot;, age , &quot;years old, you came from&quot;,hometown)
+</code></pre><h4 id="6-流程控制–IF语句"><a href="#6-流程控制–IF语句" class="headerlink" title="6.流程控制–IF语句"></a>6.流程控制–IF语句</h4><p>把写程序当作走路，一个人走在路上去往某个目的地，有走直路的，也有遇到很多的岔路口，但这些都会到达目的地。我们可以通过添加一些条件判断句来实现。这个过程就叫流程控制</p>
+<h5 id="6-1-if…else-语句"><a href="#6-1-if…else-语句" class="headerlink" title="6.1 if…else..语句"></a>6.1 if…else..语句</h5><p>单分支</p>
+<pre><code>if 条件:
+    满足条件后要执行的代码
+</code></pre><p>双分支：</p>
+<pre><code>if 条件:
+    满足后要执行的代码
+else:
+    if条件不满足的话走这边的代码
+
+
+if age_oldman &gt; 60 :
+    print(&quot;回家洗洗睡吧&quot;)
+else:
+    print(&quot;可以继续工作&quot;)
+</code></pre><p><strong>注意：</strong></p>
+<p>以上的这一代码需要注意<strong>缩进</strong>。</p>
+<p>这就是Python的一大特色，强制缩进，目的是为了让程序知道，每段代码依赖哪个条件，如果不通过缩进来区分，程序怎么会知道，当你的条件成立后，去执行哪些代码呢？</p>
+<p>在其它的语言里，大多通过{}来确定代码块，比如C,C++,Java,Javascript都是这样。</p>
+<pre><code>Python的缩进有以下几个原则:
+
+顶级代码必须顶行写，即如果一行代码本身不依赖于任何条件，那它必须不能进行任何缩进
+同一级别的代码，缩进必须一致
+官方建议缩进用4个空格
+</code></pre><p>多分支</p>
+<pre><code>if 条件:
+    满足条件执行代码
+elif 条件:
+    上面的条件不满足就走这个
+elif 条件:
+    上面的条件不满足就走这个
+elif 条件:
+    上面的条件不满足就走这个    
+else:
+    上面所有的条件不满足就走这段
+</code></pre><p>举个例子：一个人的年龄基本对应的做些什么事</p>
+<pre><code>age_people = int(input(&quot;请输入你的年龄：&quot;))
+
+if age_people &gt; 60:
+    print(&quot;如果你是男的该歇歇了，你老了，女的也是&quot;)
+
+else age_people &gt; 50:
+    print(&quot;女同志你该歇歇了，男同胞们加油&quot;)
+
+else age_people &gt;= 16:
+    print(&quot;人生有很多选择，你可以选择读书或者工作&quot;)
+
+else age_people &lt; 16:
+    print(&quot;请你的家人照顾好你&quot;)
+</code></pre><h4 id="7-流程控制—while循环"><a href="#7-流程控制—while循环" class="headerlink" title="7. 流程控制—while循环"></a>7. 流程控制—while循环</h4><h5 id="7-1-基本循环"><a href="#7-1-基本循环" class="headerlink" title="7.1 基本循环"></a>7.1 基本循环</h5><pre><code>while 条件:
+    # 循环体
+
+    # 如果条件为真，那么循环体则执行
+    # 如果条件为假，那么循环体不执行
+
+
+while True:
+    print(&quot;帅&quot;)
+    print(&quot;太帅&quot;)
+    print(&quot;非常帅&quot;)
+</code></pre><p>运行后会发现这个程序他会一直循环，首先代码是从上往下依次运行，运行到while时会先判断条件，条件成立就进入循环体，在循环体中从上往下依次进行，直到最后，完成一次循环，然后在跳到while处判断条件，再继续<br>。</p>
+<h5 id="7-2-终止循环"><a href="#7-2-终止循环" class="headerlink" title="7.2 终止循环"></a>7.2 终止循环</h5><pre><code>1. 改变条件(根据上面的流程，只要改变条件，就会终止循环)。
+2. 关键字：break。
+3. 调用系统命令：quit(),exit() 后面会讲到，不建议使用。
+4. 关键字：continue（终止本次循环）。
+</code></pre><h6 id="7-2-1-第一个终止方法"><a href="#7-2-1-第一个终止方法" class="headerlink" title="7.2.1 第一个终止方法"></a>7.2.1 第一个终止方法</h6><pre><code>flag = True
+while flag:
+    print(&quot;帅&quot;)
+    print(&quot;太帅&quot;)
+    print(&quot;非常帅&quot;)
+    flag = False
+    print(&apos;帅出天际&apos;)
+</code></pre><p>输出1~100所有数字<br>    count = 1<br>    flag = True<br>    while flag:<br>        print(count)<br>        count = count + 1<br>        if count == 101:<br>            flag = False</p>
+<p>使用while循环来求出1~100所有数的和</p>
+<pre><code>count = 1
+s = 0
+while count &lt; 101:
+    s = s + count
+    count = count + 1
+print(s)
+</code></pre><h6 id="7-2-2-break"><a href="#7-2-2-break" class="headerlink" title="7.2.2 break"></a>7.2.2 break</h6><p>break 很简单，其实是Python给大家提供的关键字。它的用法就是：循环中，只要遇到break马上退出循环：</p>
+<pre><code>flag = True
+
+print(1)
+
+while flag:
+
+    print(&quot;帅&quot;)
+    print(&quot;太帅&quot;)
+    print(&quot;非常帅&quot;)
+    break
+    print(&apos;帅出天际&apos;)
+
+print(2)
+</code></pre><p>打印出1~100所有的偶数</p>
+<p>方法一：</p>
+<pre><code>count =1 
+while True:
+    if count % 2 == 0:
+        print(count)
+    count = count + 1
+    if count == 101:
+        break
+</code></pre><p>方法二：</p>
+<pre><code>count = 1
+while count &lt; 101:
+    if count % 2 == 0:
+        print(count)
+    count = count + 1
+</code></pre><p>方法三：<br>    count = 2<br>    while count &lt; 101:<br>        print(count)<br>        count = count + 2</p>
+<h6 id="7-2-3-continue"><a href="#7-2-3-continue" class="headerlink" title="7.2.3 continue"></a>7.2.3 continue</h6><pre><code>flag = True
+
+print(1)
+
+while flag:
+
+    print(&quot;帅&quot;)
+    print(&quot;太帅&quot;)
+    print(&quot;非常帅&quot;)
+    continue
+    print(&apos;帅出天际&apos;)
+
+print(2)
+</code></pre><p>使用while循环打印1 2 3 4 5 6 8 9 10</p>
+<pre><code>count = 0 
+
+while count &lt;10
+
+    count = count + 1
+
+    if count == 7:
+        continue
+    print(count)
+</code></pre><p>打印出1 2 3 4 5 95 96 97 98 99 100</p>
+<pre><code>count = 0
+
+while count &lt;= 100:
+
+count += 1
+
+ if count &gt; and count &lt; 95:
+    continue
+
+print(count)
+</code></pre><h5 id="7-3-while-…-else-…"><a href="#7-3-while-…-else-…" class="headerlink" title="7.3 while … else …."></a>7.3 while … else ….</h5><p>与其它语言else 一般只与if 搭配不同，在Python 中还有个while …else 语句</p>
+<p>while 后面的else 作用是指，当while 循环正常执行完，中间没有被break 中止的话，就会执行else后面的语句</p>
+<pre><code>count = 0
+
+while count &lt;= 5 :
+
+    count += 1
+    print(&quot;Loop&quot;,count)
+
+else:
+    print(&quot;循环正常执行完啦&quot;)
+print(&quot;-----out of while loop ------&quot;)
+</code></pre><p>结果：</p>
+<pre><code>Loop 1
+Loop 2
+Loop 3
+Loop 4
+Loop 5
+Loop 6
+循环正常执行完啦
+-----out of while loop ------
+</code></pre><p>如果执行过程中被break啦，就不会执行else的语句啦</p>
+<pre><code>count = 0
+
+while count &lt;= 5 :
+    count += 1
+    if count == 3:break
+    print(&quot;Loop&quot;,count)
+
+else:
+    print(&quot;循环正常执行完啦&quot;)
+print(&quot;-----out of while loop ------&quot;)    
+</code></pre><p>结果：</p>
+<pre><code>Loop 1
+Loop 2
+-----out of while loop ------
+</code></pre><h4 id="8-格式化输出"><a href="#8-格式化输出" class="headerlink" title="8.格式化输出"></a>8.格式化输出</h4><p>我们想把一个人的姓名、年龄、工作、爱好打印成以下的格式：</p>
+<pre><code>------------ 拉斐尔  -----------
+Name  : 拉斐尔
+Age   : 20
+job   : student
+Hobby : girl
+------------- end --------------
+</code></pre><p>我们可以这样做：</p>
+<pre><code>name = input(&quot;Name:&quot;)
+age = input(&quot;Age:&quot;)
+job = input(&quot;Job:&quot;)
+hobby = input(&quot;Hobby:&quot;)
+
+info = &apos;&apos;&apos;
+------------ %s  -----------
+Name  : %s        
+Age   : %s
+job   : %s
+Hobby : %s
+------------- end --------------
+&apos;&apos;&apos; %(name,age,job,hobby)
+
+print(info)
+</code></pre><p><strong>注意</strong></p>
+<p><strong>%s</strong>代表字符串占位符，除此之外，还有%d，是数字占位符，如果把上面的age后面的换成%d，就代表你必须只能输入数字。如果你要改成%d,那么之前的年龄你也需要修改，因为input接受的内容默认是字符串格式，所以需要改成</p>
+<pre><code>age = int(input(&quot;Age:&quot;))
+</code></pre><h4 id="9-函数-初识"><a href="#9-函数-初识" class="headerlink" title="9.函数(初识)"></a>9.函数(初识)</h4><p>函数就像小型程序，可用来执行特定的操作。Python提供了很多的函数，用来进行很神奇的操作。</p>
+<h4 id="10-模块"><a href="#10-模块" class="headerlink" title="10.模块"></a>10.模块</h4><p>可将模块视为扩展。通常是将其导入可以扩展Python功能。要想导入模块，首先要使用特殊命令import，如导入math：</p>
 <pre><code>import math
 math.floor(32.9)
 </code></pre>
@@ -542,7 +764,7 @@ math.floor(32.9)
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -604,7 +826,7 @@ math.floor(32.9)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-运行Python代码"><span class="nav-number">1.</span> <span class="nav-text">1.运行Python代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-注释"><span class="nav-number">2.</span> <span class="nav-text">2.注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-变量"><span class="nav-number">3.</span> <span class="nav-text">3.变量</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#3-1-声明变量"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 声明变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-2-变量定义的规则"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2 变量定义的规则</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#4-常量"><span class="nav-number">4.</span> <span class="nav-text">4.常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-函数-初识"><span class="nav-number">5.</span> <span class="nav-text">5.函数(初识)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-模块"><span class="nav-number">6.</span> <span class="nav-text">6.模块</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-运行Python代码"><span class="nav-number">1.</span> <span class="nav-text">1.运行Python代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-注释"><span class="nav-number">2.</span> <span class="nav-text">2.注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-变量"><span class="nav-number">3.</span> <span class="nav-text">3.变量</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#3-1-声明变量"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 声明变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-2-变量定义的规则"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2 变量定义的规则</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#4-常量"><span class="nav-number">4.</span> <span class="nav-text">4.常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-获取用户输入-程序交互"><span class="nav-number">5.</span> <span class="nav-text">5.获取用户输入(程序交互)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-流程控制–IF语句"><span class="nav-number">6.</span> <span class="nav-text">6.流程控制–IF语句</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-if…else-语句"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 if…else..语句</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-流程控制—while循环"><span class="nav-number">7.</span> <span class="nav-text">7. 流程控制—while循环</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#7-1-基本循环"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 基本循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-2-终止循环"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 终止循环</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#7-2-1-第一个终止方法"><span class="nav-number">7.2.1.</span> <span class="nav-text">7.2.1 第一个终止方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-2-2-break"><span class="nav-number">7.2.2.</span> <span class="nav-text">7.2.2 break</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-2-3-continue"><span class="nav-number">7.2.3.</span> <span class="nav-text">7.2.3 continue</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-3-while-…-else-…"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 while … else ….</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-格式化输出"><span class="nav-number">8.</span> <span class="nav-text">8.格式化输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-函数-初识"><span class="nav-number">9.</span> <span class="nav-text">9.函数(初识)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-模块"><span class="nav-number">10.</span> <span class="nav-text">10.模块</span></a></li></div>
             
 
           </div>
