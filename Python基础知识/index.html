@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="Rafael">
 <meta property="og:description" content="行宫 唐代·元稹 寥落古行宫，宫花寂寞红。 白头宫女在，闲坐说玄宗。 1.运行Python代码1.在d盘下创建一个it.py文件，里面内容是： print(&amp;apos;hello world&amp;apos;) 2.打开Windows命令行输入cmd，确认后写入代码： python d:it.py 总结：创建一个后缀名.py的文件，写入内容，打开终端，输入cmd，最后 python 文件路径，回车。 2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-05T04:41:47.321Z">
+<meta property="og:updated_time" content="2019-10-06T02:34:19.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础知识">
 <meta name="twitter:description" content="行宫 唐代·元稹 寥落古行宫，宫花寂寞红。 白头宫女在，闲坐说玄宗。 1.运行Python代码1.在d盘下创建一个it.py文件，里面内容是： print(&amp;apos;hello world&amp;apos;) 2.打开Windows命令行输入cmd，确认后写入代码： python d:it.py 总结：创建一个后缀名.py的文件，写入内容，打开终端，输入cmd，最后 python 文件路径，回车。 2">
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T18:26:54+08:00">
-                2018-08-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-01T10:26:54+08:00">
+                2017-10-01
               </time>
             
 
@@ -400,7 +400,7 @@ hometown = input(&quot;Where is your hometown?&quot;)
 
 print(&quot;Hello &quot;,name , &quot;your are &quot;, age , &quot;years old, you came from&quot;,hometown)
 </code></pre><h4 id="6-流程控制–IF语句"><a href="#6-流程控制–IF语句" class="headerlink" title="6.流程控制–IF语句"></a>6.流程控制–IF语句</h4><p>把写程序当作走路，一个人走在路上去往某个目的地，有走直路的，也有遇到很多的岔路口，但这些都会到达目的地。我们可以通过添加一些条件判断句来实现。这个过程就叫流程控制</p>
-<h5 id="6-1-if…else-语句"><a href="#6-1-if…else-语句" class="headerlink" title="6.1 if…else..语句"></a>6.1 if…else..语句</h5><p>单分支</p>
+<h6 id="6-1-if…else-语句"><a href="#6-1-if…else-语句" class="headerlink" title="6.1 if…else..语句"></a>6.1 if…else..语句</h6><p>单分支</p>
 <pre><code>if 条件:
     满足条件后要执行的代码
 </code></pre><p>双分支：</p>
@@ -448,7 +448,7 @@ else age_people &gt;= 16:
 
 else age_people &lt; 16:
     print(&quot;请你的家人照顾好你&quot;)
-</code></pre><h4 id="7-流程控制—while循环"><a href="#7-流程控制—while循环" class="headerlink" title="7. 流程控制—while循环"></a>7. 流程控制—while循环</h4><h5 id="7-1-基本循环"><a href="#7-1-基本循环" class="headerlink" title="7.1 基本循环"></a>7.1 基本循环</h5><pre><code>while 条件:
+</code></pre><h4 id="7-流程控制—while循环"><a href="#7-流程控制—while循环" class="headerlink" title="7. 流程控制—while循环"></a>7. 流程控制—while循环</h4><h6 id="7-1-基本循环"><a href="#7-1-基本循环" class="headerlink" title="7.1 基本循环"></a>7.1 基本循环</h6><pre><code>while 条件:
     # 循环体
 
     # 如果条件为真，那么循环体则执行
@@ -460,11 +460,12 @@ while True:
     print(&quot;太帅&quot;)
     print(&quot;非常帅&quot;)
 </code></pre><p>运行后会发现这个程序他会一直循环，首先代码是从上往下依次运行，运行到while时会先判断条件，条件成立就进入循环体，在循环体中从上往下依次进行，直到最后，完成一次循环，然后在跳到while处判断条件，再继续<br>。</p>
-<h5 id="7-2-终止循环"><a href="#7-2-终止循环" class="headerlink" title="7.2 终止循环"></a>7.2 终止循环</h5><pre><code>1. 改变条件(根据上面的流程，只要改变条件，就会终止循环)。
+<h6 id="7-2-终止循环"><a href="#7-2-终止循环" class="headerlink" title="7.2 终止循环"></a>7.2 终止循环</h6><pre><code>1. 改变条件(根据上面的流程，只要改变条件，就会终止循环)。
 2. 关键字：break。
 3. 调用系统命令：quit(),exit() 后面会讲到，不建议使用。
 4. 关键字：continue（终止本次循环）。
-</code></pre><h6 id="7-2-1-第一个终止方法"><a href="#7-2-1-第一个终止方法" class="headerlink" title="7.2.1 第一个终止方法"></a>7.2.1 第一个终止方法</h6><pre><code>flag = True
+</code></pre><p>####### 7.2.1 第一个终止方法</p>
+<pre><code>flag = True
 while flag:
     print(&quot;帅&quot;)
     print(&quot;太帅&quot;)
@@ -479,7 +480,8 @@ while count &lt; 101:
     s = s + count
     count = count + 1
 print(s)
-</code></pre><h6 id="7-2-2-break"><a href="#7-2-2-break" class="headerlink" title="7.2.2 break"></a>7.2.2 break</h6><p>break 很简单，其实是Python给大家提供的关键字。它的用法就是：循环中，只要遇到break马上退出循环：</p>
+</code></pre><p>####### 7.2.2 break</p>
+<p>break 很简单，其实是Python给大家提供的关键字。它的用法就是：循环中，只要遇到break马上退出循环：</p>
 <pre><code>flag = True
 
 print(1)
@@ -509,7 +511,8 @@ while count &lt; 101:
         print(count)
     count = count + 1
 </code></pre><p>方法三：<br>    count = 2<br>    while count &lt; 101:<br>        print(count)<br>        count = count + 2</p>
-<h6 id="7-2-3-continue"><a href="#7-2-3-continue" class="headerlink" title="7.2.3 continue"></a>7.2.3 continue</h6><pre><code>flag = True
+<p>####### 7.2.3 continue</p>
+<pre><code>flag = True
 
 print(1)
 
@@ -543,7 +546,7 @@ count += 1
     continue
 
 print(count)
-</code></pre><h5 id="7-3-while-…-else-…"><a href="#7-3-while-…-else-…" class="headerlink" title="7.3 while … else …."></a>7.3 while … else ….</h5><p>与其它语言else 一般只与if 搭配不同，在Python 中还有个while …else 语句</p>
+</code></pre><h6 id="7-3-while-…-else-…"><a href="#7-3-while-…-else-…" class="headerlink" title="7.3 while … else …."></a>7.3 while … else ….</h6><p>与其它语言else 一般只与if 搭配不同，在Python 中还有个while …else 语句</p>
 <p>while 后面的else 作用是指，当while 循环正常执行完，中间没有被break 中止的话，就会执行else后面的语句</p>
 <pre><code>count = 0
 
@@ -627,7 +630,7 @@ math.floor(32.9)
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>本文标题:</span><a href="/Python基础知识/">Python基础知识</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mr Zuo 的个人博客">Mr Zuo</a></p>
-  <p><span>发布时间:</span>2018年08月28日 - 18:08</p>
+  <p><span>发布时间:</span>2017年10月01日 - 10:10</p>
   <p><span>原始链接:</span><a href="/Python基础知识/" title="Python基础知识">http://fireworksrain.com/Python基础知识/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/Python基础知识/" aria-label="复制成功！"></i></span>
   </p>
@@ -673,8 +676,8 @@ math.floor(32.9)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Python语言的介绍/" rel="next" title="Python语言的介绍">
-                <i class="fa fa-chevron-left"></i> Python语言的介绍
+              <a href="/Django模版系统/" rel="next" title="Django模版系统">
+                <i class="fa fa-chevron-left"></i> Django模版系统
               </a>
             
           </div>
@@ -683,8 +686,8 @@ math.floor(32.9)
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/linux下的python/" rel="prev" title="linux下的python">
-                linux下的python <i class="fa fa-chevron-right"></i>
+              <a href="/爬虫重点知识梳理/" rel="prev" title="爬虫重点知识梳理">
+                爬虫重点知识梳理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -786,7 +789,7 @@ math.floor(32.9)
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -826,7 +829,7 @@ math.floor(32.9)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-运行Python代码"><span class="nav-number">1.</span> <span class="nav-text">1.运行Python代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-注释"><span class="nav-number">2.</span> <span class="nav-text">2.注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-变量"><span class="nav-number">3.</span> <span class="nav-text">3.变量</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#3-1-声明变量"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 声明变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-2-变量定义的规则"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2 变量定义的规则</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#4-常量"><span class="nav-number">4.</span> <span class="nav-text">4.常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-获取用户输入-程序交互"><span class="nav-number">5.</span> <span class="nav-text">5.获取用户输入(程序交互)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-流程控制–IF语句"><span class="nav-number">6.</span> <span class="nav-text">6.流程控制–IF语句</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-if…else-语句"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 if…else..语句</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-流程控制—while循环"><span class="nav-number">7.</span> <span class="nav-text">7. 流程控制—while循环</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#7-1-基本循环"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 基本循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-2-终止循环"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 终止循环</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#7-2-1-第一个终止方法"><span class="nav-number">7.2.1.</span> <span class="nav-text">7.2.1 第一个终止方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-2-2-break"><span class="nav-number">7.2.2.</span> <span class="nav-text">7.2.2 break</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-2-3-continue"><span class="nav-number">7.2.3.</span> <span class="nav-text">7.2.3 continue</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-3-while-…-else-…"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 while … else ….</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-格式化输出"><span class="nav-number">8.</span> <span class="nav-text">8.格式化输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-函数-初识"><span class="nav-number">9.</span> <span class="nav-text">9.函数(初识)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-模块"><span class="nav-number">10.</span> <span class="nav-text">10.模块</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-运行Python代码"><span class="nav-number">1.</span> <span class="nav-text">1.运行Python代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-注释"><span class="nav-number">2.</span> <span class="nav-text">2.注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-变量"><span class="nav-number">3.</span> <span class="nav-text">3.变量</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#3-1-声明变量"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 声明变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-2-变量定义的规则"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2 变量定义的规则</span></a></li></ol></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#4-常量"><span class="nav-number">4.</span> <span class="nav-text">4.常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-获取用户输入-程序交互"><span class="nav-number">5.</span> <span class="nav-text">5.获取用户输入(程序交互)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-流程控制–IF语句"><span class="nav-number">6.</span> <span class="nav-text">6.流程控制–IF语句</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#6-1-if…else-语句"><span class="nav-number">6.0.1.</span> <span class="nav-text">6.1 if…else..语句</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-流程控制—while循环"><span class="nav-number">7.</span> <span class="nav-text">7. 流程控制—while循环</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#7-1-基本循环"><span class="nav-number">7.0.1.</span> <span class="nav-text">7.1 基本循环</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-2-终止循环"><span class="nav-number">7.0.2.</span> <span class="nav-text">7.2 终止循环</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-3-while-…-else-…"><span class="nav-number">7.0.3.</span> <span class="nav-text">7.3 while … else ….</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-格式化输出"><span class="nav-number">8.</span> <span class="nav-text">8.格式化输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-函数-初识"><span class="nav-number">9.</span> <span class="nav-text">9.函数(初识)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-模块"><span class="nav-number">10.</span> <span class="nav-text">10.模块</span></a></li></div>
             
 
           </div>

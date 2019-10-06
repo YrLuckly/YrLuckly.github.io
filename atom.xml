@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fireworksrain.com/"/>
-  <updated>2019-10-05T02:50:08.057Z</updated>
+  <updated>2019-09-27T02:21:48.000Z</updated>
   <id>http://fireworksrain.com/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Python基础知识之数据类型(1)</title>
-    <link href="http://fireworksrain.com/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-1/"/>
-    <id>http://fireworksrain.com/Python基础知识之数据类型-1/</id>
-    <published>2019-10-05T02:50:07.000Z</published>
-    <updated>2019-10-05T02:50:08.057Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Python游戏的基础知识</title>
@@ -150,23 +136,23 @@
   </entry>
   
   <entry>
-    <title>Python基础知识</title>
-    <link href="http://fireworksrain.com/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://fireworksrain.com/Python基础知识/</id>
-    <published>2018-08-28T10:26:54.000Z</published>
-    <updated>2019-10-05T04:41:47.321Z</updated>
+    <title>Python基础知识之数据类型(1)</title>
+    <link href="http://fireworksrain.com/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-1/"/>
+    <id>http://fireworksrain.com/Python基础知识之数据类型-1/</id>
+    <published>2018-10-01T07:30:07.000Z</published>
+    <updated>2019-10-06T02:19:44.962Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>行宫唐代·元稹寥落古行宫，宫花寂寞红。白头宫女在，闲坐说玄宗。</code></pre><h4 id="1-运行Python代码"><a href="#1-运行Python代码" class="headerlink" title="1.运行Python代码"></a>1.运行Python代码</h4><p>1.在d盘下创建一个it.py文件，里面内容是：</p><pre><code>print(&apos;hello world&apos;)</code></pre><p>2.打开Windows命令行输入cmd，确认后写入代码：</p><pre><code>python d:it.py</code></pre><p>总结：创建一个后缀名.py的文件，写入内容，打开终端，输入cmd，最后 python 文件路径，回车。</p><h4 id="2-注释"><a href="#2-注释" class="headerlink" title="2.注释"></a>2.注释</h4><p>注释，是为了让每一个程序员都能看懂代码，了解其中的内容。作为一名程序员，我们应该“汝必注释”，，注释务必要有物，不能重复注释<br>常见的注释方法：</p><pre><code>当行注释：# 被注释内容多行注释：&apos;&apos;&apos;被注释内容&apos;&apos;&apos; 或者 &quot;&quot;&quot;被注释内容&quot;&quot;&quot;</code></pre><h4 id="3-变量"><a href="#3-变量" class="headerlink" title="3.变量"></a>3.变量</h4><p>变量是表示(或指示)特定值的名称。</p><h6 id="3-1-声明变量"><a href="#3-1-声明变量" class="headerlink" title="3.1 声明变量"></a>3.1 声明变量</h6><pre><code>mon = &apos;users&apos;</code></pre><p>上述代码声明了一个变量，变量名是 mon，变量的值是users。</p><h6 id="3-2-变量定义的规则"><a href="#3-2-变量定义的规则" class="headerlink" title="3.2 变量定义的规则"></a>3.2 变量定义的规则</h6><pre><code>变量名只能是字母、数字或下划线的任意组合变量名的第一个字符不能是数字不能使用关键字声明为变量名经常混淆的且不能使用的：[&apos;and&apos;, &apos;as&apos;, &apos;assert&apos;, &apos;break&apos;, &apos;class&apos;, &apos;continue&apos;, &apos;def&apos;, &apos;del&apos;, &apos;elif&apos;, &apos;else&apos;, &apos;except&apos;, &apos;exec&apos;, &apos;finally&apos;, &apos;for&apos;, &apos;from&apos;, &apos;global&apos;, &apos;if&apos;, &apos;import&apos;, &apos;in&apos;, &apos;is&apos;, &apos;lambda&apos;, &apos;not&apos;, &apos;or&apos;, &apos;pass&apos;, &apos;print&apos;, &apos;raise&apos;, &apos;return&apos;, &apos;try&apos;, &apos;while&apos;, &apos;with&apos;, &apos;yield&apos;]不好的方式命名：为中文、拼音，过长，不达意</code></pre><h4 id="4-常量"><a href="#4-常量" class="headerlink" title="4.常量"></a>4.常量</h4><p>常量即指不变的量，如π= 3.141592653…, 或在程序运行过程中不会改变的量</p><p>举例，假如有一个人的岁数会变，那这就是个变量，但在一些情况下，他的岁数不会变了，那就是常量。在Python中没有一个专门的语法代表常量，程序员约定俗成用变量名全部大写代表常量</p><pre><code>AGE_OF_OLDBOY = 56</code></pre><h4 id="5-获取用户输入-程序交互"><a href="#5-获取用户输入-程序交互" class="headerlink" title="5.获取用户输入(程序交互)"></a>5.获取用户输入(程序交互)</h4><pre><code>#!/usr/bin/env python# -*- coding: utf-8 -*-# 将用户输入的内容赋值给 name 变量name = input(&quot;请输入用户名：&quot;)# 打印输入的内容print(name)</code></pre><p>执行脚本后发现，程序等待着输入你的名字，然后才能往下走。<br>也可以让用户输入多个信息，如年龄，家乡什么的</p><pre><code>#!/usr/bin/env python# -*- coding: utf-8 -*-name = input(&quot;What is your name?&quot;)age = input(&quot;How old are you?&quot;)hometown = input(&quot;Where is your hometown?&quot;)print(&quot;Hello &quot;,name , &quot;your are &quot;, age , &quot;years old, you came from&quot;,hometown)</code></pre><h4 id="6-流程控制–IF语句"><a href="#6-流程控制–IF语句" class="headerlink" title="6.流程控制–IF语句"></a>6.流程控制–IF语句</h4><p>把写程序当作走路，一个人走在路上去往某个目的地，有走直路的，也有遇到很多的岔路口，但这些都会到达目的地。我们可以通过添加一些条件判断句来实现。这个过程就叫流程控制</p><h5 id="6-1-if…else-语句"><a href="#6-1-if…else-语句" class="headerlink" title="6.1 if…else..语句"></a>6.1 if…else..语句</h5><p>单分支</p><pre><code>if 条件:    满足条件后要执行的代码</code></pre><p>双分支：</p><pre><code>if 条件:    满足后要执行的代码else:    if条件不满足的话走这边的代码if age_oldman &gt; 60 :    print(&quot;回家洗洗睡吧&quot;)else:    print(&quot;可以继续工作&quot;)</code></pre><p><strong>注意：</strong></p><p>以上的这一代码需要注意<strong>缩进</strong>。</p><p>这就是Python的一大特色，强制缩进，目的是为了让程序知道，每段代码依赖哪个条件，如果不通过缩进来区分，程序怎么会知道，当你的条件成立后，去执行哪些代码呢？</p><p>在其它的语言里，大多通过{}来确定代码块，比如C,C++,Java,Javascript都是这样。</p><pre><code>Python的缩进有以下几个原则:顶级代码必须顶行写，即如果一行代码本身不依赖于任何条件，那它必须不能进行任何缩进同一级别的代码，缩进必须一致官方建议缩进用4个空格</code></pre><p>多分支</p><pre><code>if 条件:    满足条件执行代码elif 条件:    上面的条件不满足就走这个elif 条件:    上面的条件不满足就走这个elif 条件:    上面的条件不满足就走这个    else:    上面所有的条件不满足就走这段</code></pre><p>举个例子：一个人的年龄基本对应的做些什么事</p><pre><code>age_people = int(input(&quot;请输入你的年龄：&quot;))if age_people &gt; 60:    print(&quot;如果你是男的该歇歇了，你老了，女的也是&quot;)else age_people &gt; 50:    print(&quot;女同志你该歇歇了，男同胞们加油&quot;)else age_people &gt;= 16:    print(&quot;人生有很多选择，你可以选择读书或者工作&quot;)else age_people &lt; 16:    print(&quot;请你的家人照顾好你&quot;)</code></pre><h4 id="7-流程控制—while循环"><a href="#7-流程控制—while循环" class="headerlink" title="7. 流程控制—while循环"></a>7. 流程控制—while循环</h4><h5 id="7-1-基本循环"><a href="#7-1-基本循环" class="headerlink" title="7.1 基本循环"></a>7.1 基本循环</h5><pre><code>while 条件:    # 循环体    # 如果条件为真，那么循环体则执行    # 如果条件为假，那么循环体不执行while True:    print(&quot;帅&quot;)    print(&quot;太帅&quot;)    print(&quot;非常帅&quot;)</code></pre><p>运行后会发现这个程序他会一直循环，首先代码是从上往下依次运行，运行到while时会先判断条件，条件成立就进入循环体，在循环体中从上往下依次进行，直到最后，完成一次循环，然后在跳到while处判断条件，再继续<br>。</p><h5 id="7-2-终止循环"><a href="#7-2-终止循环" class="headerlink" title="7.2 终止循环"></a>7.2 终止循环</h5><pre><code>1. 改变条件(根据上面的流程，只要改变条件，就会终止循环)。2. 关键字：break。3. 调用系统命令：quit(),exit() 后面会讲到，不建议使用。4. 关键字：continue（终止本次循环）。</code></pre><h6 id="7-2-1-第一个终止方法"><a href="#7-2-1-第一个终止方法" class="headerlink" title="7.2.1 第一个终止方法"></a>7.2.1 第一个终止方法</h6><pre><code>flag = Truewhile flag:    print(&quot;帅&quot;)    print(&quot;太帅&quot;)    print(&quot;非常帅&quot;)    flag = False    print(&apos;帅出天际&apos;)</code></pre><p>输出1~100所有数字<br>    count = 1<br>    flag = True<br>    while flag:<br>        print(count)<br>        count = count + 1<br>        if count == 101:<br>            flag = False</p><p>使用while循环来求出1~100所有数的和</p><pre><code>count = 1s = 0while count &lt; 101:    s = s + count    count = count + 1print(s)</code></pre><h6 id="7-2-2-break"><a href="#7-2-2-break" class="headerlink" title="7.2.2 break"></a>7.2.2 break</h6><p>break 很简单，其实是Python给大家提供的关键字。它的用法就是：循环中，只要遇到break马上退出循环：</p><pre><code>flag = Trueprint(1)while flag:    print(&quot;帅&quot;)    print(&quot;太帅&quot;)    print(&quot;非常帅&quot;)    break    print(&apos;帅出天际&apos;)print(2)</code></pre><p>打印出1~100所有的偶数</p><p>方法一：</p><pre><code>count =1 while True:    if count % 2 == 0:        print(count)    count = count + 1    if count == 101:        break</code></pre><p>方法二：</p><pre><code>count = 1while count &lt; 101:    if count % 2 == 0:        print(count)    count = count + 1</code></pre><p>方法三：<br>    count = 2<br>    while count &lt; 101:<br>        print(count)<br>        count = count + 2</p><h6 id="7-2-3-continue"><a href="#7-2-3-continue" class="headerlink" title="7.2.3 continue"></a>7.2.3 continue</h6><pre><code>flag = Trueprint(1)while flag:    print(&quot;帅&quot;)    print(&quot;太帅&quot;)    print(&quot;非常帅&quot;)    continue    print(&apos;帅出天际&apos;)print(2)</code></pre><p>使用while循环打印1 2 3 4 5 6 8 9 10</p><pre><code>count = 0 while count &lt;10    count = count + 1    if count == 7:        continue    print(count)</code></pre><p>打印出1 2 3 4 5 95 96 97 98 99 100</p><pre><code>count = 0while count &lt;= 100:count += 1 if count &gt; and count &lt; 95:    continueprint(count)</code></pre><h5 id="7-3-while-…-else-…"><a href="#7-3-while-…-else-…" class="headerlink" title="7.3 while … else …."></a>7.3 while … else ….</h5><p>与其它语言else 一般只与if 搭配不同，在Python 中还有个while …else 语句</p><p>while 后面的else 作用是指，当while 循环正常执行完，中间没有被break 中止的话，就会执行else后面的语句</p><pre><code>count = 0while count &lt;= 5 :    count += 1    print(&quot;Loop&quot;,count)else:    print(&quot;循环正常执行完啦&quot;)print(&quot;-----out of while loop ------&quot;)</code></pre><p>结果：</p><pre><code>Loop 1Loop 2Loop 3Loop 4Loop 5Loop 6循环正常执行完啦-----out of while loop ------</code></pre><p>如果执行过程中被break啦，就不会执行else的语句啦</p><pre><code>count = 0while count &lt;= 5 :    count += 1    if count == 3:break    print(&quot;Loop&quot;,count)else:    print(&quot;循环正常执行完啦&quot;)print(&quot;-----out of while loop ------&quot;)    </code></pre><p>结果：</p><pre><code>Loop 1Loop 2-----out of while loop ------</code></pre><h4 id="8-格式化输出"><a href="#8-格式化输出" class="headerlink" title="8.格式化输出"></a>8.格式化输出</h4><p>我们想把一个人的姓名、年龄、工作、爱好打印成以下的格式：</p><pre><code>------------ 拉斐尔  -----------Name  : 拉斐尔Age   : 20job   : studentHobby : girl------------- end --------------</code></pre><p>我们可以这样做：</p><pre><code>name = input(&quot;Name:&quot;)age = input(&quot;Age:&quot;)job = input(&quot;Job:&quot;)hobby = input(&quot;Hobby:&quot;)info = &apos;&apos;&apos;------------ %s  -----------Name  : %s        Age   : %sjob   : %sHobby : %s------------- end --------------&apos;&apos;&apos; %(name,age,job,hobby)print(info)</code></pre><p><strong>注意</strong></p><p><strong>%s</strong>代表字符串占位符，除此之外，还有%d，是数字占位符，如果把上面的age后面的换成%d，就代表你必须只能输入数字。如果你要改成%d,那么之前的年龄你也需要修改，因为input接受的内容默认是字符串格式，所以需要改成</p><pre><code>age = int(input(&quot;Age:&quot;))</code></pre><h4 id="9-函数-初识"><a href="#9-函数-初识" class="headerlink" title="9.函数(初识)"></a>9.函数(初识)</h4><p>函数就像小型程序，可用来执行特定的操作。Python提供了很多的函数，用来进行很神奇的操作。</p><h4 id="10-模块"><a href="#10-模块" class="headerlink" title="10.模块"></a>10.模块</h4><p>可将模块视为扩展。通常是将其导入可以扩展Python功能。要想导入模块，首先要使用特殊命令import，如导入math：</p><pre><code>import mathmath.floor(32.9)</code></pre>]]></content>
+    <content type="html"><![CDATA[<pre><code>相思唐代：王维红豆生南国，春来发几枝。愿君多采撷，此物最相思。</code></pre><h4 id="1-数据结构与数据类型"><a href="#1-数据结构与数据类型" class="headerlink" title="1.数据结构与数据类型"></a>1.数据结构与数据类型</h4><p>数据结构是以某种方式组合起来的数据元素集合。在Python中，最基本的数据结构为序列。序列中的每个元素都有编号，即位置或者索引，其中第一个元素索引为0，第二个索引为1，以此类推。</p><p>数据类型：是一种值的集合和定义在这个值集上的一组操作的总称。</p><p>数据结构是数据类型的一个子集。</p><p>Python中内置了多种序列，常用有列表、元祖还有字符串常用如下：</p><pre><code>整数(int)，字符串(str)，布尔值(bool)，列表(list),元祖(tuple)，字典(dict)，集合(set)int: 数字，主要运用于运算str: 简单少量的存储数据，并且可以进行相应的操作bool: 判断真假，True，Falselist: 大量有序数据，，[1,&apos;ww&apos;,[111]]tuple: 只读，不可更改dict: 大量的数据，也是关联性比较强的数据{&apos;name&apos;:&apos;Rafael&apos;,&apos;age&apos;:20,&apos;hobbies_list&apos;:[&apos;喝酒&apos;,&apos;美女&apos;]}</code></pre><h4 id="2-数据类型–int"><a href="#2-数据类型–int" class="headerlink" title="2.数据类型–int"></a>2.数据类型–int</h4>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;pre&gt;&lt;code&gt;行宫
-唐代·元稹
-寥落古行宫，宫花寂寞红。
-白头宫女在，闲坐说玄宗。
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-运行Python代码&quot;&gt;&lt;a href=&quot;#1-运行Python代码&quot; class=&quot;headerlink&quot; title=&quot;1.运行Pytho
+        &lt;pre&gt;&lt;code&gt;相思
+唐代：王维
+红豆生南国，春来发几枝。
+愿君多采撷，此物最相思。
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-数据结构与数据类型&quot;&gt;&lt;a href=&quot;#1-数据结构与数据类型&quot; class=&quot;headerlink&quot; title=&quot;1.数据结构与数据类型
       
     
     </summary>
@@ -174,7 +160,7 @@
       <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
     
     
-      <category term="基础知识" scheme="http://fireworksrain.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+      <category term="Python之数据类型" scheme="http://fireworksrain.com/tags/Python%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
     
   </entry>
   
@@ -323,6 +309,35 @@
   </entry>
   
   <entry>
+    <title>Python基础知识</title>
+    <link href="http://fireworksrain.com/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://fireworksrain.com/Python基础知识/</id>
+    <published>2017-10-01T02:26:54.000Z</published>
+    <updated>2019-10-06T02:34:19.028Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>行宫唐代·元稹寥落古行宫，宫花寂寞红。白头宫女在，闲坐说玄宗。</code></pre><h4 id="1-运行Python代码"><a href="#1-运行Python代码" class="headerlink" title="1.运行Python代码"></a>1.运行Python代码</h4><p>1.在d盘下创建一个it.py文件，里面内容是：</p><pre><code>print(&apos;hello world&apos;)</code></pre><p>2.打开Windows命令行输入cmd，确认后写入代码：</p><pre><code>python d:it.py</code></pre><p>总结：创建一个后缀名.py的文件，写入内容，打开终端，输入cmd，最后 python 文件路径，回车。</p><h4 id="2-注释"><a href="#2-注释" class="headerlink" title="2.注释"></a>2.注释</h4><p>注释，是为了让每一个程序员都能看懂代码，了解其中的内容。作为一名程序员，我们应该“汝必注释”，，注释务必要有物，不能重复注释<br>常见的注释方法：</p><pre><code>当行注释：# 被注释内容多行注释：&apos;&apos;&apos;被注释内容&apos;&apos;&apos; 或者 &quot;&quot;&quot;被注释内容&quot;&quot;&quot;</code></pre><h4 id="3-变量"><a href="#3-变量" class="headerlink" title="3.变量"></a>3.变量</h4><p>变量是表示(或指示)特定值的名称。</p><h6 id="3-1-声明变量"><a href="#3-1-声明变量" class="headerlink" title="3.1 声明变量"></a>3.1 声明变量</h6><pre><code>mon = &apos;users&apos;</code></pre><p>上述代码声明了一个变量，变量名是 mon，变量的值是users。</p><h6 id="3-2-变量定义的规则"><a href="#3-2-变量定义的规则" class="headerlink" title="3.2 变量定义的规则"></a>3.2 变量定义的规则</h6><pre><code>变量名只能是字母、数字或下划线的任意组合变量名的第一个字符不能是数字不能使用关键字声明为变量名经常混淆的且不能使用的：[&apos;and&apos;, &apos;as&apos;, &apos;assert&apos;, &apos;break&apos;, &apos;class&apos;, &apos;continue&apos;, &apos;def&apos;, &apos;del&apos;, &apos;elif&apos;, &apos;else&apos;, &apos;except&apos;, &apos;exec&apos;, &apos;finally&apos;, &apos;for&apos;, &apos;from&apos;, &apos;global&apos;, &apos;if&apos;, &apos;import&apos;, &apos;in&apos;, &apos;is&apos;, &apos;lambda&apos;, &apos;not&apos;, &apos;or&apos;, &apos;pass&apos;, &apos;print&apos;, &apos;raise&apos;, &apos;return&apos;, &apos;try&apos;, &apos;while&apos;, &apos;with&apos;, &apos;yield&apos;]不好的方式命名：为中文、拼音，过长，不达意</code></pre><h4 id="4-常量"><a href="#4-常量" class="headerlink" title="4.常量"></a>4.常量</h4><p>常量即指不变的量，如π= 3.141592653…, 或在程序运行过程中不会改变的量</p><p>举例，假如有一个人的岁数会变，那这就是个变量，但在一些情况下，他的岁数不会变了，那就是常量。在Python中没有一个专门的语法代表常量，程序员约定俗成用变量名全部大写代表常量</p><pre><code>AGE_OF_OLDBOY = 56</code></pre><h4 id="5-获取用户输入-程序交互"><a href="#5-获取用户输入-程序交互" class="headerlink" title="5.获取用户输入(程序交互)"></a>5.获取用户输入(程序交互)</h4><pre><code>#!/usr/bin/env python# -*- coding: utf-8 -*-# 将用户输入的内容赋值给 name 变量name = input(&quot;请输入用户名：&quot;)# 打印输入的内容print(name)</code></pre><p>执行脚本后发现，程序等待着输入你的名字，然后才能往下走。<br>也可以让用户输入多个信息，如年龄，家乡什么的</p><pre><code>#!/usr/bin/env python# -*- coding: utf-8 -*-name = input(&quot;What is your name?&quot;)age = input(&quot;How old are you?&quot;)hometown = input(&quot;Where is your hometown?&quot;)print(&quot;Hello &quot;,name , &quot;your are &quot;, age , &quot;years old, you came from&quot;,hometown)</code></pre><h4 id="6-流程控制–IF语句"><a href="#6-流程控制–IF语句" class="headerlink" title="6.流程控制–IF语句"></a>6.流程控制–IF语句</h4><p>把写程序当作走路，一个人走在路上去往某个目的地，有走直路的，也有遇到很多的岔路口，但这些都会到达目的地。我们可以通过添加一些条件判断句来实现。这个过程就叫流程控制</p><h6 id="6-1-if…else-语句"><a href="#6-1-if…else-语句" class="headerlink" title="6.1 if…else..语句"></a>6.1 if…else..语句</h6><p>单分支</p><pre><code>if 条件:    满足条件后要执行的代码</code></pre><p>双分支：</p><pre><code>if 条件:    满足后要执行的代码else:    if条件不满足的话走这边的代码if age_oldman &gt; 60 :    print(&quot;回家洗洗睡吧&quot;)else:    print(&quot;可以继续工作&quot;)</code></pre><p><strong>注意：</strong></p><p>以上的这一代码需要注意<strong>缩进</strong>。</p><p>这就是Python的一大特色，强制缩进，目的是为了让程序知道，每段代码依赖哪个条件，如果不通过缩进来区分，程序怎么会知道，当你的条件成立后，去执行哪些代码呢？</p><p>在其它的语言里，大多通过{}来确定代码块，比如C,C++,Java,Javascript都是这样。</p><pre><code>Python的缩进有以下几个原则:顶级代码必须顶行写，即如果一行代码本身不依赖于任何条件，那它必须不能进行任何缩进同一级别的代码，缩进必须一致官方建议缩进用4个空格</code></pre><p>多分支</p><pre><code>if 条件:    满足条件执行代码elif 条件:    上面的条件不满足就走这个elif 条件:    上面的条件不满足就走这个elif 条件:    上面的条件不满足就走这个    else:    上面所有的条件不满足就走这段</code></pre><p>举个例子：一个人的年龄基本对应的做些什么事</p><pre><code>age_people = int(input(&quot;请输入你的年龄：&quot;))if age_people &gt; 60:    print(&quot;如果你是男的该歇歇了，你老了，女的也是&quot;)else age_people &gt; 50:    print(&quot;女同志你该歇歇了，男同胞们加油&quot;)else age_people &gt;= 16:    print(&quot;人生有很多选择，你可以选择读书或者工作&quot;)else age_people &lt; 16:    print(&quot;请你的家人照顾好你&quot;)</code></pre><h4 id="7-流程控制—while循环"><a href="#7-流程控制—while循环" class="headerlink" title="7. 流程控制—while循环"></a>7. 流程控制—while循环</h4><h6 id="7-1-基本循环"><a href="#7-1-基本循环" class="headerlink" title="7.1 基本循环"></a>7.1 基本循环</h6><pre><code>while 条件:    # 循环体    # 如果条件为真，那么循环体则执行    # 如果条件为假，那么循环体不执行while True:    print(&quot;帅&quot;)    print(&quot;太帅&quot;)    print(&quot;非常帅&quot;)</code></pre><p>运行后会发现这个程序他会一直循环，首先代码是从上往下依次运行，运行到while时会先判断条件，条件成立就进入循环体，在循环体中从上往下依次进行，直到最后，完成一次循环，然后在跳到while处判断条件，再继续<br>。</p><h6 id="7-2-终止循环"><a href="#7-2-终止循环" class="headerlink" title="7.2 终止循环"></a>7.2 终止循环</h6><pre><code>1. 改变条件(根据上面的流程，只要改变条件，就会终止循环)。2. 关键字：break。3. 调用系统命令：quit(),exit() 后面会讲到，不建议使用。4. 关键字：continue（终止本次循环）。</code></pre><p>####### 7.2.1 第一个终止方法</p><pre><code>flag = Truewhile flag:    print(&quot;帅&quot;)    print(&quot;太帅&quot;)    print(&quot;非常帅&quot;)    flag = False    print(&apos;帅出天际&apos;)</code></pre><p>输出1~100所有数字<br>    count = 1<br>    flag = True<br>    while flag:<br>        print(count)<br>        count = count + 1<br>        if count == 101:<br>            flag = False</p><p>使用while循环来求出1~100所有数的和</p><pre><code>count = 1s = 0while count &lt; 101:    s = s + count    count = count + 1print(s)</code></pre><p>####### 7.2.2 break</p><p>break 很简单，其实是Python给大家提供的关键字。它的用法就是：循环中，只要遇到break马上退出循环：</p><pre><code>flag = Trueprint(1)while flag:    print(&quot;帅&quot;)    print(&quot;太帅&quot;)    print(&quot;非常帅&quot;)    break    print(&apos;帅出天际&apos;)print(2)</code></pre><p>打印出1~100所有的偶数</p><p>方法一：</p><pre><code>count =1 while True:    if count % 2 == 0:        print(count)    count = count + 1    if count == 101:        break</code></pre><p>方法二：</p><pre><code>count = 1while count &lt; 101:    if count % 2 == 0:        print(count)    count = count + 1</code></pre><p>方法三：<br>    count = 2<br>    while count &lt; 101:<br>        print(count)<br>        count = count + 2</p><p>####### 7.2.3 continue</p><pre><code>flag = Trueprint(1)while flag:    print(&quot;帅&quot;)    print(&quot;太帅&quot;)    print(&quot;非常帅&quot;)    continue    print(&apos;帅出天际&apos;)print(2)</code></pre><p>使用while循环打印1 2 3 4 5 6 8 9 10</p><pre><code>count = 0 while count &lt;10    count = count + 1    if count == 7:        continue    print(count)</code></pre><p>打印出1 2 3 4 5 95 96 97 98 99 100</p><pre><code>count = 0while count &lt;= 100:count += 1 if count &gt; and count &lt; 95:    continueprint(count)</code></pre><h6 id="7-3-while-…-else-…"><a href="#7-3-while-…-else-…" class="headerlink" title="7.3 while … else …."></a>7.3 while … else ….</h6><p>与其它语言else 一般只与if 搭配不同，在Python 中还有个while …else 语句</p><p>while 后面的else 作用是指，当while 循环正常执行完，中间没有被break 中止的话，就会执行else后面的语句</p><pre><code>count = 0while count &lt;= 5 :    count += 1    print(&quot;Loop&quot;,count)else:    print(&quot;循环正常执行完啦&quot;)print(&quot;-----out of while loop ------&quot;)</code></pre><p>结果：</p><pre><code>Loop 1Loop 2Loop 3Loop 4Loop 5Loop 6循环正常执行完啦-----out of while loop ------</code></pre><p>如果执行过程中被break啦，就不会执行else的语句啦</p><pre><code>count = 0while count &lt;= 5 :    count += 1    if count == 3:break    print(&quot;Loop&quot;,count)else:    print(&quot;循环正常执行完啦&quot;)print(&quot;-----out of while loop ------&quot;)    </code></pre><p>结果：</p><pre><code>Loop 1Loop 2-----out of while loop ------</code></pre><h4 id="8-格式化输出"><a href="#8-格式化输出" class="headerlink" title="8.格式化输出"></a>8.格式化输出</h4><p>我们想把一个人的姓名、年龄、工作、爱好打印成以下的格式：</p><pre><code>------------ 拉斐尔  -----------Name  : 拉斐尔Age   : 20job   : studentHobby : girl------------- end --------------</code></pre><p>我们可以这样做：</p><pre><code>name = input(&quot;Name:&quot;)age = input(&quot;Age:&quot;)job = input(&quot;Job:&quot;)hobby = input(&quot;Hobby:&quot;)info = &apos;&apos;&apos;------------ %s  -----------Name  : %s        Age   : %sjob   : %sHobby : %s------------- end --------------&apos;&apos;&apos; %(name,age,job,hobby)print(info)</code></pre><p><strong>注意</strong></p><p><strong>%s</strong>代表字符串占位符，除此之外，还有%d，是数字占位符，如果把上面的age后面的换成%d，就代表你必须只能输入数字。如果你要改成%d,那么之前的年龄你也需要修改，因为input接受的内容默认是字符串格式，所以需要改成</p><pre><code>age = int(input(&quot;Age:&quot;))</code></pre><h4 id="9-函数-初识"><a href="#9-函数-初识" class="headerlink" title="9.函数(初识)"></a>9.函数(初识)</h4><p>函数就像小型程序，可用来执行特定的操作。Python提供了很多的函数，用来进行很神奇的操作。</p><h4 id="10-模块"><a href="#10-模块" class="headerlink" title="10.模块"></a>10.模块</h4><p>可将模块视为扩展。通常是将其导入可以扩展Python功能。要想导入模块，首先要使用特殊命令import，如导入math：</p><pre><code>import mathmath.floor(32.9)</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code&gt;行宫
+唐代·元稹
+寥落古行宫，宫花寂寞红。
+白头宫女在，闲坐说玄宗。
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-运行Python代码&quot;&gt;&lt;a href=&quot;#1-运行Python代码&quot; class=&quot;headerlink&quot; title=&quot;1.运行Pytho
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
+    
+    
+      <category term="基础知识" scheme="http://fireworksrain.com/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Django模版系统</title>
     <link href="http://fireworksrain.com/Django%E6%A8%A1%E7%89%88%E7%B3%BB%E7%BB%9F/"/>
     <id>http://fireworksrain.com/Django模版系统/</id>
@@ -353,7 +368,7 @@
     <link href="http://fireworksrain.com/Django%E7%9A%84%E7%AE%80%E4%BB%8B/"/>
     <id>http://fireworksrain.com/Django的简介/</id>
     <published>2017-01-02T08:24:58.000Z</published>
-    <updated>2019-01-04T08:26:33.113Z</updated>
+    <updated>2019-10-06T01:22:53.504Z</updated>
     
     <content type="html"><![CDATA[<h3 id="MVC框架和MTV框架"><a href="#MVC框架和MTV框架" class="headerlink" title="MVC框架和MTV框架"></a>MVC框架和MTV框架</h3><p>MVC：全名是Model View Controller，是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型(Model)、视图(View)和控制器(Controller)，具有耦合性低、重用性高、生命周期成本低等优点。<br>大体上是这样的：<br><img src="https://images2017.cnblogs.com/blog/867021/201801/867021-20180116155130396-1611801504.png" alt=""></p><p>Django框架的设计模式借鉴了MVC框架的思想，也分为三个部分，用来降低各个部分之间的耦合性。<br>Django框架的不同之处在于它拆分的三个部分：Model（模型）、Template（模板）和View（视图），也就是MTV框架。</p><h3 id="Django的MTV模式"><a href="#Django的MTV模式" class="headerlink" title="Django的MTV模式"></a>Django的MTV模式</h3><p> Model(模型)：负责业务对象与数据库的对象(ORM)</p><p> Template(模版)：负责如何把页面展示给用户</p><p> View(视图)：负责业务逻辑，并在适当的时候调用Model和Template</p><p>此外，Django还有一个urls分发器，它的作用是将一个个URL的页面请求分发给不同的view处理，view再调用相应的Model和Template</p><h3 id="Django框架图示"><a href="#Django框架图示" class="headerlink" title="Django框架图示"></a>Django框架图示</h3><p><img src="https://images2017.cnblogs.com/blog/867021/201801/867021-20180116155153334-721949851.png" alt=""></p><h3 id="Django常见命令"><a href="#Django常见命令" class="headerlink" title="Django常见命令"></a>Django常见命令</h3><p>在Django的使用过程中需要使用命令让Django进行一些早做，比如创建Django项目、启动Django程序、创建新的APP等</p><h4 id="1-创建Django项目"><a href="#1-创建Django项目" class="headerlink" title="1.创建Django项目"></a>1.创建Django项目</h4><p>一把我们都新建一个文件夹来存放项目文件，切换到这个目录下，启动命令行工具。创建一个名为xxx的Django项目：</p><pre><code>django-admin startproject xxx</code></pre><p>创建好项目后，可以查看当前目录下多出一个名为xxx的文件，xxx的文件夹目录结构如下：</p><pre><code>xxx/    manage.py    xxx/        __init__.py        settings.py        urls.py        wsgi.py</code></pre><h4 id="2-启动Django项目"><a href="#2-启动Django项目" class="headerlink" title="2.启动Django项目"></a>2.启动Django项目</h4><p>启动项目的时候，需要切换到xxx目录下，执行命令如下：</p><pre><code>python manage.py runserver　　#默认使用8000端口</code></pre><p>命令后面可以跟指定端口号:</p><pre><code>python manage.py runserver 8888　　#默认使用8888</code></pre><p>或者IP：</p><pre><code>python manage.py runserver 127.0.0.1:8000    #指定IP和端口，冒号分割</code></pre><h4 id="3-创建app"><a href="#3-创建app" class="headerlink" title="3.创建app"></a>3.创建app</h4><p>一个Django项目可以分为很多个app用来隔离不同功能模块的代码<br>命令行创建：</p><pre><code>python manage.py startapp app01</code></pre><p>执行后，项目目录下多出一个app01的文件夹，结构如下：</p><pre><code>app01/    migrations        __init__.py    __init__.py    admin.py    apps.py    models.py    tests.py    views.py</code></pre><h3 id="使用PyCharm创建"><a href="#使用PyCharm创建" class="headerlink" title="使用PyCharm创建"></a>使用PyCharm创建</h3><p>可以使用PyCharm的manage.py工具来执行命名。在主菜单栏中选择<strong>Tools</strong>，在下拉菜单中选择<strong>Run manage.py task</strong>，</p><p>在弹出的命令窗口中直接输入下面的命令便可创建app：</p><pre><code>startapp app01</code></pre><p>使用PyCharm的manage.py工具执行命令时，只用输入命令及参数即可，不再输入python manage.py了。</p><h4 id="1-数据库迁移"><a href="#1-数据库迁移" class="headerlink" title="1.数据库迁移"></a>1.数据库迁移</h4><pre><code>python manage.py makemigrationspython manage.py migrate</code></pre><h4 id="2-创建超级用户"><a href="#2-创建超级用户" class="headerlink" title="2.创建超级用户"></a>2.创建超级用户</h4><pre><code>python manage.py createsuperuser</code></pre><p>输入以上命令后，根据提示输入用户名、邮箱、密码、确认密码。密码的要求至少是不八位，不能和邮箱太接近，两次密码需要一致。</p>]]></content>
     
@@ -369,7 +384,7 @@
       <category term="Python" scheme="http://fireworksrain.com/categories/Python/"/>
     
     
-      <category term="Django框架" scheme="http://fireworksrain.com/tags/Django%E6%A1%86%E6%9E%B6/"/>
+      <category term="Python框架之Django框架" scheme="http://fireworksrain.com/tags/Python%E6%A1%86%E6%9E%B6%E4%B9%8BDjango%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
