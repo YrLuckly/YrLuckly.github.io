@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="Rafael">
 <meta property="og:description" content="相思 唐代：王维 红豆生南国，春来发几枝。 愿君多采撷，此物最相思。 1.数据结构与数据类型数据结构是以某种方式组合起来的数据元素集合。在Python中，最基本的数据结构为序列。序列中的每个元素都有编号，即位置或者索引，其中第一个元素索引为0，第二个索引为1，以此类推。 数据类型：是一种值的集合和定义在这个值集上的一组操作的总称。 数据结构是数据类型的一个子集。 Python中内置了多种序列，常用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-06T02:19:44.962Z">
+<meta property="og:updated_time" content="2019-10-08T02:52:54.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础知识之数据类型(1)">
 <meta name="twitter:description" content="相思 唐代：王维 红豆生南国，春来发几枝。 愿君多采撷，此物最相思。 1.数据结构与数据类型数据结构是以某种方式组合起来的数据元素集合。在Python中，最基本的数据结构为序列。序列中的每个元素都有编号，即位置或者索引，其中第一个元素索引为0，第二个索引为1，以此类推。 数据类型：是一种值的集合和定义在这个值集上的一组操作的总称。 数据结构是数据类型的一个子集。 Python中内置了多种序列，常用">
@@ -374,7 +374,32 @@ bool: 判断真假，True，False
 list: 大量有序数据，，[1,&apos;ww&apos;,[111]]
 tuple: 只读，不可更改
 dict: 大量的数据，也是关联性比较强的数据{&apos;name&apos;:&apos;Rafael&apos;,&apos;age&apos;:20,&apos;hobbies_list&apos;:[&apos;喝酒&apos;,&apos;美女&apos;]}
-</code></pre><h4 id="2-数据类型–int"><a href="#2-数据类型–int" class="headerlink" title="2.数据类型–int"></a>2.数据类型–int</h4>
+</code></pre><h4 id="2-数据类型–int"><a href="#2-数据类型–int" class="headerlink" title="2.数据类型–int"></a>2.数据类型–int</h4><p>int，常见的数据的类型，主要运用于运算。常见的也是最简单的莫过于进制之间的转换。</p>
+<h5 id="2-1-十进制转二进制"><a href="#2-1-十进制转二进制" class="headerlink" title="2.1 十进制转二进制"></a>2.1 十进制转二进制</h5><p>进制之间转换分为整数和小数。首先先来整数。<br><strong>十进制整数转换为二进制整数</strong>，方法“除2取余，逆序排序”。具体流程：用2整出十进制整数，可以获得一个商和余数，再用2去除商，又得到一个商和余数，如此进行，直到商为小于1时为止，然后把先得到的余数作为二进制数的低位有效位，后得到的余数作为二进制数的高位有效位，依次排列起来。举个例子：98转换二进制</p>
+<pre><code>2|98  --------0
+2|49  --------1
+2|24  --------0
+2|12  --------0
+2|6   --------0
+2|3   --------1
+2|1   --------1
+</code></pre><p>最终的98转换成二进制为 1100010</p>
+<p><strong>十进制小数转换二进制小数</strong>，方法“乘2取整，顺序排序”。具体流程：用2乘十进制小数，可以得到积，将积的整数部分取出，再用2乘余下的小数部分，又得到一个积，再将积的整数部分取出，如此进行，直到积中的小数部分为零，此时0或1为二进制的最后一位。或者达到所要求的精度为止。<br>举例说明：0.625</p>
+<pre><code>0.625*2 = 1.25  ----取整数部分1
+0.25*2=0.5      ----取整数部分0
+0.5*2=1         ----取整数部分1
+</code></pre><p>最终为0.101</p>
+<h5 id="2-2-二进制转十进制"><a href="#2-2-二进制转十进制" class="headerlink" title="2.2 二进制转十进制"></a>2.2 二进制转十进制</h5><p>要从右到左用二进制的每个数去乘以2的相应次方,小数点后则是从左往右</p>
+<p>1101.01（2）=1<em>2^0+0</em>2^1+1<em>2^2+1</em>2^3 +0<em>2^-1+1</em>2^-2=1+0+4+8+0+0.25=13.25（10）</p>
+<p>通用公式：</p>
+<pre><code>abcd.efg(2)=d*2^0+c*2^1+b*2^2+a*2^3+e*2^-1+f*2^-2+g*2^-3（10）
+</code></pre><h5 id="2-3-操作方法"><a href="#2-3-操作方法" class="headerlink" title="2.3 操作方法"></a>2.3 操作方法</h5><p>数字最大的用处在于计算，Python提供了一种方法：bit_length()就是帮助你快速的计算整数在内存中占用的二进制码的长度.</p>
+<pre><code>num = 9
+print(num.bit_length())
+</code></pre><h4 id="3-布尔值bool"><a href="#3-布尔值bool" class="headerlink" title="3.布尔值bool"></a>3.布尔值bool</h4><p>布尔值分两种：True，False。就是真与否</p>
+<pre><code>真 1 True
+假 0 False
+</code></pre>
       
     </div>
     
@@ -591,7 +616,7 @@ dict: 大量的数据，也是关联性比较强的数据{&apos;name&apos;:&apos
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数据结构与数据类型"><span class="nav-number">1.</span> <span class="nav-text">1.数据结构与数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-数据类型–int"><span class="nav-number">2.</span> <span class="nav-text">2.数据类型–int</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数据结构与数据类型"><span class="nav-number">1.</span> <span class="nav-text">1.数据结构与数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-数据类型–int"><span class="nav-number">2.</span> <span class="nav-text">2.数据类型–int</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-十进制转二进制"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 十进制转二进制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-二进制转十进制"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 二进制转十进制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-操作方法"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 操作方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-布尔值bool"><span class="nav-number">3.</span> <span class="nav-text">3.布尔值bool</span></a></li></ol></div>
             
 
           </div>
