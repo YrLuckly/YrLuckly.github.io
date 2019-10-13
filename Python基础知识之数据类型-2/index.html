@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Flask框架,">
+  <meta name="keywords" content="Python之数据类型,">
 
 
 
@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="三剑客Flask框架的三剑客跟Django的是有点区别的：  HTTPResponseRedirectrender_template  1.HTTPResponse在Flask 中的HttpResponse 在我们看来其实就是直接返回字符串 from flask import Flask app = Flask(__name__) @app.route(&amp;quot;/&amp;quot;) def ind">
-<meta name="keywords" content="Flask框架">
+<meta name="description" content="竹里馆 唐代：王维 独坐幽篁里，弹琴复长啸。 深林人不知，明月来相照。 本次文章会讲到数据类型中的字符串、字典、列表、元祖、集合。在以后的工作中都会用到。 1.字符串—strPython中凡是用引号引起来的数据可以称为字符串类型，组成字符串的每个元素称之为字符，将这些字符一个一个连接起来，然后在用引号起来就是字符串。所有标准序列操作都适用于字符串，但是字符串是不可变的，所以，所有的元素赋值和切片赋">
+<meta name="keywords" content="Python之数据类型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flask的三剑客">
-<meta property="og:url" content="http://fireworksrain.com/Flask的三剑客/index.html">
+<meta property="og:title" content="Python基础知识之数据类型(2)">
+<meta property="og:url" content="http://fireworksrain.com/Python基础知识之数据类型-2/index.html">
 <meta property="og:site_name" content="Rafael">
-<meta property="og:description" content="三剑客Flask框架的三剑客跟Django的是有点区别的：  HTTPResponseRedirectrender_template  1.HTTPResponse在Flask 中的HttpResponse 在我们看来其实就是直接返回字符串 from flask import Flask app = Flask(__name__) @app.route(&amp;quot;/&amp;quot;) def ind">
+<meta property="og:description" content="竹里馆 唐代：王维 独坐幽篁里，弹琴复长啸。 深林人不知，明月来相照。 本次文章会讲到数据类型中的字符串、字典、列表、元祖、集合。在以后的工作中都会用到。 1.字符串—strPython中凡是用引号引起来的数据可以称为字符串类型，组成字符串的每个元素称之为字符，将这些字符一个一个连接起来，然后在用引号起来就是字符串。所有标准序列操作都适用于字符串，但是字符串是不可变的，所以，所有的元素赋值和切片赋">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-27T10:01:21.186Z">
+<meta property="og:updated_time" content="2019-10-13T10:26:27.616Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flask的三剑客">
-<meta name="twitter:description" content="三剑客Flask框架的三剑客跟Django的是有点区别的：  HTTPResponseRedirectrender_template  1.HTTPResponse在Flask 中的HttpResponse 在我们看来其实就是直接返回字符串 from flask import Flask app = Flask(__name__) @app.route(&amp;quot;/&amp;quot;) def ind">
+<meta name="twitter:title" content="Python基础知识之数据类型(2)">
+<meta name="twitter:description" content="竹里馆 唐代：王维 独坐幽篁里，弹琴复长啸。 深林人不知，明月来相照。 本次文章会讲到数据类型中的字符串、字典、列表、元祖、集合。在以后的工作中都会用到。 1.字符串—strPython中凡是用引号引起来的数据可以称为字符串类型，组成字符串的每个元素称之为字符，将这些字符一个一个连接起来，然后在用引号起来就是字符串。所有标准序列操作都适用于字符串，但是字符串是不可变的，所以，所有的元素赋值和切片赋">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://fireworksrain.com/Flask的三剑客/">
+  <link rel="canonical" href="http://fireworksrain.com/Python基础知识之数据类型-2/">
 
 
 
 
 
-  <title>Flask的三剑客 | Rafael</title>
+  <title>Python基础知识之数据类型(2) | Rafael</title>
   
 
 
@@ -269,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fireworksrain.com/Flask的三剑客/">
+    <link itemprop="mainEntityOfPage" href="http://fireworksrain.com/Python基础知识之数据类型-2/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr Zuo">
@@ -286,7 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Flask的三剑客</h1>
+          <h1 class="post-title" itemprop="name headline">Python基础知识之数据类型(2)</h1>
         
 
         <div class="post-meta">
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T17:49:04+08:00">
-                2017-11-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T09:13:19+08:00">
+                2018-10-02
               </time>
             
 
@@ -358,33 +358,105 @@
       
 
       
-        <h3 id="三剑客"><a href="#三剑客" class="headerlink" title="三剑客"></a>三剑客</h3><p>Flask框架的三剑客跟Django的是有点区别的：</p>
-<blockquote>
-<p>HTTPResponse<br>Redirect<br>render_template</p>
-</blockquote>
-<h4 id="1-HTTPResponse"><a href="#1-HTTPResponse" class="headerlink" title="1.HTTPResponse"></a>1.HTTPResponse</h4><p>在Flask 中的HttpResponse 在我们看来其实就是直接返回字符串</p>
-<pre><code>from flask import Flask
-app = Flask(__name__)
-@app.route(&quot;/&quot;)
-def index():  # 视图函数
-    return &quot;Hello World&quot;   #返回一个字符串，类似于HttpResponse
-app.run()
-</code></pre><h4 id="2-Redirect"><a href="#2-Redirect" class="headerlink" title="2.Redirect"></a>2.Redirect</h4><p>每当访问”/login”这个地址的时候,视图函数redi会触发redirect(“/“) 跳转到url地址:  “/“ 并会触发”/“对应的视图函数index()</p>
-<pre><code>from flask import Flask,redirect  # 导入模块
-app = Flask(__name__)
+        <pre><code>竹里馆
+唐代：王维
+独坐幽篁里，弹琴复长啸。
+深林人不知，明月来相照。
+</code></pre><p>本次文章会讲到数据类型中的字符串、字典、列表、元祖、集合。在以后的工作中都会用到。</p>
+<h4 id="1-字符串—str"><a href="#1-字符串—str" class="headerlink" title="1.字符串—str"></a>1.字符串—str</h4><p>Python中凡是用引号引起来的数据可以称为字符串类型，组成字符串的每个元素称之为字符，将这些字符一个一个连接起来，然后在用引号起来就是字符串。所有标准序列操作都适用于字符串，但是字符串是不可变的，所以，所有的元素赋值和切片赋值都是不可取的</p>
+<pre><code>w = &apos;双击666&apos;   # 对w这个字符串来说，它由‘双，击，6，6，6’五个字符组成
+</code></pre><h5 id="1-1-字符串的索引与切片"><a href="#1-1-字符串的索引与切片" class="headerlink" title="1.1 字符串的索引与切片"></a>1.1 字符串的索引与切片</h5><p>组成字符串的字符从左往右，依次排列，从左往右依次对应：0,1,2,3…,其中必须注意首位第一是0。</p>
+<h6 id="1-1-1-索引"><a href="#1-1-1-索引" class="headerlink" title="1.1.1 索引"></a>1.1.1 索引</h6><p>索引也是下标，就是字符串组成的元素从第一开始，初识索引为0 。<br>举例说明：</p>
+<pre><code>s = &apos;abcdefg&apos;
 
-@app.route(&quot;/login&quot;)
-def redi():
-    return redirect(&quot;/&quot;) #redirect跳转至&apos;/&apos;
-app.run()
-</code></pre><h4 id="3-render-template"><a href="#3-render-template" class="headerlink" title="3.render_template"></a>3.render_template</h4><p>HTML模板渲染是每个Web框架中都必须有的,至于render_template的具体用法,</p>
-<p>注意: 如果要使用 render_template 返回渲染的模板,请在项目的主目录中加入一个目录 templates,否则可能会有一个Jinja2的异常哦</p>
-<pre><code>from flask import Flask,render_template
-app = Flask(__name__)
-@app.route(&quot;/login&quot;)
-def login():
-    return render_template(&quot;login.html&quot;)
-app.run()
+print(s[0])       # a
+print(s[1])       # b
+print(s[5])       # f
+print(s[6])       # g
+</code></pre><h6 id="1-1-2-切片"><a href="#1-1-2-切片" class="headerlink" title="1.1.2 切片"></a>1.1.2 切片</h6><p>切片就是通过索引（索引：索引：步长）截取字符串的一段，形成新的字符串（原则就是顾头不顾尾）。</p>
+<pre><code>s = &apos;abcdefg&apos;
+
+print(s[0:2])       # abc  其中0可以默认不写
+print(s[1:5])       # bcdef
+print(s[:])         # 直接到最后
+print(s[:-1])       # abcdef  -1值最后一个元素的索引。
+print(s[1:5:2])       # bd
+</code></pre><h4 id="1-2-format-格式化输出"><a href="#1-2-format-格式化输出" class="headerlink" title="1.2 format  格式化输出"></a>1.2 format  格式化输出</h4><p>除了上篇文章介绍的%d的格式化输出方法外，现在有关于format的格式化输出也可以看作替换</p>
+<h5 id="1-2-1-format三种方式"><a href="#1-2-1-format三种方式" class="headerlink" title="1.2.1 format三种方式"></a>1.2.1 format三种方式</h5><p>1.</p>
+<pre><code>s1= &quot;name{0},age{1},hobby{2}&quot;.format(&apos;老左&apos;,&apos;24&apos;,&apos;女票女昌&apos;)
+
+print(s1) # name老左,age24,hobby女票女昌
+</code></pre><p>2.</p>
+<pre><code>s1 = &quot;name{},age{},hobby{}&quot;.format(&apos;老左&apos;,&apos;24&apos;,&apos;女票女昌&apos;)
+
+print(s1)       # name老左,age24,hobby女票女昌
+</code></pre><p>3.</p>
+<pre><code>s1 = &quot;name{name},age{age},hobby{hobby}&quot;.format(name=&apos;老左&apos;,age= &apos;24&apos;,hobby=&apos;女票女昌&apos;)
+
+print(s1)       # name老左,age24,hobby女票女昌
+</code></pre><h5 id="1-3-字符串常用方法"><a href="#1-3-字符串常用方法" class="headerlink" title="1.3 字符串常用方法"></a>1.3 字符串常用方法</h5><p>字符串除了切片，还有一些其他的方法，这些方法中有些会常用到</p>
+<h5 id="1-3-1-capitalize"><a href="#1-3-1-capitalize" class="headerlink" title="1.3.1 capitalize ***"></a>1.3.1 capitalize ***</h5><p>方法capitalize将首字母大写其余字母小写</p>
+<pre><code>s = &apos;abcdefg&apos;
+s1 = s.capitalize()
+print(s1)            #  Abcdefg
+</code></pre><h5 id="1-3-2-upper、lower"><a href="#1-3-2-upper、lower" class="headerlink" title="1.3.2 upper、lower ***"></a>1.3.2 upper、lower ***</h5><p>方法upper是全部大写，方法lower是全部小写</p>
+<pre><code>s = &apos;abcdefg&apos;
+s1 = s.upper()
+print(s1)            #  ABCDEFG
+
+s = &apos;ABCDEFG&apos;
+s1 = s.upper()
+print(s1)            #  abcdefg    
+</code></pre><h5 id="1-3-3-startswith、endswith"><a href="#1-3-3-startswith、endswith" class="headerlink" title="1.3.3 startswith、endswith ***"></a>1.3.3 startswith、endswith ***</h5><p>方法startswith是判断以什么为开头,方法endswith是判断以什么为结尾</p>
+<pre><code>s = &apos;abcdefg&apos;
+s1 = s.startswith(&apos;a&apos;)
+print(s1)            #  True
+
+s = &apos;abcdefg&apos;
+s1 = s.endswith(&apos;g&apos;)
+print(s1)            #  True    
+</code></pre><h5 id="1-3-4-find、index"><a href="#1-3-4-find、index" class="headerlink" title="1.3.4 find、index ***"></a>1.3.4 find、index ***</h5><p>方法find：通过元素找索引，可切片，找不到返回-1<br>方法find：通过元素找索引，可切片，找不到报错</p>
+<pre><code>s = &apos;abcdefg&apos;
+s1 = s.find(&apos;a&apos;)
+print(s1)  # 0
+
+s2 = s.find(&apos;t&apos;)
+print(s2)  # -1
+
+s1 = s.index(&apos;a&apos;)
+print(s1)  # 0
+
+s2 = s.index(&apos;r&apos;)
+print(s2)  # ValueError: substring not found
+</code></pre><h5 id="1-3-5-strip"><a href="#1-3-5-strip" class="headerlink" title="1.3.5 strip ***"></a>1.3.5 strip ***</h5><p>方法strip是去除前后两边的空格、换行符、制表符</p>
+<pre><code>s = &apos;  abcdefg  &apos;
+s1 = s.strip()
+print(s1)  # abcdefg
+</code></pre><h5 id="1-3-6-split"><a href="#1-3-6-split" class="headerlink" title="1.3.6 split   ***"></a>1.3.6 split   ***</h5><p>方法split是将字符串转变成列表</p>
+<pre><code>s = &apos;abcdefg&apos;
+s1 = s.split()
+print(s1)      # [&apos;abcdefg&apos;]
+</code></pre><h5 id="1-3-7-join"><a href="#1-3-7-join" class="headerlink" title="1.3.7 join   ***"></a>1.3.7 join   ***</h5><p>方法join是 将列表变成字符串</p>
+<pre><code>s = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]
+s1 = &apos;+&apos;.join(s)
+print(s1)         # a+b+c
+</code></pre><h5 id="1-3-8-center"><a href="#1-3-8-center" class="headerlink" title="1.3.8 center *"></a>1.3.8 center *</h5><p>方法center是居中</p>
+<pre><code>s = &apos;abcdefg&apos;
+s1 = s.center(10)
+print(s1)            #   abcdefg  两边空格补充
+</code></pre><h5 id="1-3-9-swapcase"><a href="#1-3-9-swapcase" class="headerlink" title="1.3.9 swapcase    *"></a>1.3.9 swapcase    *</h5><p>方法swapcase是大小写翻转</p>
+<pre><code>s = &apos;abcdefgH&apos;
+s1 = s.swapcase()
+print(s1)            #  ABCDEFGh
+</code></pre><h5 id="1-3-10-title"><a href="#1-3-10-title" class="headerlink" title="1.3.10 title"></a>1.3.10 title</h5><p>方法title是非字母隔开的每个单词的首字母大写</p>
+<pre><code>s = &apos;a1bc3de5fg&apos;
+s1 = s.title()
+print(s1)        # A1Bc3De5Fg     
+</code></pre><h5 id="1-3-11-replace"><a href="#1-3-11-replace" class="headerlink" title="1.3.11 replace"></a>1.3.11 replace</h5><pre><code>s = &apos;abc&apos;
+s1 = s.replace(&apos;a&apos;,&apos;222&apos;)
+print(s1)                 # 222bc     
+</code></pre><h5 id="1-4-判断字符串是否满足特定条件"><a href="#1-4-判断字符串是否满足特定条件" class="headerlink" title="1.4 判断字符串是否满足特定条件"></a>1.4 判断字符串是否满足特定条件</h5><p>很多字符串方法都以is开头，如isspace、isdigit和isupper，它们判断字符串是否具有特定的性质。如果这些字符串具备特定的性质，返回True，否则返回False。</p>
+<pre><code>isalnum,isalpha,isdecimal,isdigit,isidentifier,islower,is,numeric,isprintable,isspace,istitle,isupper
 </code></pre>
       
     </div>
@@ -401,11 +473,11 @@ app.run()
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/Flask的三剑客/">Flask的三剑客</a></p>
+  <p><span>本文标题:</span><a href="/Python基础知识之数据类型-2/">Python基础知识之数据类型(2)</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mr Zuo 的个人博客">Mr Zuo</a></p>
-  <p><span>发布时间:</span>2017年11月27日 - 17:11</p>
-  <p><span>原始链接:</span><a href="/Flask的三剑客/" title="Flask的三剑客">http://fireworksrain.com/Flask的三剑客/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/Flask的三剑客/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年10月02日 - 09:10</p>
+  <p><span>原始链接:</span><a href="/Python基础知识之数据类型-2/" title="Python基础知识之数据类型(2)">http://fireworksrain.com/Python基础知识之数据类型-2/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://fireworksrain.com/Python基础知识之数据类型-2/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -436,7 +508,7 @@ app.run()
       
         <div class="post-tags">
           
-            <a href="/tags/Flask框架/" rel="tag"><i class="fa fa-tag"></i> Flask框架</a>
+            <a href="/tags/Python之数据类型/" rel="tag"><i class="fa fa-tag"></i> Python之数据类型</a>
           
         </div>
       
@@ -449,8 +521,8 @@ app.run()
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Flask的请求机制-request/" rel="next" title="Flask的请求机制(request)">
-                <i class="fa fa-chevron-left"></i> Flask的请求机制(request)
+              <a href="/Python基础知识之数据类型-1/" rel="next" title="Python基础知识之数据类型(1)">
+                <i class="fa fa-chevron-left"></i> Python基础知识之数据类型(1)
               </a>
             
           </div>
@@ -459,8 +531,8 @@ app.run()
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Flask的模版语言Jinja2/" rel="prev" title="Flask的模版语言Jinja2">
-                Flask的模版语言Jinja2 <i class="fa fa-chevron-right"></i>
+              <a href="/linux下的python/" rel="prev" title="linux下的python">
+                linux下的python <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -602,7 +674,7 @@ app.run()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三剑客"><span class="nav-number">1.</span> <span class="nav-text">三剑客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-HTTPResponse"><span class="nav-number">1.1.</span> <span class="nav-text">1.HTTPResponse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Redirect"><span class="nav-number">1.2.</span> <span class="nav-text">2.Redirect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-render-template"><span class="nav-number">1.3.</span> <span class="nav-text">3.render_template</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-字符串—str"><span class="nav-number">1.</span> <span class="nav-text">1.字符串—str</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-字符串的索引与切片"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 字符串的索引与切片</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-1-1-索引"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1 索引</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-1-2-切片"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2 切片</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-format-格式化输出"><span class="nav-number">2.</span> <span class="nav-text">1.2 format  格式化输出</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-1-format三种方式"><span class="nav-number">2.1.</span> <span class="nav-text">1.2.1 format三种方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-字符串常用方法"><span class="nav-number">2.2.</span> <span class="nav-text">1.3 字符串常用方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-1-capitalize"><span class="nav-number">2.3.</span> <span class="nav-text">1.3.1 capitalize ***</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-2-upper、lower"><span class="nav-number">2.4.</span> <span class="nav-text">1.3.2 upper、lower ***</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-3-startswith、endswith"><span class="nav-number">2.5.</span> <span class="nav-text">1.3.3 startswith、endswith ***</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-4-find、index"><span class="nav-number">2.6.</span> <span class="nav-text">1.3.4 find、index ***</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-5-strip"><span class="nav-number">2.7.</span> <span class="nav-text">1.3.5 strip ***</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-6-split"><span class="nav-number">2.8.</span> <span class="nav-text">1.3.6 split   ***</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-7-join"><span class="nav-number">2.9.</span> <span class="nav-text">1.3.7 join   ***</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-8-center"><span class="nav-number">2.10.</span> <span class="nav-text">1.3.8 center *</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-9-swapcase"><span class="nav-number">2.11.</span> <span class="nav-text">1.3.9 swapcase    *</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-10-title"><span class="nav-number">2.12.</span> <span class="nav-text">1.3.10 title</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-11-replace"><span class="nav-number">2.13.</span> <span class="nav-text">1.3.11 replace</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-判断字符串是否满足特定条件"><span class="nav-number">2.14.</span> <span class="nav-text">1.4 判断字符串是否满足特定条件</span></a></li></ol></li></ol></div>
             
 
           </div>
